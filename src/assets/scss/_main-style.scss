@@ -1,0 +1,87 @@
+img{
+    width: 100%;
+}
+
+section{
+    display: flex;
+    align-items: stretch;
+}
+
+.nav {
+    .nav-item {
+        &.active {
+            border-bottom: 2px solid $blackColor;
+        }
+
+        a.nav-link {
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+
+.main-paragraph {
+    color: $greyColor;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+
+@mixin main-link {
+    position: absolute;
+    height: 25px;
+    left: 240px;
+    bottom: 60px;
+    font-family: Artegra Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-transform: $uppercase;
+    color: $whiteColor;
+    border-bottom: 1px solid $whiteColor;
+    padding-bottom: 50px;
+    width: 190px;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &--black {
+        color: black;
+        border-bottom: 1px solid $blackColor;
+        position: static;
+        margin-top: 40px;
+        font-size: 14px;
+        padding-bottom: 35px;
+        display: inline-block;
+    }
+}
+
+@mixin single-item {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    font-size: 16px;
+    line-height: 25px;
+
+    span {
+        color: $gold;
+        font-size: 25px;
+        line-height: 20px;
+    }
+}
+
+
+@mixin slider {
+    width: 630px;
+    height: 600px;
+}
+
+

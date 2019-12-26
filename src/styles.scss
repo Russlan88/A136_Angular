@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'style-reset.scss';
+
+@font-face {
+  font-family: "ArtegraSans";
+  src: url("../src/assets/fonts/ArtegraSans-Regular.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-ExtraBoldItalic.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-ExtraLight.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-Light.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-LightItalic.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-Medium.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-MediumItalic.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-Regular.otf") format("eot"),
+    url("../src/assets/fonts/ArtegraSans-RegularItalic.otf") format("eot");
+}
+
+html,
+body {
+  width: 100%;
+
+}
+
+body {
+  margin: 0;
+  font-family: ArtegraSans;
+}

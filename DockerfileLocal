@@ -1,0 +1,33 @@
+# FROM node:13.0-alpine AS builder
+# COPY . ./projOne
+# WORKDIR /projOne
+# RUN npm i
+# RUN $(npm bin)/ npm build:ssr
+# FROM nginx:1.15.8-alpine
+# COPY --from=builder /projOne/dist/ /usr/share/nginx/html
+FROM node:10-alpine as buildContainer
+WORKDIR /app
+COPY ./package.json ./package-lock.json /app/
+RUN npm install
+COPY . /app
+RUN npm run build:ssr
+# RUN npm run generate:prerender
+
+FROM node:12-alpine
+
+WORKDIR /app
+# Copy dependency definitions
+COPY --from=buildContainer /app/package.json /app
+# COPY --from=buildContainer /dist/server.js /app
+
+# Get all the code needed to run the app
+COPY --from=buildContainer ./app/dist/server.js /app
+COPY --from=buildContainer ./app/dist/browser/ /app/dist/browser
+COPY --from=buildContainer ./app/dist/server/ /app/server
+
+
+# Expose the port the app runs in
+EXPOSE 4000
+
+# Serve the app
+CMD [  "node", "server.js" ]

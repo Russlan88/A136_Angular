@@ -1,0 +1,60 @@
+@import '../../assets/scss/variables.scss';
+
+.footer{
+    background-color: $darkGray;
+    padding: 130px 100px;
+    display: flex;
+    justify-content: space-between;
+    &__container{
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    &__content{
+        display: flex;
+    justify-content: space-between;
+
+    }
+
+    &__column-container{
+        width: 45%;
+        &_second-width{
+            width: 30%;
+        }
+
+    }
+
+    &__inner-container{
+        p{
+            color: $whiteColor;
+            display: flex;
+            flex-direction: column;
+            line-height: 25px;
+            margin-bottom: 30px;
+            span{
+                color: $greyColor;
+                text-transform:$uppercase;
+            }
+            a{
+                color: #fff;
+
+    flex-direction: column;
+    line-height: 25px;
+    margin-bottom: 30px;
+            }
+        }
+
+        
+    }
+
+    &__title{
+        font-size: 23px;
+        color: #FFFFFF;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+    }
+
+    
+}

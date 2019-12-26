@@ -1,0 +1,138 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/_main-style';
+
+
+.pl-130 {
+    padding-left: 130px;
+}
+
+.pt-130 {
+    padding-top: 130px;
+}
+
+.mr-205 {
+    margin-right: 205px;
+}
+
+.carousel-control,
+.carousel-control-prev {
+    bottom: 0px;
+    top: unset;
+    background: red;
+}
+
+
+.nav {
+    justify-content: space-between;
+
+    .active {
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        border-radius: 0px;
+        padding: 10px 0px;
+    }
+}
+
+
+
+.item-description {
+    @include single-item;
+}
+
+
+.carousel-indicators {
+    li {
+        position: relative;
+
+        &::after {
+            content: "" !important;
+            font-size: 20px !important;
+            position: absolute !important;
+            background: red !important;
+            width: 20px !important;
+            height: 20px !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+
+        }
+    }
+}
+
+
+/*************************************************
+
+                SECTION MATERIALS
+
+*************************************************/
+
+.materials {
+    position: relative;
+    height: 733px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &__dark-figure {
+        left: 0px;
+        bottom: 0px;
+        width: 180px;
+        height: 411px;
+        background: $darkGray;
+    }
+
+    &__first-image {
+        width: 435px;
+        height: auto;
+        left: 325px;
+        top: 57px;
+    }
+
+    &__second-image {
+        right: 0px;
+        top: 152px;
+        width: 380px;
+        height: auto;
+    }
+
+
+    .triple-container {
+        width: 460px;
+        height: 100%;
+        left: 910px;
+
+        &__light-figure {
+            width: 204px;
+            height: 232px;
+            font-weight: 900;
+            font-size: 45px;
+            background: $gold;
+        }
+
+        &__title {
+            font-weight: 900;
+            font-size: 45px;
+            line-height: 55px;
+            letter-spacing: 0.02em;
+        }
+
+        &__h3 {
+            top: 352px;
+        }
+
+        &__paragraph {
+            font-size: 14px;
+            line-height: 25px;
+        }
+
+        &__primary-link {
+            @include main-link;
+        }
+
+        &__inner-image {
+            height: auto;
+            bottom: -220px;
+            left: 0px;
+        }
+    }
+}
