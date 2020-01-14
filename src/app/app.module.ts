@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TabsModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { MyComponentComponent } from './my-component/my-component.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     SelectFlatComponent,
     FlatsComponent,
     GalleryComponent,
-    NewsComponent
+    NewsComponent,
+    MyComponentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
