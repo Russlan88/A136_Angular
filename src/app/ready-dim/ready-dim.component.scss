@@ -1,0 +1,44 @@
+@import "../../styles.scss";
+
+
+.dim {
+  padding-top: 20rem;
+}
+
+.dim-main {
+  .desc {
+    display: block;
+    font-size: inherit;
+  }
+}
+
+.company-structure {
+
+  &__completed-project {
+    font-size: 18px;
+    color: $gl-color;
+  }
+
+  &__countries {
+    color: $b-color;
+    font-weight: 500;
+  }
+}
+
+
+.full-img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.logos {
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: initial;
+    }
+  }
+}

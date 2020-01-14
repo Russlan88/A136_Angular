@@ -1,0 +1,204 @@
+@import "../../styles.scss";
+
+/* First section | Hero style */
+
+.app-hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/home-page/hero.jpg");
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  &__h1 {
+    position: absolute;
+    width: 629px;
+    height: 130px;
+    left: 100px;
+    bottom: 155px;
+    font-family: Artegra Sans;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 55px;
+    line-height: 65px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: $w-color;
+  }
+
+  &__cta {
+    position: absolute;
+    bottom: 80px;
+    left: 100px;
+    color: $w-color;
+    border-bottom-color: $w-color;
+  }
+
+  &__watch-block {
+    position: absolute;
+    width: 467px;
+    height: 145px;
+    right: 0;
+    bottom: 0;
+    background: #232529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: " ";
+      height: 100vh;
+      background: $lightGray;
+      width: 1px;
+      position: absolute;
+      left: -1px;
+    }
+
+    .desc {
+      color: $w-color;
+      position: relative;
+      padding-left: 75px;
+      letter-spacing: 0.1em;
+      font-size: 20px;
+
+      &::before {
+        content: " ";
+        width: 62px;
+        position: absolute;
+        background: $w-color;
+        height: 2px;
+        top: 50%;
+        left: 0px;
+      }
+    }
+  }
+
+  &__list-social {
+    position: absolute;
+    bottom: 190px;
+    right: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 265px;
+    font-size: 17px;
+
+    a {
+      color: $w-color;
+    }
+  }
+
+  &__rectangle {
+    height: 2250px;
+    width: 249px;
+    position: absolute;
+    border-left: 1px solid $lightGray;
+    transform: rotate(-67deg);
+    bottom: -550px;
+    right: 915px;
+    border-right: 1px solid $lightGray;
+
+    &::after {
+      content: "";
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      height: 100%;
+      left: 248px;
+    }
+  }
+}
+
+/* Main section */
+
+.nav-rooms {
+  &__single {
+    font-size: 1rem;
+
+    a {
+      color: $greyColor;
+      text-transform: uppercase;
+
+      &.active {
+        color: $blackColor;
+        background: transparent;
+        border-radius: 0;
+        @include link(inherit, inherit);
+      }
+    }
+  }
+}
+
+.tab-content {
+  .inner-content {
+    font-size: 1rem;
+    color: $greyColor;
+  }
+
+  @include black_gold-title;
+}
+
+.contact-form {
+  @include contact-form;
+}
+
+.six-elements-section {
+  &__grey-figure {
+    background-color: $l-color;
+    height: 810px;
+  }
+
+  &__gold-figure {
+    background-color: $g-text;
+    height: 395px;
+  }
+}
+
+.apartment-choice {
+  .title-h3 {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &__card {
+    height: 515px;
+    width: 530px;
+    color: $w-color;
+    background: $l-color;
+    left: -50px;
+    bottom: -15px;
+    z-index: 9;
+    padding: 60px;
+    text-align: left;
+  }
+
+  @include black_gold-title;
+
+  .paragraph {
+    color: $w-color;
+    @include paragraph(14px);
+  }
+
+  a {
+    position: absolute;
+    color: $w-color;
+    bottom: 60px;
+    left: 60px;
+    border-bottom-color: $w-color;
+  }
+}
+
+/* галерея с фотками о жк */
+
+.gallery-section {
+  &__gold-figure {
+    height: 527px;
+    background: $gold;
+    margin-bottom: 8rem;
+  }
+
+  &__side-photo {
+    margin-top: 20rem;
+  }
+}

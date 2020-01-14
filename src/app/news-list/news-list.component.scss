@@ -1,0 +1,28 @@
+@import "../../styles.scss";
+
+section {
+  @include left-align-content;
+}
+
+.pagination {
+  a {
+    color: $n-color;
+  }
+
+  &__item {
+    list-style: none;
+
+    &.active {
+      a {
+        color: $b-color;
+        font-weight: 900;
+      }
+    }
+  }
+
+  &__next-page {
+    a {
+      color: $n-color;
+    }
+  }
+}

@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+
+/* Import variables */
+
+@import ".././src/variables.scss";
+
+/* Import custom fonts */
+
+@import ".././src/assets/scss/fonts.scss";
+
+/* Import mixins */
+
+@import "../src/assets/scss/mixins/_mixins.scss";
+
+ul>li {
+  list-style: none;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.z-top {
+  z-index: 99999;
+  top: 0px;
+}
+
+input {
+  border: none;
+}
+
+.desc {
+  @include gold_desc;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 25px;
+  color: $gl-color;
+  font-weight: 500;
+}
+
+/* Gallery */
+
+$height-item: 600px;
+
+/* MAIN COLORS */
+
+$lightGray: rgba(255, 255, 255, 0.2);
+$darkGray: #232529;
+$lightBlack: #a4a4a4;
+
+$pt-130: 130px;
+
+.submit-btn {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 0px;
+  text-align: left;
+  @include link;
+}
+
+body {
+  font-family: "Artegra Sans";
+  font-weight: 400;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  // font-size: 0.17rem;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.underline {
+  border-bottom: 2px solid $b-color;
+}
+
+.project-block {
+  height: 396px;
+  position: relative;
+
+  &:first-child {
+    background: url(/assets/images/home-page/Project-block/A136_preview-block.jpg);
+    @include bg-img;
+  }
+
+  &:last-child {
+    background: url(/assets/images/home-page/Project-block/A136_preview.jpg);
+    @include bg-img;
+  }
+
+  &__title-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-40%, -50%);
+
+    a {
+      align-self: flex-end;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: justify;
+    text-transform: uppercase;
+  }
+}
+
+.date {
+  @include date;
+}
+
+.par {
+  color: $gt-color;
+  font-size: 12px;
+}
+
+.title-h1 {
+  @include title-h1;
+}
+
+.title-h2 {
+  @include title-h2;
+}
+
+.title-h4 {
+  @include stitle-h4;
+}
+
+.title-h3 {
+  @include title-h3;
+}
+
+.title-h6 {
+  @include title-h6;
+}
+
+
+
+.row {
+  width: 100%;
+  margin: 0;
+}
+
+.link {
+  @include link;
+}

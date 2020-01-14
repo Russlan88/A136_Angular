@@ -1,0 +1,171 @@
+@import "../../styles.scss";
+
+
+.gallery {
+    padding: 0;
+
+    &__container {
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__img-holder {
+        // flex-grow: 1;
+        display: block;
+        min-width: 100%;
+        height: 600px;
+        margin-bottom: 20px;
+
+        &:nth-child(1n) {
+            width: 23%;
+            margin-right: 15px;
+            min-width: 250px;
+            max-width: 100%;
+        }
+
+        &:nth-child(2n) {
+            width: 75%;
+            min-width: 435px;
+            max-width: 100%;
+            flex-grow: 1;
+            margin-right: 0px;
+        }
+
+        &:nth-child(3n) {
+            width: 75%;
+            min-width: 435px;
+            max-width: 100%;
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        &:nth-child(4n) {
+            width: 23%;
+            margin-right: 0px;
+            min-width: 250px;
+            max-width: 100%;
+        }
+
+        &:nth-child(5n) {
+            width: 23.33333333%;
+            margin-right: 20px;
+            min-width: 250px;
+            max-width: 100%;
+        }
+
+        &:nth-child(6n) {
+            width: 33.33333333%;
+            max-width: 100%;
+        }
+
+        &:nth-child(7n) {
+            width: 23.33333333%;
+            margin-right: 0px;
+            min-width: 250px;
+            max-width: 100%;
+        }
+
+        &:nth-child(8n) {
+            width: 23%;
+            margin-right: 15px;
+            min-width: 250px;
+            max-width: 100%;
+        }
+
+        &:nth-child(9n) {
+            width: 75%;
+            min-width: 435px;
+            max-width: 100%;
+            flex-grow: 1;
+            margin-right: 0px;
+        }
+
+        // padding: .2rem;
+    }
+
+    &__item {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+    grid-gap: 20px;
+    grid-auto-rows: minmax(600px, auto);
+    grid-auto-flow: dense;
+
+    @media (max-width: 920px) {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+
+    .grid-item {
+        color: $w-color;
+
+        &__item {
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
+    &__block {
+
+        @media (max-width: 920px) {
+            width: 50%;
+            display: -webkit-box;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+            /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;
+            /* TWEENER - IE 10 */
+            display: -webkit-flex;
+            /* NEW - Chrome */
+            display: flex;
+
+        }
+
+        &:nth-of-type(9n-7) {
+            grid-column-end: span 2;
+            grid-row-end: span 1;
+        }
+
+        &:nth-child(9n-6) {
+            grid-column-end: span 2;
+        }
+
+        &:nth-child(9n-5) {
+            grid-column-end: span 1;
+        }
+
+        &:nth-child(9n-4) {
+            grid-column-end: span 1;
+            grid-row-end: span 1;
+        }
+
+        &:nth-child(9n-3) {
+            grid-column-end: span 1;
+            grid-row-end: span 1;
+        }
+
+        &:nth-child(9n-2) {
+            grid-column-end: span 1;
+            grid-row-end: span 1;
+        }
+
+        &.span:nth-child(9n-1) {
+            grid-column-end: span 2;
+            grid-row-end: span 1;
+        }
+
+        &:nth-child(9n-0) {
+            grid-column-end: span 2;
+            grid-row-end: span 1;
+        }
+    }
+}

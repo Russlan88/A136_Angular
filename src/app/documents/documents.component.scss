@@ -1,0 +1,26 @@
+@import "../../styles.scss";
+
+.documentation {
+    &__thumbnail {
+        object-fit: fill;
+    }
+
+    &__item {
+        border-top: 2px solid $b-color;
+
+        &:last-child {
+            border-bottom: 2px solid $b-color;
+        }
+
+        img {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-family: "Artegra Sans medium";
+            font-size: 1rem;
+        }
+    }
+}

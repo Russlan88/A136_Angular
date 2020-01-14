@@ -1,0 +1,183 @@
+<!-- {{sss}} -->
+<div class="app-header d-md-flex justify-content-between">
+  <figure class="app-header__logo ml-5 pt-4">
+    <img src="../../assets/images/A136__logo-w.png" alt="A136" />
+  </figure>
+
+  <div class="app-header__map pr-5 pt-4">
+    <div class="app-header-container">
+      <span>{{ sityMap }}</span>
+      <a href="">{{ showMap }}</a>
+    </div>
+    <div class="button-wrap oh-desktop">
+      <a class="cta wow slideInUp" href="tel:{{ phoneNumber }}">{{
+        phoneNumber
+      }}</a>
+    </div>
+  </div>
+
+  <div class="app-header__nav-menu mr-5 mt-4">
+    <!-- Nav menu -->
+    <div
+      type="button"
+      class="button-nav"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+    >
+      <label
+        class="button-nav__toggle-btn toggle-btn toggle-btn_cross"
+        for="toggle"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- Modal menu  -->
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          <figure class="app-header__logo ml-5 mt-4">
+            <img src="../../assets/images/A136__logo-w.png" alt="A136" />
+          </figure>
+        </h5>
+        <button
+          type="button"
+          class="close mr-5 mt-4"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">Close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <nav>
+          <ul class="app-header__list">
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/main']"
+                routerLinkActive="router-link-active"
+              >
+                Main
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/about_complex']"
+                routerLinkActive="router-link-active"
+              >
+                About complex
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/about_developer']"
+                routerLinkActive="router-link-active"
+              >
+                About developer
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/bye_conditions']"
+                routerLinkActive="router-link-active"
+              >
+                Bye Condition
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/documents']"
+                routerLinkActive="router-link-active"
+              >
+                Documents
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/contacts']"
+                routerLinkActive="router-link-active"
+              >
+                Contacts
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/ready_dim']"
+                routerLinkActive="router-link-active"
+              >
+                Ready dim
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/building_process']"
+                routerLinkActive="router-link-active"
+              >
+                Building process
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/select_flat']"
+                routerLinkActive="router-link-active"
+              >
+                Select flat
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/flats']"
+                routerLinkActive="router-link-active"
+              >
+                Flats
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/gallery']"
+                aria-hidden="true"
+                routerLinkActive="router-link-active"
+              >
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a
+                class="app-header__list-item"
+                [routerLink]="['/news-list']"
+                routerLinkActive="router-link-active"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

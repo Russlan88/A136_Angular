@@ -1,0 +1,12 @@
+version: '2'
+services:
+ a136:
+  image: 'dev_a136'
+  labels:
+    traefik.port: '80'
+    traefik.domain: svitsoft.com
+    traefik.enable: 'true'
+    dev01: 'true'
+    traefik.alias: a136-ang
+  ports:
+   - 4000/tcp
