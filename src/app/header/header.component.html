@@ -18,50 +18,20 @@
 
   <div class="app-header__nav-menu mr-5 mt-4">
     <!-- Nav menu -->
-    <button
-      class="navbar-toggler navbar-toggler-right"
+    <div
       type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
+      class="button-nav"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
     >
-      <span class="app-header__navbar-toggler-icon"></span>
-      <span class="app-header__navbar-toggler-icon"></span>
-      <span class="app-header__navbar-toggler-icon"></span>
-      <span class="app-header__navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a
-          class="nav-item nav-link active app-header__list-item"
-          [routerLink]="['/main']"
-          routerLinkActive="router-link-active"
-          >Main</a
-        >
-        <a
-          class="nav-item nav-link app-header__list-item"
-          [routerLink]="['/about_complex']"
-          routerLinkActive="router-link-active"
-        >
-          About complex
-        </a>
-        <a
-          class="nav-item nav-link app-header__list-item"
-          [routerLink]="['/about_developer']"
-          routerLinkActive="router-link-active"
-        >
-          About developer
-        </a>
-        <a
-          class="nav-item nav-link app-header__list-item"
-          [routerLink]="['/bye_conditions']"
-          routerLinkActive="router-link-active"
-        >
-          Bye Condition
-        </a>
-      </div>
+      <label
+        class="button-nav__toggle-btn toggle-btn toggle-btn_cross"
+        for="toggle"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </label>
     </div>
   </div>
 </div>

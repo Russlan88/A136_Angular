@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-
 /* Import variables */
 
 @import ".././src/variables.scss";
@@ -15,7 +10,7 @@
 
 @import "../src/assets/scss/mixins/_mixins.scss";
 
-ul>li {
+ul > li {
   list-style: none;
 }
 
@@ -32,10 +27,6 @@ a {
 
 input {
   border: none;
-}
-
-.desc {
-  @include gold_desc;
 }
 
 .paragraph {
@@ -151,7 +142,13 @@ img {
   @include title-h6;
 }
 
+.ml {
+  margin-left: $pl;
+}
 
+.mr {
+  margin-right: $pl;
+}
 
 .row {
   width: 100%;
