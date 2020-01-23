@@ -34,7 +34,7 @@
 }
 
 @font-face {
-  font-family: "Artegra Sansc";
+  font-family: "Artegra Sans";
   font-style: italic;
   font-weight: 400;
   src: url("/../../assets/fonts/ArtegraSans-RegularItalic.otf")
@@ -72,15 +72,48 @@
 @mixin title-h1 {
   font-family: "Artegra Sans";
   font-weight: 900;
-  font-size: 3.5rem;
+  @include fluid-type(34px, 55px);
   text-transform: uppercase;
-  line-height: 4.1rem;
+  line-height: unset;
   font-weight: 900;
 
-  @media (max-width: 767.98px) {
-    width: 100%;
-    font-size: 2.4rem;
-    padding: 0;
+  // @media (max-width: 767.98px) {
+  //   width: 100%;
+  //   font-size: 2.4rem;
+  //   padding: 0;
+  // }
+}
+
+/*****************************
+******************************   
+    
+    RESPONSIVE FONT SIZE
+
+******************************
+*****************************/
+
+@mixin fluid-type(
+  $min-font-size: 12px,
+  $max-font-size: 21px,
+  $lower-range: 420px,
+  $upper-range: 900px
+) {
+  font-size: calc(
+    #{$min-font-size} + #{(
+        ($max-font-size / ($max-font-size * 0 + 1)) -
+          ($min-font-size / ($min-font-size * 0 + 1))
+      )} * ((100vw - #{$lower-range}) / #{(
+            ($upper-range / ($upper-range * 0 + 1)) -
+              ($lower-range / ($lower-range * 0 + 1))
+          )})
+  );
+
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+
+  @media screen and (min-width: $upper-range) {
+    font-size: $max-font-size;
   }
 }
 
@@ -89,7 +122,7 @@
   line-height: 1.5rem;
 }
 
-@mixin stitle-h4 {
+@mixin title-h4 {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.6rem;
@@ -109,6 +142,6 @@
 
 @mixin title-h2 {
   font-weight: 900;
-  font-size: 45px;
-  line-height: 55px;
+  @include fluid-type(15px, 44px);
+  // line-height: 55px;
 }

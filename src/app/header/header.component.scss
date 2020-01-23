@@ -1,7 +1,6 @@
 @import "../../styles.scss";
 
 .header-container {
-  position: fixed;
   width: 100%;
   top: 0px;
   left: 0px;
@@ -16,6 +15,22 @@
   z-index: 99;
   background: rgba(0, 0, 0, 0.3);
   padding-bottom: 35px;
+  align-items: center;
+
+  &__language {
+    .btn {
+      &.btn-primary {
+        background: transparent;
+        border: none;
+        padding-top: 0px;
+        opacity: 0.5;
+        box-shadow: none;
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
 
   &__item {
     color: $w-color;
@@ -33,19 +48,16 @@
       width: 80px;
     }
   }
-}
 
-.app-header {
   &__item {
     font-weight: 900;
     font-size: 15px;
     color: $w-color !important;
   }
 
-  &__map {
+  &__middle-container {
     color: $w-color;
     display: flex;
-    flex-direction: row;
     position: relative;
     width: 520px;
     line-height: 22px;
@@ -55,10 +67,25 @@
     a {
       color: $w-color;
     }
+  }
+
+  &__map {
+    display: flex;
+    flex-direction: column;
 
     .app-header-container {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  &__selector {
+    opacity: 0.5;
+    transition: all 0.5s;
+
+    &:hover,
+    &.active {
+      opacity: 1;
     }
   }
 
@@ -196,6 +223,10 @@
 .modal-header {
   border: none;
   z-index: 9;
+  padding: 0;
+  height: 80px;
+  height: 140px;
+  align-items: center;
 }
 
 .modal-dialog {

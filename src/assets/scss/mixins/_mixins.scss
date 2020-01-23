@@ -4,6 +4,12 @@
   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (7250 - 300)));
 }
 
+@mixin gold_desc {
+  font-size: 35px;
+  color: $gold;
+  font-weight: 900;
+}
+
 @mixin black_gold-title {
   .h3 {
     font-size: 16px;
@@ -11,9 +17,7 @@
   }
 
   .desc {
-    font-size: 35px;
-    color: $gold;
-    font-weight: 900;
+    @include gold_desc;
   }
 }
 
@@ -118,7 +122,6 @@
 }
 
 @mixin title-h4 {
-  font-family: "Artegra Sans medium";
   font-size: 2rem;
   line-height: 40px;
   text-transform: uppercase;
@@ -148,7 +151,6 @@
   }
 
   .field-input {
-    border: none;
     border-radius: 0px;
     height: 25px;
     border-bottom-color: $lightBlack;
@@ -162,5 +164,37 @@
     padding: 0px;
     text-align: left;
     @include link;
+  }
+}
+
+/* MEDIA QUERY */
+
+@mixin for-phone($width-size) {
+  @media (max-width: $width-size + "px") {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-large-desktop {
+  @media (max-width: 2000px) {
+    @content;
   }
 }

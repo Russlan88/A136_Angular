@@ -1,37 +1,72 @@
 <!-- {{sss}} -->
-<div class="app-header d-md-flex justify-content-between">
-  <figure class="app-header__logo ml-5 pt-4">
-    <img src="../../assets/images/A136__logo-w.png" alt="A136" />
-  </figure>
+<div class="app-header d-md-flex pt-5 pb-5 justify-content-between">
+  <div class="col-md-11 m-auto">
+    <div class="row">
+      <figure class="app-header__logo col-md-5 ">
+        <img src="../../assets/images/A136__logo-w.png" alt="A136" />
+      </figure>
 
-  <div class="app-header__map pr-5 pt-4">
-    <div class="app-header-container">
-      <span>{{ sityMap }}</span>
-      <a href="">{{ showMap }}</a>
-    </div>
-    <div class="button-wrap oh-desktop">
-      <a class="cta wow slideInUp" href="tel:{{ phoneNumber }}">{{
-        phoneNumber
-      }}</a>
-    </div>
-  </div>
-
-  <div class="app-header__nav-menu mr-5 mt-4">
-    <!-- Nav menu -->
-    <div
-      type="button"
-      class="button-nav"
-      data-toggle="modal"
-      data-target="#exampleModalCenter"
-    >
-      <label
-        class="button-nav__toggle-btn toggle-btn toggle-btn_cross"
-        for="toggle"
-      >
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </label>
+      <div class="app-header__middle-container col-md-7">
+        <div class="row">
+          <div class="app-header__map col-md-5">
+            <span>{{ getRes("adress") | async }}</span>
+            <a href="">{{ getRes("showMap") | async }}</a>
+          </div>
+          <div class="app-header__phone-number col-md-3">
+            <a class="cta wow slideInUp" href="tel:{{ phoneNumber }}">{{
+              phoneNumber
+            }}</a>
+          </div>
+          <div [formGroup]="form" class="col-md-2">
+            <div
+              formControlName="lang"
+              btnRadioGroup
+              class="app-header__language d-flex justify-content-around"
+            >
+              <label
+                btnRadio="{{ enumLang.RUSSIAN }}"
+                class="btn btn-primary"
+                tabindex="0"
+                role="button"
+                >РУ</label
+              >
+              <label
+                btnRadio="{{ enumLang.UKRAINIAN }}"
+                class="btn btn-primary"
+                tabindex="0"
+                role="button"
+                >УК</label
+              >
+              <label
+                btnRadio="{{ enumLang.ENGLISH }}"
+                class="btn btn-primary"
+                tabindex="0"
+                role="button"
+                >EN</label
+              >
+            </div>
+          </div>
+          <div class="app-header__nav-menu col-md-2">
+            <!-- Nav menu -->
+            <div
+              type="button"
+              class="button-nav"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+            >
+              <label
+                class="button-nav__toggle-btn toggle-btn toggle-btn_cross"
+                for="toggle"
+              >
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -49,13 +84,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">
-          <figure class="app-header__logo ml-5 mt-4">
+          <figure class="app-header__logo ml-5">
             <img src="../../assets/images/A136__logo-w.png" alt="A136" />
           </figure>
         </h5>
         <button
           type="button"
-          class="close mr-5 mt-4"
+          class="close mr-5 m-0"
           data-dismiss="modal"
           aria-label="Close"
         >
@@ -65,11 +100,26 @@
       <div class="modal-body">
         <nav>
           <ul class="app-header__list">
-            <li>
+            <li *ngFor="let item of menu">
+              <a
+                class="app-header__list-item"
+                [routerLink]="getRouter(item)"
+                routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
+              >
+                {{ item.name }}
+              </a>
+            </li>
+            <!-- <li>
               <a
                 class="app-header__list-item"
                 [routerLink]="['/main']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Main
               </a>
@@ -77,8 +127,11 @@
             <li>
               <a
                 class="app-header__list-item"
-                [routerLink]="['/about_complex']"
+                [routerLink]="['/about-complex']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 About complex
               </a>
@@ -86,8 +139,11 @@
             <li>
               <a
                 class="app-header__list-item"
-                [routerLink]="['/about_developer']"
+                [routerLink]="['/about-developer']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 About developer
               </a>
@@ -95,8 +151,11 @@
             <li>
               <a
                 class="app-header__list-item"
-                [routerLink]="['/bye_conditions']"
+                [routerLink]="['/bye-conditions']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Bye Condition
               </a>
@@ -107,6 +166,9 @@
                 class="app-header__list-item"
                 [routerLink]="['/documents']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Documents
               </a>
@@ -116,6 +178,9 @@
                 class="app-header__list-item"
                 [routerLink]="['/contacts']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Contacts
               </a>
@@ -123,8 +188,11 @@
             <li>
               <a
                 class="app-header__list-item"
-                [routerLink]="['/ready_dim']"
+                [routerLink]="['/ready-dim']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Ready dim
               </a>
@@ -132,8 +200,11 @@
             <li>
               <a
                 class="app-header__list-item"
-                [routerLink]="['/building_process']"
+                [routerLink]="['/building-process']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Building process
               </a>
@@ -141,8 +212,11 @@
             <li>
               <a
                 class="app-header__list-item"
-                [routerLink]="['/select_flat']"
+                [routerLink]="['/select-flat']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Select flat
               </a>
@@ -152,6 +226,9 @@
                 class="app-header__list-item"
                 [routerLink]="['/flats']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Flats
               </a>
@@ -162,6 +239,9 @@
                 [routerLink]="['/gallery']"
                 aria-hidden="true"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 Gallery
               </a>
@@ -171,10 +251,13 @@
                 class="app-header__list-item"
                 [routerLink]="['/news-list']"
                 routerLinkActive="router-link-active"
+                aria-label="Close"
+                data-dismiss="modal"
+                type="button"
               >
                 News
               </a>
-            </li>
+            </li> -->
           </ul>
         </nav>
       </div>

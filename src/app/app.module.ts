@@ -21,12 +21,28 @@ import { NewsComponent } from './news/news.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TabsModule } from 'ngx-bootstrap';
-import { FormsModule } from '@angular/forms';
-import { SpmCoreModule } from 'spm-core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SpmCoreModule, EnumLanguages } from 'spm-core';
 import { environment } from '@environment/environment';
 import { NewsListComponent } from './news-list/news-list.component';
+import { DevelopmentTechnologyComponent } from './development-technology/development-technology.component';
+import { ISiteVariables } from '@owntypes/site-variables/site.variables';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LanguageInterceptor } from './interceptors/lang.interceptor';
 
-export function getEnv() {
+export const SITE_VARIABLES: ISiteVariables = {
+  /**
+   * this siteId
+   */
+  id: 18,
+  /**
+   * language applying at stary up application
+   */
+  defLang: EnumLanguages.UKRAINIAN
+};
+
+export function getEnv(): any {
   return environment;
 }
 @NgModule({
@@ -47,7 +63,8 @@ export function getEnv() {
     FlatsComponent,
     GalleryComponent,
     NewsComponent,
-    NewsListComponent
+    NewsListComponent,
+    DevelopmentTechnologyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -56,9 +73,14 @@ export function getEnv() {
     CarouselModule.forRoot(),
     TabsModule.forRoot(),
     FormsModule,
-    SpmCoreModule.forRoot(getEnv())
+    SpmCoreModule.forRoot(getEnv()),
+    ReactiveFormsModule,
+    ButtonsModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: 'APP_CONFIG', useValue: SITE_VARIABLES },
+    { provide: HTTP_INTERCEPTORS, useClass: LanguageInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,4 +1,4 @@
-.app-land{
+.app-land {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -6,8 +6,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
+  position: relative;
 
-  
+
 
   .app-footer {
     margin-top: auto;

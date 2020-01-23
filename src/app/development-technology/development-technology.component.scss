@@ -1,0 +1,124 @@
+@import "../../styles.scss";
+
+.dev-technlogy {
+  .figured {
+    width: 40rem;
+
+    @include for-phone(1275px) {
+      width: 30rem;
+    }
+
+    @include for-phone(991px) {
+      width: 100%;
+    }
+
+    img {
+      height: 600px;
+      object-fit: cover;
+    }
+  }
+
+  .ordered {
+    order: 1;
+
+    @include for-phone(991px) {
+      order: 2;
+    }
+  }
+
+  div {
+    order: 2;
+    margin-top: 25px;
+  }
+}
+
+.list-content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    color: $n-color;
+    font-size: 1.1rem;
+    list-style: none;
+    position: relative;
+    padding-left: 60px;
+    line-height: 30px;
+    margin-bottom: 20px;
+
+    @include for-phone(425px) {
+      font-size: 16px;
+      line-height: unset;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      margin-right: 30px;
+      width: 15px;
+      height: 15px;
+      border: 1px solid $gold;
+      border-radius: 50%;
+      top: 7px;
+    }
+  }
+}
+
+.contact {
+  margin-top: 13rem;
+
+  div {
+    @include for-phone(991px) {
+      order: 1;
+    }
+  }
+
+  &__title {
+    color: $l-color;
+    font-weight: 900;
+    line-height: 80px;
+    font-size: 4rem;
+  }
+
+  &__preview {
+    position: relative;
+
+    @include for-phone(991px) {
+      order: 2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: $bk-color;
+      height: 685px;
+      top: -120px;
+      width: 640px;
+      left: 15px;
+      z-index: -1;
+
+      @include for-phone(991px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__form {
+    @include for-tablet-landscape {
+      order: 1;
+    }
+  }
+}
+
+.form-contact {
+  @include contact-form;
+
+  @include for-tablet-landscape {
+    order: 1;
+  }
+}

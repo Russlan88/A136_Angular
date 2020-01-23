@@ -1,27 +1,33 @@
 <div class="app-hero">
   <h1 class="app-hero__h1">
-    The world most advanced thermal
+    {{ getRes("textOne") | async }}
   </h1>
-  <a href="" class="app-hero__cta submit-btn">{{ linkToSecondSection }}</a>
+  <a href="" class="app-hero__cta submit-btn">{{
+    getRes("watchMore") | async
+  }}</a>
 
   <div class="app-hero__rectangle"></div>
   <ul class="app-hero__list-social">
-    <li><a href="#">Facebook</a></li>
-    <li><a href="#">Instagram</a></li>
+    <li>
+      <a href="#" class="text-uppercase">{{ getRes("facebook") | async }}</a>
+    </li>
+    <li>
+      <a href="#" class="text-uppercase">{{ getRes("instagram") | async }}</a>
+    </li>
   </ul>
   <a
     [routerLink]="['/flats']"
     routerLinkActive="router-link-active"
     class="app-hero__watch-block"
   >
-    <span>{{ watchHouse }}</span>
+    <span>{{ getRes("exploreFlats") | async }}</span>
   </a>
 </div>
 
 <!-- main sections -->
 
 <section>
-  <div class="col-md-12 ml-lg-5 ml-md-3 pt-5 pl-lg-5 pl-md-3 pb-5 mt-5 mb-5">
+  <div class="col-md-12 t-5 pb-5 mt-5 mb-5 col-md-12 pl-5 pr-0">
     <div class="row justify-content-between">
       <div class="col-md-5 pr-5">
         <h1 class="title-h2 mb-5 pr-5 mr-5">Планировка квартир</h1>
@@ -301,7 +307,7 @@
 
 <section>
   <div
-    class="apartment-choice col-md-12 ml-lg-5 ml-md-3 pt-5 pl-lg-5 pl-md-3 pb-5 mt-5 mb-5"
+    class="apartment-choice col-md-12 t-5 pb-5 mt-5 mb-5 col-md-12 pl-5 pr-0"
   >
     <div class="row justify-content-between p-0 m-0">
       <div class="col-md-4 pt-5">
@@ -508,6 +514,9 @@
     </div>
   </div>
 </section>
+
+<!-- НОВОСТИ И АКЦИИ -->
+
 <section>
   <div class="col-md-11 m-auto mb-5">
     <div class="row mr-0">

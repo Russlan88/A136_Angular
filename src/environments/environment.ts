@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'http://localhost:64524'
+  // serverUrl: 'http://localhost:64524'
+  serverUrl: 'https://dimapi.svitsoft.com'
 };
 
 /*

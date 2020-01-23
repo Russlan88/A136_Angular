@@ -1,57 +1,83 @@
 <footer class="footer">
-  <figure class="footer__img-container">
-    <img src="../../assets/images/A136__logo-footer-white.png" alt="A136" />
-  </figure>
-  <div class="footer__container" style="display:none;">
-    <div class="footer__column-container">
-      <h3 class="footer__title">СВЯЖИТЕСЬ С НАМИ</h3>
-      <div class="footer__content">
-        <div class="footer__inner-container">
-          <p>
-            <span>АДРЕС</span>
-            Г. КИЕВ, УЛ. АНТОНОВИЧА, 136-138
-          </p>
-          <p>
-            <span>ОФИС ПРОДАЖ</span>
-            Г. КИЕВ, УЛ. АНТОНОВИЧА 136-138
-          </p>
-        </div>
-        <div class="footer__inner-container">
-          <p>
-            <span>АДРЕС</span>
-            Г. КИЕВ, УЛ. АНТОНОВИЧА, 136-138
-          </p>
-          <p>
-            <span>ОФИС ПРОДАЖ</span>
-            Г. КИЕВ, УЛ. АНТОНОВИЧА 136-138
-          </p>
-        </div>
+  <div class="col-md-11 m-auto pt-5 pb-5">
+    <div class="row pt-5 pb-5 mt-5">
+      <div class="footer__img-container col-lg-2 col-md-2 col-sm-2 col-xs-12">
+        <figure class="footer__img-container pb-5 mb-5">
+          <img
+            src="../../assets/images/A136__logo-footer-white.png"
+            alt="A136"
+          />
+        </figure>
       </div>
 
-      <div class="footer__social-container">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-      </div>
-    </div>
-    <div class="footer__column-container footer__column-container_second-width">
-      <h3 class="footer__title">Карта сайта</h3>
-      <div class="footer__content">
-        <div class="footer__inner-container">
-          <p>
-            <a href="#">О КОМПЛЕКСЕ</a>
-            <a href="#">ПЛАНИРОВКИ</a>
-            <a href="#">3D-МОДЕЛЬ КОМПЛЕКСА</a>
-            <a href="#">ГАЛЕРЕЯ</a>
-            <a href="#">ХОД СТРОИТЕЛЬСТВА</a>
-          </p>
+      <div class="footer__column-container col-md-5">
+        <h3 class="footer__title">СВЯЖИТЕСЬ С НАМИ</h3>
+        <div class="row">
+          <div class="col-md-5 pl-0">
+            <div class="footer__content">
+              <div class="footer__inner-container">
+                <p>
+                  <span>АДРЕС</span>
+                  {{ getRes("main_address") | async }}
+                </p>
+                <p>
+                  <span>ОФИС ПРОДАЖ</span>
+                  Г. КИЕВ, УЛ. АНТОНОВИЧА 136-138
+                </p>
+              </div>
+            </div>
+            <div class="footer__social-container">
+              <a href="#">Facebook</a>
+              <a href="#" class="ml-3">Instagram</a>
+            </div>
+          </div>
+          <div class="col-md-7 pl-0">
+            <div class="footer__inner-container">
+              <p>
+                <span>E-MAIL</span>
+                SALES@A136.COM.UA
+              </p>
+              <p>
+                <span>ТЕЛЕФОН</span>
+                (044) 299-54-10
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="footer__inner-container">
-          <p>
-            <a href="">НОВОСТИ</a>
-            <a href="">ЗАСТРОЙЩИК</a>
-            <a href="">ДОКУМЕНТАЦИЯ</a>
-            <a href="">КОНТАКТЫ</a>
-          </p>
+      </div>
+      <div class="footer__column-container col-md-5">
+        <h3 class="footer__title">СВЯЖИТЕСЬ С НАМИ</h3>
+        <div class="row">
+          <div class="col-md-5 pl-0">
+            <div class="footer__content">
+              <div class="footer__inner-container">
+                <p>
+                  <span>АДРЕС</span>
+                  Г. КИЕВ, УЛ. АНТОНОВИЧА, 136-138
+                </p>
+                <p>
+                  <span>ОФИС ПРОДАЖ</span>
+                  Г. КИЕВ, УЛ. АНТОНОВИЧА 136-138
+                </p>
+              </div>
+            </div>
+            <div class="footer__social-container">
+              <a href="#">Facebook</a>
+              <a href="#" class="ml-3">Instagram</a>
+            </div>
+          </div>
+          <div class="col-md-7 pl-0">
+            <div class="footer__inner-container">
+              <p>
+                <span>E-MAIL</span>
+                SALES@A136.COM.UA
+              </p>
+              <p>
+                <span>ТЕЛЕФОН</span>
+                (044) 299-54-10
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

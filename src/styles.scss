@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+a:focus {
+  outline: none;
+}
+
 /* Import variables */
 
 @import ".././src/variables.scss";
@@ -23,15 +31,20 @@ a {
 .z-top {
   z-index: 99999;
   top: 0px;
+  position: absolute;
 }
 
 input {
   border: none;
 }
 
+.desc {
+  @include gold_desc;
+}
+
 .paragraph {
-  font-size: 16px;
-  line-height: 25px;
+  @include fluid-type(12px, 16px);
+  line-height: unset;
   color: $gl-color;
   font-weight: 500;
 }
@@ -46,7 +59,9 @@ $lightGray: rgba(255, 255, 255, 0.2);
 $darkGray: #232529;
 $lightBlack: #a4a4a4;
 
-$pt-130: 130px;
+.pt {
+  padding-top: 130px;
+}
 
 .submit-btn {
   border-top: none;
@@ -77,8 +92,26 @@ img {
 }
 
 .project-block {
-  height: 396px;
+  height: 515px;
   position: relative;
+  width: 70vw;
+
+  @include for-desktop {
+    height: 35vw;
+  }
+
+  @include for-tablet-landscape {
+    height: 280px;
+  }
+
+  @include for-tablet-portrait {
+    height: 210px;
+  }
+
+  @include for-phone(425) {
+    height: 145px;
+    width: 80vw;
+  }
 
   &:first-child {
     background: url(/assets/images/home-page/Project-block/A136_preview-block.jpg);
@@ -94,22 +127,44 @@ img {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 500px;
+    height: 35%;
+    width: 35vw;
     display: flex;
     flex-direction: column;
-    transform: translate(-40%, -50%);
+    transform: translate(-34%, -50%);
+
+    @include for-desktop {
+      width: 45vw;
+      height: 50%;
+    }
+
+    @include for-tablet-landscape {
+      transform: translate(-35%, -50%);
+      width: 60vw;
+    }
+
+    @include for-phone(425) {
+      transform: translate(-15%, -50%);
+      width: 80vw;
+    }
 
     a {
-      align-self: flex-end;
+      position: absolute;
+      right: 5%;
+      bottom: 0px;
     }
   }
 
   &__title {
     font-weight: 900;
-    font-size: 30px;
-    line-height: 40px;
-    text-align: justify;
+    @include fluid-type(12px, 30px);
+    line-height: unset;
+    text-align: left;
     text-transform: uppercase;
+
+    @include for-desktop {
+      font-size: calc(50% + 10px);
+    }
   }
 }
 
@@ -131,7 +186,7 @@ img {
 }
 
 .title-h4 {
-  @include stitle-h4;
+  @include title-h4;
 }
 
 .title-h3 {
@@ -142,14 +197,6 @@ img {
   @include title-h6;
 }
 
-.ml {
-  margin-left: $pl;
-}
-
-.mr {
-  margin-right: $pl;
-}
-
 .row {
   width: 100%;
   margin: 0;
@@ -157,4 +204,19 @@ img {
 
 .link {
   @include link;
+}
+
+/************************************************************************************************
+                                      SOCIAL BLOCK
+*************************************************************************************************/
+
+.social {
+  &__link {
+    font-size: 25px;
+    color: $darkGray;
+
+    @include for-phone(425px) {
+      font-size: 16px;
+    }
+  }
 }

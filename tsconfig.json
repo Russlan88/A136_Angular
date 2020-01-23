@@ -21,7 +21,8 @@
     "paths": {
       "@assets/*" : ["assets/*"],
       "@environment/*":["environments/*"],
-      "@services/*":["app/services/*"]
+      "@services/*":["app/services/*"],
+      "@owntypes/*":["app/own-types/*"]
     }
   },
   "angularCompilerOptions": {

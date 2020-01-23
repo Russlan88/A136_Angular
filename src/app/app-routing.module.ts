@@ -13,21 +13,23 @@ import { MainComponent } from './main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewsListComponent } from './news-list/news-list.component';
+import { DevelopmentTechnologyComponent } from './development-technology/development-technology.component';
 
 const routes: Routes = [
   { path: 'main', component: MainComponent },
-  { path: 'about_complex', component: AboutComplexComponent },
-  { path: 'about_developer', component: AboutDeveloperComponent },
-  { path: 'bye_conditions', component: ByeConditionsComponent },
+  { path: 'about-complex', component: AboutComplexComponent },
+  { path: 'about-developer', component: AboutDeveloperComponent },
+  { path: 'bye-conditions', component: ByeConditionsComponent },
   { path: 'documents', component: DocumentsComponent },
   { path: 'contacts', component: ContactsComponent },
-  { path: 'ready_dim', component: ReadyDimComponent },
+  { path: 'ready-dim', component: ReadyDimComponent },
   { path: 'building_process', component: BuildingProcessComponent },
-  { path: 'select_flat', component: SelectFlatComponent },
+  { path: 'select-flat', component: SelectFlatComponent },
   { path: 'flats', component: FlatsComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'news-list', component: NewsListComponent },
   { path: 'news/:id', component: NewsComponent },
+  { path: 'development-technology', component: DevelopmentTechnologyComponent },
   {
     path: '',
     redirectTo: '/main',
