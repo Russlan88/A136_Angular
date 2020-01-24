@@ -1,18 +1,18 @@
 <div class="app-hero">
   <h1 class="app-hero__h1">
-    {{ getRes("textOne") | async }}
+    {{ getSiteGroup("textOne") | async }}
   </h1>
   <a href="" class="app-hero__cta submit-btn">{{
-    getRes("watchMore") | async
+    getSiteGroup("watchMore") | async
   }}</a>
 
   <div class="app-hero__rectangle"></div>
   <ul class="app-hero__list-social">
     <li>
-      <a href="#" class="text-uppercase">{{ getRes("facebook") | async }}</a>
+      <a href="#" class="text-uppercase">{{ getSiteGroup("facebook") | async }}</a>
     </li>
     <li>
-      <a href="#" class="text-uppercase">{{ getRes("instagram") | async }}</a>
+      <a href="#" class="text-uppercase">{{ getSiteGroup("instagram") | async }}</a>
     </li>
   </ul>
   <a
@@ -20,7 +20,7 @@
     routerLinkActive="router-link-active"
     class="app-hero__watch-block"
   >
-    <span>{{ getRes("exploreFlats") | async }}</span>
+    <span>{{ getSiteGroup("exploreFlats") | async }}</span>
   </a>
 </div>
 

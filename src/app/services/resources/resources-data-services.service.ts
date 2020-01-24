@@ -15,12 +15,12 @@ export class ResourcesDataServicesService {
     private _resources: ResourcesService
   ) { }
 
-  queryResources(sitePageGroupId: number): Observable<ReadonlyArray<ModelResource>> {
+  queryResources(): Observable<ReadonlyArray<ModelResource>> {
     return this._resources.queryResources({
       siteId: this.appConfig.id,
       lang: EnumLanguages.RUSSIAN,
-      sitePageGroupId,
-      type: EnumResourceType.SITE
+      sitePageGroupId: null,
+      type: EnumResourceType.SHARED
     })
       .pipe(
         map((models: ReadonlyArray<ModelResource>) => {

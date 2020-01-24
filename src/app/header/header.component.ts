@@ -12,7 +12,6 @@ import { LangService } from '@services/lang/lang.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ResourcesDataServicesService]
 })
 export class HeaderComponent implements OnInit {
   /**
@@ -59,12 +58,12 @@ export class HeaderComponent implements OnInit {
       .pipe(
         mergeMap((_lang) => {
           return forkJoin([
-            this._resource.queryResources(this.sitePageGroupId),
             this._menuServ.queryMenu(this._appConfig.id, this.mainMenucode)
           ]);
         })
       )
-      .subscribe(([ _ , menu]: [ReadonlyArray<ModelResource>, ReadonlyArray<ModelTopMenuItem>]) => {
+      .subscribe(([ menu]: [ReadonlyArray<ModelTopMenuItem>]) => {
+        console.log('------------------------');
         this.menu = menu;
         this._cd.detectChanges();
       });
