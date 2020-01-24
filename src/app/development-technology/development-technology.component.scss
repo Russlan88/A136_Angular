@@ -38,7 +38,7 @@
   list-style-type: none;
 
   li {
-    color: $n-color;
+    color: $gt-color;
     font-size: 1.1rem;
     list-style: none;
     position: relative;
@@ -79,7 +79,7 @@
   }
 
   &__title {
-    color: $l-color;
+    color: $gt-color;
     font-weight: 900;
     line-height: 80px;
     font-size: 4rem;
@@ -95,7 +95,7 @@
     &::after {
       content: "";
       position: absolute;
-      background: $bk-color;
+      background: $b-color;
       height: 685px;
       top: -120px;
       width: 640px;

@@ -6,7 +6,7 @@ section {
 
 .pagination {
   a {
-    color: $n-color;
+    color: $gt-color;
   }
 
   &__item {
@@ -22,7 +22,7 @@ section {
 
   &__next-page {
     a {
-      color: $n-color;
+      color: $gt-color;
     }
   }
 }

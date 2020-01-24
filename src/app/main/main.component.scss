@@ -120,7 +120,7 @@
       text-transform: uppercase;
 
       &.active {
-        color: $blackColor;
+        color: $b-color;
         background: transparent;
         border-radius: 0;
         @include link(inherit, inherit);
@@ -144,12 +144,12 @@
 
 .six-elements-section {
   &__grey-figure {
-    background-color: $l-color;
+    background-color: $gt-color;
     height: 810px;
   }
 
   &__gold-figure {
-    background-color: $g-text;
+    background-color: $gt-color;
     height: 395px;
   }
 }
@@ -165,7 +165,7 @@
     height: 515px;
     width: 530px;
     color: $w-color;
-    background: $l-color;
+    background: $gt-color;
     left: -50px;
     bottom: -15px;
     z-index: 9;

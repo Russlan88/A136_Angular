@@ -6,19 +6,27 @@ a:focus {
   outline: none;
 }
 
+/* MAIN COLORS */
+
+$lightGray: rgba(255, 255, 255, 0.2);
+$darkGray: #232529;
+$lightBlack: #a4a4a4;
+$link-active: #070707;
+
+
 /* Import variables */
 
-@import ".././src/variables.scss";
+@import "../src/assets/scss/variables";
 
 /* Import custom fonts */
 
-@import ".././src/assets/scss/fonts.scss";
+@import "../src/assets/scss/fonts.scss";
 
 /* Import mixins */
 
 @import "../src/assets/scss/mixins/_mixins.scss";
 
-ul > li {
+ul>li {
   list-style: none;
 }
 
@@ -49,15 +57,114 @@ input {
   font-weight: 500;
 }
 
+/* Breadcrumb */
+.row {
+  .col-md-6 {
+    display: flex;
+    align-items: center;
+
+    .breadcrumb {
+      &__list {
+        background-color: transparent;
+      }
+
+      &__item {
+        a {
+          font-size: 14px;
+          color: $greyColor;
+        }
+
+        &.active {
+          color: $link-active;
+          font-size: 16px;
+        }
+
+        &::before {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .back-menu {
+
+
+      &__link {
+        font-size: 16px;
+        color: $greyColor;
+      }
+
+    }
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+/* Select */
+
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #444;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  position: relative;
+
+  option{
+    text-transform: uppercase;
+  }
+
+  &::after {
+    content: '\003E';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg) scaleY(1.75);
+    transform: translate(-50%, -50%) rotate(90deg) scaleY(1.75);
+    color: #3e3e3e;
+    font-size: 28px;
+    pointer-events: none;
+    z-index: 2;
+    -webkit-transition: all 250ms cubic-bezier(.4, .25, .3, 1);
+    transition: all 250ms cubic-bezier(.4, .25, .3, 1);
+    opacity: .6;
+  }
+}
+
+.select-css::-ms-expand {
+  display: none;
+}
+
+.select-css:hover {
+  border-color: #888;
+}
+
+.select-css:focus {
+  border-color: #aaa;
+  color: #222;
+  outline: none;
+}
+
+.select-css option {
+  font-weight: normal;
+}
+
+
+
+
 /* Gallery */
 
 $height-item: 600px;
 
-/* MAIN COLORS */
-
-$lightGray: rgba(255, 255, 255, 0.2);
-$darkGray: #232529;
-$lightBlack: #a4a4a4;
 
 .pt {
   padding-top: 130px;

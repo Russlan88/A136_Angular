@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewsListComponent } from './news-list/news-list.component';
 import { DevelopmentTechnologyComponent } from './development-technology/development-technology.component';
+import { LayoutDescriptionComponent } from './layout-description/layout-description.component';
 
 const routes: Routes = [
   { path: 'main', component: MainComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'news-list', component: NewsListComponent },
   { path: 'news/:id', component: NewsComponent },
   { path: 'development-technology', component: DevelopmentTechnologyComponent },
+  { path: 'layout-description', component: LayoutDescriptionComponent },
   {
     path: '',
     redirectTo: '/main',
@@ -42,4 +44,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+}
