@@ -30,7 +30,8 @@ import { ISiteVariables } from '@owntypes/site-variables/site.variables';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LanguageInterceptor } from './interceptors/lang.interceptor';
-import { LayoutDescriptionComponent } from './layout-description/layout-description.component';
+import { PurchaseTermsComponent } from './purchase-terms/purchase-terms.component';
+import { ApartmentsFilterComponent } from './apartments-filter/apartments-filter.component';
 
 export const SITE_VARIABLES: ISiteVariables = {
   /**
@@ -66,7 +67,8 @@ export function getEnv(): any {
     NewsComponent,
     NewsListComponent,
     DevelopmentTechnologyComponent,
-    LayoutDescriptionComponent
+    PurchaseTermsComponent,
+    ApartmentsFilterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

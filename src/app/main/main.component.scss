@@ -10,18 +10,27 @@
   position: relative;
   overflow: hidden;
 
+  &::before {
+    content: " ";
+    height: 100vh;
+    background: $lightGray;
+    width: 1px;
+    position: absolute;
+    right: 545px;
+  }
+
   &__h1 {
     position: absolute;
-    width: 629px;
-    height: 130px;
-    left: 100px;
+    width: 50%;
+    left: 8rem;
     bottom: 155px;
     font-family: Artegra Sans;
     font-style: normal;
     font-weight: 900;
-    font-size: 55px;
-    line-height: 65px;
+    font-size: 4rem;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: center;
     align-items: center;
     text-transform: uppercase;
     color: $w-color;
@@ -30,30 +39,39 @@
   &__cta {
     position: absolute;
     bottom: 80px;
-    left: 100px;
+    left: 15rem;
     color: $w-color;
     border-bottom-color: $w-color;
   }
 
+  &__indicator {
+    width: 10rem;
+    height: 1px;
+    background: #fff;
+  }
+
+  &__plan {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+  }
+
   &__watch-block {
     position: absolute;
-    width: 467px;
-    height: 145px;
     right: 0;
     bottom: 0;
     background: #232529;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    height: 10rem;
+    padding: 0 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    width: 545px;
 
-    &::before {
-      content: " ";
-      height: 100vh;
-      background: $lightGray;
-      width: 1px;
-      position: absolute;
-      left: -1px;
-    }
 
     .desc {
       color: $w-color;
@@ -109,6 +127,18 @@
   }
 }
 
+
+/* Planning room */
+
+.planning-flat {
+  padding-top: 8rem;
+  padding-left: 8rem;
+}
+
+
+
+
+
 /* Main section */
 
 .nav-rooms {
@@ -120,14 +150,16 @@
       text-transform: uppercase;
 
       &.active {
-        color: $b-color;
+        color: $blackColor;
         background: transparent;
         border-radius: 0;
-        @include link(inherit, inherit);
       }
     }
   }
 }
+
+
+
 
 .tab-content {
   .inner-content {
@@ -143,18 +175,33 @@
 }
 
 .six-elements-section {
+
+  margin-top: 8rem;
+
   &__grey-figure {
-    background-color: $gt-color;
+    background-color: $l-color;
     height: 810px;
+    width: 8rem;
   }
 
   &__gold-figure {
-    background-color: $gt-color;
+    background-color: $g-text;
     height: 395px;
+  }
+
+  &__figure-lastImg {
+    width: 20rem;
   }
 }
 
+
+/* ВИБIР КВАРТИРЫ И ПЕРЕХОД */
+
 .apartment-choice {
+  margin-top: 8rem;
+  margin-left: 8rem;
+  margin-bottom: 8rem;
+
   .title-h3 {
     font-weight: 900;
     font-size: 30px;
@@ -165,7 +212,7 @@
     height: 515px;
     width: 530px;
     color: $w-color;
-    background: $gt-color;
+    background: $l-color;
     left: -50px;
     bottom: -15px;
     z-index: 9;
@@ -189,6 +236,45 @@
   }
 }
 
+
+
+/* SLIDER */
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+a.carousel-control-next,
+a.carousel-control-prev {
+  position: absolute;
+  top: unset;
+  bottom: 0;
+  width: 10px;
+  background: $darkGray;
+  height: 80px;
+  left: 0;
+  opacity: 1;
+}
+
+.carousel-control span {
+  background-size: inherit;
+}
+
+a.carousel-control-next {
+  left: 110px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
+  transform: rotate(180deg);
+}
+
+
 /* галерея с фотками о жк */
 
 .gallery-section {
@@ -196,9 +282,14 @@
     height: 527px;
     background: $gold;
     margin-bottom: 8rem;
+    width: 8rem;
   }
 
   &__side-photo {
     margin-top: 20rem;
   }
+}
+
+.infostructure{
+margin-top: 8rem;
 }

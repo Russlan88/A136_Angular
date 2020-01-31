@@ -1,1 +1,123 @@
-<p>building-process works!</p>
+<section class="head-section">
+  <div class="head-section__rectangle"></div>
+  <div class="inner-container ">
+    <div class="head-section__section-title row align-items-center">
+      <h1 class="head-section__title title-h1">
+        {{ getSiteGroup("buildingProcessMainTitle") | async }}
+      </h1>
+      <div class="head-section__section-paragraph">
+        <p class="head-section__paragraph">
+          {{ getSiteGroup("buildingProcessTitleParagraph") | async }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <img
+    src="../../assets/images/Building-process/A136__building-process-hero.jpg"
+    alt=""
+  />
+</section>
+
+<section>
+  <div class="building-process container-left">
+    <div class="building-process__row row">
+      <div class="building-process__left-content col-md-4">
+        <p class="building-process__date mb-5">
+          {{ getSiteGroup("buildingProcessDate") | async }}
+        </p>
+        <h3 class="building-process__title mb-5">
+          ХОД СТРОИТЕЛЬСТВА, ИЮНЬ-ИЮЛЬ 2019
+        </h3>
+        <p class="building-process__paragraph mb-5">
+          {{ getSiteGroup("buildingProcessSectionTitle") | async }}
+        </p>
+        <button class="building-process__link link-negative">
+          Read more
+        </button>
+      </div>
+      <div class="building-process__right-content col-md-8 pr-0">
+        <carousel
+          id="tabCarousel"
+          class="build-process-carousel"
+          [showIndicators]="false"
+        >
+          <slide>
+            <img
+              alt="First slide"
+              class="d-block w-100"
+              src="assets/images/home-page/Layout_apartments/A136_layout-apartments-slider.jpg"
+            />
+          </slide>
+          <slide>
+            <img
+              alt="Second slide"
+              class="d-block w-100"
+              src="assets/images/home-page/Layout_apartments/A136_layout-apartments-slider_2.jpg"
+            />
+          </slide>
+          <slide>
+            <img
+              alt="Third slide"
+              class="d-block w-100"
+              src="assets/images/home-page/Layout_apartments/A136_layout-apartments-slider.jpg"
+            />
+          </slide>
+        </carousel>
+      </div>
+    </div>
+    <div class="date-navigation__main-container inner-container">
+      <ul class="date-navigation__list pl-0 mt-3">
+        <li class="date-navigation__item date-navigation__active">
+          <a href="">20.09.19</a>
+        </li>
+        <li class="date-navigation__item "><a href=""> 08.10.19</a></li>
+        <li class="date-navigation__item"><a href="">19.12.19</a></li>
+        <li class="date-navigation__item"><a href="">19.12.19</a></li>
+        <li class="date-navigation__item"><a href="">19.12.19</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="head-section__rectangle"></div>
+  <div class="inner-container ">
+    <div class="head-section__section-title row align-items-center">
+      <h1 class="head-section__title title-h1 pt-0">
+        {{ getSiteGroup("buildingProcessVideoSectionTitle") | async }}
+      </h1>
+      <div class="head-section__section-paragraph pt-0">
+        <p class="head-section__paragraph">
+          {{ getSiteGroup("buildingProcessVideoSectionParagraph") | async }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="video-container inner-container inner-container__block">
+    <div class="video-container__preview">
+      <img
+        src="../../assets/images/Building-process/Video-container/A136__video-preview.jpg"
+        title=""
+        alt=""
+        class="video-container__video"
+      />
+    </div>
+  </div>
+</section>
+<section>
+  <div
+    class="date-navigation__main-container date-navigation__left inner-container"
+  >
+    <ul class="date-navigation__list pl-0 mt-3">
+      <li class="date-navigation__item date-navigation__active">
+        <a href="">Камера 1 (дом 1-5)</a>
+      </li>
+      <li class="date-navigation__item "><a href="">Камера 2 (дом 5)</a></li>
+      <li class="date-navigation__item"><a href="">Камера 3 (дом 9)</a></li>
+    </ul>
+  </div>
+</section>

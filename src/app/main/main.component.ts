@@ -1,7 +1,7 @@
 import { GgroupService } from './../services/sitegroup/sitegroup.service';
 import { EnumLanguages, SitegroupService, ModelSiteGroup } from 'spm-core';
 import { Observable, forkJoin } from 'rxjs';
-import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { ResourcesDataServicesService } from '@services/resources/resources-data-services.service';
 import { LangService } from '@services/lang/lang.service';
 import { mergeMap } from 'rxjs/operators';
@@ -12,7 +12,8 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ GgroupService ]
+  providers: [GgroupService],
+  /*encapsulation: ViewEncapsulation.None*/
 })
 export class MainComponent implements OnInit {
   readonly route = 'main';

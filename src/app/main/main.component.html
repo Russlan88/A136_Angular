@@ -2,17 +2,21 @@
   <h1 class="app-hero__h1">
     {{ getSiteGroup("textOne") | async }}
   </h1>
-  <a href="" class="app-hero__cta submit-btn">{{
+  <a href="" class="app-hero__cta link underline">{{
     getSiteGroup("watchMore") | async
   }}</a>
 
   <div class="app-hero__rectangle"></div>
-  <ul class="app-hero__list-social">
+  <ul class="app-hero__list-social mr-5">
     <li>
-      <a href="#" class="text-uppercase">{{ getSiteGroup("facebook") | async }}</a>
+      <a href="#" class="text-uppercase">{{
+        getSiteGroup("facebook") | async
+      }}</a>
     </li>
     <li>
-      <a href="#" class="text-uppercase">{{ getSiteGroup("instagram") | async }}</a>
+      <a href="#" class="text-uppercase ml-5">{{
+        getSiteGroup("instagram") | async
+      }}</a>
     </li>
   </ul>
   <a
@@ -20,17 +24,22 @@
     routerLinkActive="router-link-active"
     class="app-hero__watch-block"
   >
-    <span>{{ getSiteGroup("exploreFlats") | async }}</span>
+    <hr class="app-hero__indicator mr-4" />
+    <span class="app-hero__plan">{{
+      getSiteGroup("exploreFlats") | async
+    }}</span>
   </a>
 </div>
 
 <!-- main sections -->
 
 <section>
-  <div class="col-md-12 t-5 pb-5 mt-5 mb-5 col-md-12 pl-5 pr-0">
-    <div class="row justify-content-between">
-      <div class="col-md-5 pr-5">
-        <h1 class="title-h2 mb-5 pr-5 mr-5">Планировка квартир</h1>
+  <div class="planning-flat">
+    <div class="planning-flat__row row justify-content-between">
+      <div class="planning-flat__teb-container col-md-5 pr-5 pl-0">
+        <h1 class="title-h2 mb-5 pr-5 mr-5">
+          {{ getSiteGroup("planPlats_main") | async }}
+        </h1>
         <ul
           class="nav nav-pills mb-3 col-md-9 mb-5 d-flex justify-content-between nav-rooms"
           id="pills-tab"
@@ -45,7 +54,7 @@
               role="tab"
               aria-controls="pills-home"
               aria-selected="true"
-              >Комнат 1</a
+              >{{ getSiteGroup("main__room1") | async }}</a
             >
           </li>
           <li class="nav-rooms__single nav-item">
@@ -57,7 +66,7 @@
               role="tab"
               aria-controls="pills-profile"
               aria-selected="false"
-              >Комнат 2</a
+              >{{ getSiteGroup("main__room2") | async }}</a
             >
           </li>
           <li class="nav-rooms__single nav-item">
@@ -69,7 +78,7 @@
               role="tab"
               aria-controls="pills-contact"
               aria-selected="false"
-              >Комнат 3</a
+              >{{ getSiteGroup("main__room3") | async }}</a
             >
           </li>
           <li class="nav-rooms__single nav-item">
@@ -81,7 +90,8 @@
               role="tab"
               aria-controls="pills-contact"
               aria-selected="false"
-              >Комнат 4</a
+            >
+              {{ getSiteGroup("main__room4") | async }}</a
             >
           </li>
           <li class="nav-rooms__single nav-item">
@@ -93,7 +103,7 @@
               role="tab"
               aria-controls="pills-contact"
               aria-selected="false"
-              >Комнат 5</a
+              >{{ getSiteGroup("main__room5") | async }}</a
             >
           </li>
         </ul>
@@ -104,22 +114,24 @@
             role="tabpanel"
             aria-labelledby="pills-home-tab"
           >
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            {{ getSiteGroup("main__room1-description") | async }}
             <div class="row mt-5">
               <div class="col-lg-6 pl-0 mt-3">
-                <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
+                <h3 class="h3">
+                  {{ getSiteGroup("main__room1-type") | async }}
+                </h3>
                 <span class="desc">от 12.77 м²</span>
               </div>
               <div class="col-lg-6 pl-0 mt-3">
-                <h3 class="h3">ЦЕНА КВАРТИРЫ</h3>
+                <h3 class="h3">
+                  {{ getSiteGroup("main__room1-price") | async }}
+                </h3>
                 <span class="desc">от 300 000 грн</span>
               </div>
               <div class="col-md-12 pl-0 mt-3">
-                <h3 class="h3">ЦЕНА ЗА M²</h3>
+                <h3 class="h3">
+                  {{ getSiteGroup("main__room1-singlePrice") | async }}
+                </h3>
                 <span class="desc">250000 грн</span>
               </div>
               <a href="" class="link mt-5 pr-5">watch more</a>
@@ -131,11 +143,7 @@
             role="tabpanel"
             aria-labelledby="pills-profile-tab"
           >
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            {{ getSiteGroup("main__room2-description") | async }}
             <div class="row mt-5">
               <div class="col-lg-6 pl-0 mt-3">
                 <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -158,11 +166,7 @@
             role="tabpanel"
             aria-labelledby="pills-contact-tab"
           >
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            {{ getSiteGroup("main__room3-description") | async }}
             <div class="row mt-5">
               <div class="col-lg-6 pl-0 mt-3">
                 <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -185,11 +189,7 @@
             role="tabpanel"
             aria-labelledby="pills-contact-tab"
           >
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            {{ getSiteGroup("main__room4-description") | async }}
             <div class="row mt-5">
               <div class="col-lg-6 pl-0 mt-3">
                 <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -212,11 +212,7 @@
             role="tabpanel"
             aria-labelledby="pills-contact-tab"
           >
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            {{ getSiteGroup("main__room5-description") | async }}
             <div class="row mt-5">
               <div class="col-lg-6 pl-0 mt-3">
                 <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -235,69 +231,99 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 pr-0 pl-5">
-        <figure>
+      <div class="col-md-6 pr-0 pl-5">
+        <carousel id="tabCarousel" [showIndicators]="false">
+          <slide>
+            <img
+              alt="First slide"
+              class="d-block w-100"
+              src="assets/images/home-page/Layout_apartments/A136_layout-apartments-slider.jpg"
+            />
+          </slide>
+          <slide>
+            <img
+              alt="Second slide"
+              class="d-block w-100"
+              src="assets/images/home-page/Layout_apartments/A136_layout-apartments-slider_2.jpg"
+            />
+          </slide>
+          <slide>
+            <img
+              alt="Third slide"
+              class="d-block w-100"
+              src="assets/images/home-page/Layout_apartments/A136_layout-apartments-slider.jpg"
+            />
+          </slide>
+        </carousel>
+        <!-- <figure>
           <img
             src="../../assets/images/home-page/Layout_apartments/A136_layout-apartments-slider.jpg"
             title="slider"
             alt="Slider"
           />
-        </figure>
+        </figure> -->
       </div>
     </div>
   </div>
 </section>
+
+<!-- Main contact form -->
+
 <section>
-  <div class="col-md-11 mt-5 pt-5 pb-5 m-auto">
-    <div class="row">
-      <div class="col-md-6">
-        <figure>
+  <div class="main-contactForm">
+    <div class="inner-container">
+      <div class="main-contactForm__row row">
+        <div class="main-contactForm__preview-container col-md-5 pl-0">
           <img
             src="../../assets/images/home-page/form-contact/A136__form-preview.jpg"
+            class="main-contactForm__preview"
             title="A136"
             alt="A136"
           />
-        </figure>
-      </div>
-      <div class="col-md-6">
-        <h2 class="title-h2 pl-5 mb-5">But I must explain how all to you</h2>
-        <p class="paragraph offset-md-4 mr-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="title-h2 text-uppercase pl-5 mb-5">
+            {{ getSiteGroup("main__form-title") | async }}
+          </h2>
+          <p class="paragraph offset-md-4 mr-5">
+            {{ getSiteGroup("main__form-content") | async }}
+          </p>
 
-        <form class="contact-form offset-md-4 mr-5">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Ваше имя</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Ваш телефон</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-            />
-          </div>
-          <div class="form-group mb-5">
-            <label for="exampleInputPassword1">Ваш e-mail</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-            />
-          </div>
+          <form class="contact-form offset-md-4 mr-5">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ваше имя</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Ваш телефон</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+              />
+            </div>
+            <div class="form-group mb-5">
+              <label for="exampleInputPassword1">Ваш e-mail</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+              />
+            </div>
 
-          <button type="submit" class="btn submit-btn pr-5">Отправить</button>
-        </form>
+            <button type="submit" class="btn link-negative underline-negative">
+              Отправить
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -306,39 +332,57 @@
 <!-- выбор квартиры и переход -->
 
 <section>
-  <div
-    class="apartment-choice col-md-12 t-5 pb-5 mt-5 mb-5 col-md-12 pl-5 pr-0"
-  >
-    <div class="row justify-content-between p-0 m-0">
-      <div class="col-md-4 pt-5">
-        <div class="apartment-choice__container col-md-12">
-          <h2 class="apartment-choice title-h2 text-uppercase mb-5">
-            выбор квартиры и переход
+  <div class="apartment-choice">
+    <div class="apartment-choice__row row justify-content-between p-0 m-0">
+      <div class="apartment-choice__left-container col-md-4 pt-5 pl-0 pr-0">
+        <div class="apartment-choice__container col-md-12 pl-0 pr-0">
+          <h2 class="apartment-choice__title title-h2 text-uppercase mb-5">
+            {{ getSiteGroup("main__choiceRoom-title") | async }}
           </h2>
-          <h3 class="h3 pt-5">РІК ВВЕДЕННЯ В ЕКСПЛУАТАЦІЮ</h3>
-          <span class="desc">2020 - 1ч. 2021 - 2ч.</span>
+          <h3 class="h3 pt-4">
+            {{ getSiteGroup("main__choiceRoom-subtitle") | async }}
+          </h3>
+          <span class="desc"
+            >{{ getSiteGroup("main__choiceRoom-subtitle_content") | async }}
+          </span>
         </div>
-        <div class="apartment-choice__container col-md-12">
+        <div class="apartment-choice__container col-md-12 pl-0 pr-0">
           <div class="row">
             <div class="col-md-8 pl-0">
-              <h3 class="h3 pt-5">ВИСОТА СТЕЛЬ, М</h3>
-              <span class="desc">2.7-3</span>
+              <h3 class="h3 pt-5">
+                {{ getSiteGroup("main__choiceRoom-hight-details") | async }}
+              </h3>
+              <span class="desc">{{
+                getSiteGroup("main__choiceRoom-hight-number") | async
+              }}</span>
             </div>
             <div class="col-md-4">
-              <h3 class="h3 pt-5">БУДИНКИ</h3>
-              <span class="desc">4</span>
+              <h3 class="h3 pt-5">
+                {{ getSiteGroup("main__choiceRoom-flats") | async }}
+              </h3>
+              <span class="desc">{{
+                getSiteGroup("main__choiceRoom-flats_number") | async
+              }}</span>
             </div>
           </div>
         </div>
-        <div class="apartment-choice__container col-md-12">
+        <div class="apartment-choice__container col-md-12 pl-0 pr-0">
           <div class="row">
             <div class="col-md-8 pl-0">
-              <h3 class="h3 pt-5">ПОВЕРХІВ</h3>
-              <span class="desc">10-34</span>
+              <h3 class="h3 pt-5">
+                {{ getSiteGroup("main__choiceRoom-flats_levels") | async }}
+              </h3>
+              <span class="desc">{{
+                getSiteGroup("main__choiceRoom-flats_levels-number") | async
+              }}</span>
             </div>
             <div class="col-md-4">
-              <h3 class="h3 pt-5">КВАРТИР</h3>
-              <span class="desc">2857</span>
+              <h3 class="h3 pt-5">
+                {{ getSiteGroup("main__choiceRoom-flats_rooms") | async }}
+              </h3>
+              <span class="desc">{{
+                getSiteGroup("main__choiceRoom-flats_rooms-number") | async
+              }}</span>
             </div>
           </div>
         </div>
@@ -348,14 +392,10 @@
       >
         <div class="apartment-choice__card card-img-top position-absolute">
           <h3 class="title-h3 text-uppercase">
-            But I must explain to you how all this mistaken
+            {{ getSiteGroup("main__choiceRoom-slider-title") | async }}
           </h3>
           <p class="paragraph">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga.
+            {{ getSiteGroup("main__choiceRoom-slider-content") | async }}
           </p>
           <a href="#" class="link underline pr-5 pb-3">watch more</a>
         </div>
@@ -380,26 +420,30 @@
 </section>
 <section>
   <div
-    class="row pt-5 mt-5 justify-content-between align-items-center six-elements-section__six-elements-section"
+    class=" six-elements-section row justify-content-between align-items-center"
   >
-    <div class="col-md-1 pl-0">
-      <div class="six-elements-section__grey-figure"></div>
-    </div>
-    <div class="col-md-3 mr-5 mt-5 pt-5 align-self-start">
+    <div class="six-elements-section__grey-figure"></div>
+
+    <div
+      class="six-elements-section__figure-img col-md-3 mr-5 mt-5 pt-5 align-self-start"
+    >
       <img src="./assets/images/home-page/_materials/A136_image_2.jpg" alt="" />
     </div>
     <div class="col-md-4">
       <div class="six-elements-section__gold-figure col-md-5 mb-5"></div>
-      <h2 class="title-h2 text-uppercase">материалы хода строительства</h2>
-      <h3 class="">Ноябрь 2019 год</h3>
+      <h2 class="title-h2 text-uppercase">
+        {{ getSiteGroup("main__progress-construction-title") | async }}
+      </h2>
+      <h3 class="">
+        {{ getSiteGroup("main__progress-construction-subtitle") | async }}
+      </h3>
       <p class="paragraph col-md-12 pl-0">
-        On the other hand, we denounce with righteous indignation and dislike
-        men who are so beguiled
+        {{ getSiteGroup("main__progress-construction-content") | async }}
       </p>
       <a href="" class="link underline pb-3 pr-5 mb-5">Watch more</a>
       <img src="./assets/images/home-page/_materials/A136_image_3.jpg" alt="" />
     </div>
-    <div class="col-md-3 pr-0">
+    <div class="six-elements-section__figure-lastImg pr-0">
       <img src="./assets/images/home-page/_materials/A136_image_1.jpg" alt="" />
     </div>
   </div>
@@ -408,25 +452,23 @@
 <!-- инфраструктура перход в основной раздел -->
 
 <section>
-  <div class="col-md-11 pt-5 m-auto">
-    <div class="row mt-5">
-      <div class="col-md-7">
-        <h2 class="title-h2 text-uppercase pl-0 mb-5">
-          инфраструктура перход в основной раздел
+  <div class="infostructure inner-container">
+    <div class="infostructure__row row mt-5">
+      <div class="infostructure__content-left col-md-7 pl-0">
+        <h2 class="infostructure__title title-h2 text-uppercase pl-0 mb-5">
+          {{ getSiteGroup("main__infrastructure-title") | async }}
         </h2>
-        <div class="col-md-5 offset-md-4">
-          <p class="paragraph">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
+        <div class="infostructure__inner-container col-md-6 offset-md-2">
+          <p class="infostructure__content paragraph">
+            {{ getSiteGroup("main__infrastructure-content") | async }}
           </p>
           <a href="" class="link underline pb-3 pr-5">watch more</a>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="infostructure__content-right col-md-5">
         <img
           src="../../assets/images/home-page/Infrastructure/A136__infrastruttura.jpg"
+          class="infostructure__preview"
           alt=""
         />
       </div>
@@ -438,9 +480,8 @@
 
 <section>
   <div class="gallery-section row pt-5 mt-5 align-items-end">
-    <div class="col-md-1 p-0">
-      <div class="gallery-section__gold-figure"></div>
-    </div>
+    <div class="gallery-section__gold-figure"></div>
+
     <div class="col-md-11 pr-0 pl-0">
       <div class="row d-flex justify-content-between">
         <div class="col-md-8 pl-0">
@@ -460,13 +501,10 @@
             </div>
             <div class="col-md-8 pl-5 mb-5 pb-5 ml-5 mt-5 pt-5">
               <h2 class="col-md-12 title-h2 text-uppercase pl-0">
-                инфраструктура перход в основной раздел
+                {{ getSiteGroup("main__gallery-flats") | async }}
               </h2>
               <p class="paragraph mt-5">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                {{ getSiteGroup("main__gallery-flats-content") | async }}
               </p>
               <a href="" class="link pb-3">watch more</a>
             </div>
@@ -495,7 +533,7 @@
   <div class="col-md-11 m-auto pt-5">
     <div class="col-md-5 offset-md-6 pb-5 mt-5 ">
       <h2 class="title-h2 text-uppercase">
-        расположение строительного комплекса
+        {{ getSiteGroup("main__flats-position-title") | async }}
       </h2>
     </div>
   </div>
@@ -522,8 +560,7 @@
     <div class="row mr-0">
       <div class="col-md-10">
         <h2 class="title-h2 text-uppercase ml-5 mt-5 mb-5 pt-5">
-          Новости <br />
-          и акции
+          {{ getSiteGroup("news-stocks__title") | async }}
         </h2>
       </div>
       <div class="col-md-2">
@@ -538,12 +575,15 @@
         alt=""
       />
       <div class="row pt-3">
-        <div class="date col-md-6 pl-0">06/09</div>
-        <div class="par col-md-6 pr-0 text-right">New</div>
+        <div class="date col-md-6 pl-0">
+          {{ getSiteGroup("news-stocks__date") | async }}
+        </div>
+        <div class="par col-md-6 pr-0 text-right">
+          {{ getSiteGroup("news-stocks__type") | async }}
+        </div>
       </div>
       <h4 class="title-h4 mt-4">
-        But I must explain to you how all this mistaken idea of denouncing
-        pleasure
+        {{ getSiteGroup("news-stocks__subtitle") | async }}
       </h4>
       <a href="" class="link underline pr-5 pb-3">Watch more</a>
     </div>
@@ -555,11 +595,15 @@
             alt=""
           />
           <div class="row pt-3">
-            <div class="date col-md-6 pl-0">06/09</div>
-            <div class="par col-md-6 pr-0 text-right">New</div>
+            <div class="date col-md-6 pl-0">
+              {{ getSiteGroup("news-stocks__date") | async }}
+            </div>
+            <div class="par col-md-6 pr-0 text-right">
+              {{ getSiteGroup("news-stocks__type") | async }}
+            </div>
           </div>
           <h4 class="title-h4 mt-4">
-            Stay Trendy and In Time – Early Booking Offer
+            {{ getSiteGroup("news-stocks__subtitle") | async }}
           </h4>
           <a href="" class="link pr-5 pb-3">Read more</a>
         </div>
@@ -569,11 +613,15 @@
             alt=""
           />
           <div class="row pt-3">
-            <div class="date col-md-6 pl-0">06/09</div>
-            <div class="par col-md-6 pr-0 text-right">New</div>
+            <div class="date col-md-6 pl-0">
+              {{ getSiteGroup("news-stocks__date") | async }}
+            </div>
+            <div class="par col-md-6 pr-0 text-right">
+              {{ getSiteGroup("news-stocks__type") | async }}
+            </div>
           </div>
           <h4 class="title-h4 mt-4">
-            Stay Trendy and In Time – Early Booking Offer
+            {{ getSiteGroup("news-stocks__subtitle") | async }}
           </h4>
           <a href="" class="link pr-5 pb-3">Read more</a>
         </div>
@@ -585,7 +633,7 @@
   <div class="col-md-11 m-auto">
     <div class="col-md-6 offset-md-6">
       <h2 class="title-h2 pt-5 mt-5 mb-5">
-        Блок с проектами компании и переход на сайт
+        {{ getSiteGroup("block-projects__title") | async }}
       </h2>
     </div>
   </div>
@@ -593,9 +641,9 @@
     <div class="project-block col-md-8 pr-0 mb-3">
       <div class="project-block__title-container">
         <h3 class="project-block__title">
-          Discover new emotions and to be inspired by the local atmosphere
+          {{ getSiteGroup("block-projects__subtitle") | async }}
         </h3>
-        <a href="" class="link">read more</a>
+        <a href="" class="link-negative">read more</a>
       </div>
 
       <img src="./assets/images/home-page/A136_preview.jpg" alt="" />
@@ -603,9 +651,9 @@
     <div class="project-block col-md-8 pr-0 mb-3">
       <div class="project-block__title-container">
         <h3 class="project-block__title">
-          Discover new emotions and to be inspired by the local atmosphere
+          {{ getSiteGroup("block-projects__subtitle") | async }}
         </h3>
-        <a href="" class="link">read more</a>
+        <a href="" class="link-negative">read more</a>
       </div>
 
       <img src="./assets/images/home-page/A136_preview.jpg" alt="" />

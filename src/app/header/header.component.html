@@ -1,10 +1,14 @@
-<!-- {{sss}} -->
-<div class="app-header d-md-flex pt-5 pb-5 justify-content-between">
-  <div class="col-md-11 m-auto">
-    <div class="row">
-      <figure class="app-header__logo col-md-5 ">
-        <img src="../../assets/images/A136__logo-w.png" alt="A136" />
-      </figure>
+<!-- <div [class.test]="currentUrl === '/main'">lorem ipsum</div> -->
+
+<div
+  class="app-header d-md-flex pt-5 pb-5 justify-content-between"
+  color-on-scroll="100"
+  id="navbar-top"
+  [class.color-invert]="currentUrl === '/main'"
+>
+  <div class="inner-container">
+    <div class="row justify-content-between">
+      <figure class="app-header__logo"></figure>
 
       <div class="app-header__middle-container col-md-7">
         <div class="row">
