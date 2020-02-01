@@ -78,34 +78,34 @@ a:focus {
 	opacity: 1;
 }
 
-a.carousel-control-next,
-a.carousel-control-prev {
-	position: absolute;
-	top: unset;
-	bottom: 0;
-	width: 100px;
-	background: $darkGray;
-	height: 80px;
-	left: 0;
-	opacity: 1;
-}
+// a.carousel-control-next,
+// a.carousel-control-prev {
+// 	position: absolute;
+// 	top: unset;
+// 	bottom: 0;
+// 	width: 100px;
+// 	background: $darkGray;
+// 	height: 80px;
+// 	left: 0;
+// 	opacity: 1;
+// }
 
-.carousel-control span {
-	background-size: inherit;
-}
+// .carousel-control span {
+// 	background-size: inherit;
+// }
 
-a.carousel-control-next {
-	left: 100px;
-}
+// a.carousel-control-next {
+// 	left: 100px;
+// }
 
-.carousel-control-prev-icon {
-	background-image: url('/assets/images/home-page/Layout_apartments/A136__arrow-left.png');
-}
+// .carousel-control-prev-icon {
+// 	background-image: url('/assets/images/home-page/Layout_apartments/A136__arrow-left.png');
+// }
 
-.carousel-control-next-icon {
-	background-image: url('/assets/images/home-page/Layout_apartments/A136__arrow-left.png');
-	transform: rotate(180deg);
-}
+// .carousel-control-next-icon {
+// 	background-image: url('/assets/images/home-page/Layout_apartments/A136__arrow-left.png');
+// 	transform: rotate(180deg);
+// }
 
 ul > li {
 	list-style: none;
@@ -131,7 +131,6 @@ ul > li {
 		font-weight: 900;
 		border-radius: 0px;
 		padding-left: 0px;
-		border: none;
 	}
 
 	text-transform: uppercase;

@@ -8,12 +8,15 @@
 	box-sizing: border-box;
 }
 
-body {
-	font-family: sans-serif;
-}
-
 .carousel {
 	background: #fafafa;
+	width: 50%;
+	overflow-x: hidden;
+	height: 620px;
+}
+
+.flickity-viewport {
+	width: 600px;
 }
 
 .carousel-cell {
@@ -24,20 +27,80 @@ body {
 	counter-increment: carousel-cell;
 }
 
-/* cell number */
-.carousel-cell:before {
-	display: block;
-	text-align: center;
-	content: counter(carousel-cell);
-	line-height: 200px;
-	font-size: 80px;
-	color: white;
-}
-
 .carousel-status {
 	font-size: 24px;
 }
 
 ol.flickity-page-dots {
 	display: none;
+}
+
+/* first slider */
+
+.first-slider-container {
+	margin-bottom: 18rem;
+	background: transparent;
+	position: relative;
+	a.carousel-control-next,
+	a.carousel-control-prev {
+		position: absolute;
+		top: unset;
+		bottom: 0;
+		width: 100px;
+		background: transparent;
+		height: 80px;
+		left: 0;
+		opacity: 1;
+	}
+
+	.carousel-control span {
+		background-size: inherit;
+	}
+
+	a.carousel-control-next {
+		left: 100px;
+	}
+
+	.outer-controller {
+		position: absolute;
+		left: 0px;
+		bottom: 90px;
+		height: 90px;
+		width: 200px;
+		display: flex;
+	}
+
+	.carousel-control-prev-icon,
+	.carousel-control-next-icon {
+		width: auto;
+	}
+
+	.bottom-text {
+		display: flex;
+		justify-content: center;
+		&__paragraph {
+			width: 45%;
+			margin-top: 8rem;
+		}
+	}
+}
+
+/* Second slider */
+
+.carousel-cell {
+	width: 28%;
+	margin-right: 10px;
+	border-radius: 5px;
+	counter-increment: carousel-cell;
+}
+
+/* main page style */
+
+.secondary-title {
+	color: #232529;
+	font-weight: 900;
+	font-size: 45px;
+	line-height: 55px;
+	width: 40%;
+	margin-top: 8rem;
 }
