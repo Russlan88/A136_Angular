@@ -1,26 +1,475 @@
-/* You can add global styles to this file, and also import other style files */
-@import 'style-reset.scss';
+/** @format */
 
-@font-face {
-  font-family: "ArtegraSans";
-  src: url("../src/assets/fonts/ArtegraSans-Regular.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-ExtraBoldItalic.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-ExtraLight.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-Light.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-LightItalic.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-Medium.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-MediumItalic.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-Regular.otf") format("eot"),
-    url("../src/assets/fonts/ArtegraSans-RegularItalic.otf") format("eot");
+* {
+	box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100%;
+a:focus {
+	outline: none;
+}
 
+/* Import variables */
+
+@import '.././src/variables.scss';
+
+/* Import custom fonts */
+
+@import '.././src/assets/scss/fonts.scss';
+
+/* Import mixins */
+
+@import '../src/assets/scss/mixins/_mixins.scss';
+
+.head-section {
+	position: relative;
+	overflow: hidden;
+
+	&__rectangle {
+		height: 900rem;
+		width: 270px;
+		position: absolute;
+		border-left: 1px solid rgba(134, 134, 134, 0.2);
+		transform: rotate(-69deg) !important;
+		border-right: 1px solid rgba(134, 134, 134, 0.2);
+		left: 100px;
+		top: -444rem;
+
+		//&::after {
+		// content: "";
+		// width: 100vw;
+		// background: rgba(0, 0, 0, 0.3);
+		// position: absolute;
+		// height: 100%;
+		// left: 269px;
+		//}
+	}
+
+	&__section-title {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	&__title {
+		padding-top: 25rem;
+		width: 65%;
+
+		padding-bottom: 110px;
+	}
+
+	&__section-paragraph {
+		padding-top: 26rem;
+		width: 35%;
+		font-size: 20px;
+		border-left: 1px solid rgba(134, 134, 134, 0.2);
+		padding-bottom: 117px;
+		height: 100%;
+		display: block;
+		&__no-padding {
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+	}
+}
+
+/* SLIDER */
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+	opacity: 1;
+}
+
+a.carousel-control-next,
+a.carousel-control-prev {
+	position: absolute;
+	top: unset;
+	bottom: 0;
+	width: 100px;
+	background: $darkGray;
+	height: 80px;
+	left: 0;
+	opacity: 1;
+}
+
+.carousel-control span {
+	background-size: inherit;
+}
+
+a.carousel-control-next {
+	left: 100px;
+}
+
+.carousel-control-prev-icon {
+	background-image: url('/assets/images/home-page/Layout_apartments/A136__arrow-left.png');
+}
+
+.carousel-control-next-icon {
+	background-image: url('/assets/images/home-page/Layout_apartments/A136__arrow-left.png');
+	transform: rotate(180deg);
+}
+
+ul > li {
+	list-style: none;
+}
+
+.underline {
+	&-negative {
+		padding-right: 100px;
+		padding-bottom: 20px;
+		border-bottom: 2px solid #000;
+	}
+
+	padding-right: 100px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #fff;
+}
+
+.link {
+	&-negative {
+		color: #000;
+		text-transform: uppercase;
+		font-size: 15px;
+		font-weight: 900;
+		border-radius: 0px;
+		padding-left: 0px;
+		border: none;
+	}
+
+	text-transform: uppercase;
+	border: none;
+	font-size: 15px;
+	color: #fff;
+	font-weight: 900;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.z-top {
+	z-index: 99999;
+	top: 0px;
+	position: absolute;
+}
+
+.inner-container {
+	&_header {
+		justify-content: space-between;
+	}
+
+	&__block {
+		display: block;
+	}
+
+	padding: 0 8rem;
+	display: flex;
+	width: 100%;
+}
+
+.container-left {
+	padding-left: 8rem;
+}
+
+.container-right {
+	padding-right: 8rem;
+}
+
+input {
+	border: none;
+}
+
+.desc {
+	@include gold_desc;
+}
+
+.paragraph {
+	@include fluid-type(12px, 16px);
+	line-height: unset;
+	color: $gl-color;
+	font-weight: 500;
+}
+
+/* Gallery */
+
+$height-item: 600px;
+
+/* MAIN COLORS */
+
+$lightGray: rgba(255, 255, 255, 0.2);
+$darkGray: #232529;
+$lightBlack: #a4a4a4;
+$greyLightColor: #bdbdbd;
+$greyColorBorder: #d9d9d9;
+
+.pt {
+	padding-top: 130px;
+}
+
+.submit-btn {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	padding: 0px;
+	text-align: left;
 }
 
 body {
-  margin: 0;
-  font-family: ArtegraSans;
+	font-family: 'Artegra Sans';
+	font-weight: 400;
+	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+	// font-size: 0.17rem;
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	width: 100%;
+}
+
+.underline {
+	border-bottom: 2px solid inherit;
+	padding-right: 50px;
+}
+
+.project-block {
+	height: 515px;
+	position: relative;
+	width: 70vw;
+
+	@include for-desktop {
+		height: 35vw;
+	}
+
+	@include for-tablet-landscape {
+		height: 280px;
+	}
+
+	@include for-tablet-portrait {
+		height: 210px;
+	}
+
+	@include for-phone(425) {
+		height: 145px;
+		width: 80vw;
+	}
+
+	&:first-child {
+		background: url(/assets/images/home-page/Project-block/A136_preview-block.jpg);
+		@include bg-img;
+	}
+
+	&:last-child {
+		background: url(/assets/images/home-page/Project-block/A136_preview.jpg);
+		@include bg-img;
+	}
+
+	&__title-container {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: 35%;
+		width: 35vw;
+		display: flex;
+		flex-direction: column;
+		transform: translate(-34%, -50%);
+
+		@include for-desktop {
+			width: 45vw;
+			height: 50%;
+		}
+
+		@include for-tablet-landscape {
+			transform: translate(-35%, -50%);
+			width: 60vw;
+		}
+
+		@include for-phone(425) {
+			transform: translate(-15%, -50%);
+			width: 80vw;
+		}
+
+		a {
+			position: absolute;
+			right: 5%;
+			bottom: 0px;
+		}
+	}
+
+	&__title {
+		font-weight: 900;
+		@include fluid-type(12px, 30px);
+		line-height: unset;
+		text-align: left;
+		text-transform: uppercase;
+
+		@include for-desktop {
+			font-size: calc(50% + 10px);
+		}
+	}
+}
+
+.date {
+	@include date;
+}
+
+.par {
+	color: $gt-color;
+	font-size: 12px;
+}
+
+.title-h1 {
+	@include title-h1;
+}
+
+.title-h2 {
+	@include title-h2;
+}
+
+.title-h4 {
+	@include title-h4;
+}
+
+.title-h3 {
+	@include title-h3;
+}
+
+.title-h6 {
+	@include title-h6;
+}
+
+.row {
+	width: 100%;
+	margin: 0;
+}
+
+/************************************************************************************************
+                                      SOCIAL BLOCK
+*************************************************************************************************/
+
+.social {
+	&__link {
+		font-size: 25px;
+		color: $darkGray;
+
+		@include for-phone(425px) {
+			font-size: 16px;
+		}
+	}
+}
+
+/************************************************************************************************
+                                      NEWS AND PROMOTIAL BLOCK
+*************************************************************************************************/
+
+.news-promotions {
+	padding-top: 5rem;
+	padding-bottom: 3rem;
+
+	&__row {
+		justify-content: space-between;
+	}
+
+	&__title {
+		width: 50%;
+	}
+
+	&__description-preview {
+		@include fluid-type(12px, 32px);
+	}
+}
+
+/************************************************************************************************
+                                      PAGINATION - GLOBAL
+*************************************************************************************************/
+
+.pagination {
+	margin-top: 4rem;
+	width: 100%;
+	justify-content: flex-end;
+	color: $w-color;
+
+	&__container {
+		width: 60%;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__dots {
+		letter-spacing: 3.5px;
+	}
+
+	&__item {
+		padding: 0 10px;
+		font-size: 15px;
+
+		a {
+			color: $w-color;
+			opacity: 0.2;
+		}
+
+		&__active,
+		&:hover {
+			a {
+				opacity: 1;
+			}
+		}
+	}
+
+	.next-page {
+		margin-left: auto;
+	}
+}
+
+/************************************************************************************************
+                                      CONTACT FORM - GLOBAL
+*************************************************************************************************/
+
+.main-contactForm {
+	margin-top: 14rem;
+	margin-bottom: 8rem;
+
+	h2 {
+		font-size: 60px;
+	}
+
+	&__preview-container {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			background: $bk-color;
+			width: 675px;
+			height: 730px;
+			z-index: -1;
+			bottom: 145px;
+		}
+	}
+
+	&__row {
+		justify-content: space-between;
+	}
+}
+
+.contact-form {
+	@include contact-form;
+}
+
+/************************************************************************************************
+                                      CAROUSEL - BUILDING PROCESS PAGE
+*************************************************************************************************/
+
+.building-process {
+	.carousel-inner {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		height: 660px;
+	}
 }
