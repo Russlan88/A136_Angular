@@ -1,0 +1,55 @@
+/**
+ * /* external css: flickity.css
+ *
+ * @format
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.carousel {
+	background: #fafafa;
+}
+
+.carousel-cell {
+	width: 66%;
+	height: 200px;
+	margin-right: 10px;
+	background: #8c8;
+	counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+	display: block;
+	text-align: center;
+	content: counter(carousel-cell);
+	line-height: 200px;
+	font-size: 80px;
+	color: white;
+}
+
+.carousel-status {
+	font-size: 24px;
+}
+
+.flickity-slider {
+	transform: none !important;
+}
+
+.gallery-cell {
+	left: 0 !important;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	z-index: -1;
+}
+
+.gallery-cell.is-selected {
+	opacity: 1;
+	z-index: 0;
+}
