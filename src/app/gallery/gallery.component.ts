@@ -14,9 +14,7 @@ export class GalleryComponent implements OnInit {
 	ngOnInit() {
 		// external js: flickity.pkgd.js
 
-		var flkty = new Flickity('.carousel', {
-			fade: true
-		});
+		var flkty = new Flickity('.carousel');
 		var carouselStatus = document.querySelector('.carousel-status');
 
 		function updateStatus() {

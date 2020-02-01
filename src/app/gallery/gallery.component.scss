@@ -4,16 +4,16 @@
  * @format
  */
 
-// * {
-// 	box-sizing: border-box;
-// }
+* {
+	box-sizing: border-box;
+}
 
-// .carousel {
-// 	background: #fafafa;
-// }
+body {
+	font-family: sans-serif;
+}
 
-.flickity-page-dots {
-	display: none;
+.carousel {
+	background: #fafafa;
 }
 
 .carousel-cell {
@@ -38,18 +38,6 @@
 	font-size: 24px;
 }
 
-.flickity-slider {
-	transform: none !important;
-}
-
-.gallery-cell {
-	left: 0 !important;
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
-	z-index: -1;
-}
-
-.gallery-cell.is-selected {
-	opacity: 1;
-	z-index: 0;
+ol.flickity-page-dots {
+	display: none;
 }

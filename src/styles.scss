@@ -10,15 +10,15 @@ a:focus {
 
 /* Import variables */
 
-@import '.././src/variables.scss';
+@import '../../Angular/src/assets/scss/variables';
 
 /* Import custom fonts */
 
-@import '.././src/assets/scss/fonts.scss';
+// @import '../../Angular/src/assets/scss/fonts.scss';
 
 /* Import mixins */
 
-@import '../src/assets/scss/mixins/_mixins.scss';
+// @import '../../Angular/src/assets/scss/';
 
 .head-section {
 	position: relative;
@@ -179,14 +179,14 @@ input {
 	border: none;
 }
 
-.desc {
-	@include gold_desc;
-}
+// .desc {
+// 	@include gold_desc;
+// }
 
 .paragraph {
-	@include fluid-type(12px, 16px);
+	// @include fluid-type(12px, 16px);
 	line-height: unset;
-	color: $gl-color;
+	// color: $gl-color;
 	font-weight: 500;
 }
 
@@ -239,31 +239,31 @@ img {
 	position: relative;
 	width: 70vw;
 
-	@include for-desktop {
-		height: 35vw;
-	}
+	// @include for-desktop {
+	// 	height: 35vw;
+	// }
 
-	@include for-tablet-landscape {
-		height: 280px;
-	}
+	// @include for-tablet-landscape {
+	// 	height: 280px;
+	// }
 
-	@include for-tablet-portrait {
-		height: 210px;
-	}
+	// @include for-tablet-portrait {
+	// 	height: 210px;
+	// }
 
-	@include for-phone(425) {
-		height: 145px;
-		width: 80vw;
-	}
+	// @include for-phone(425) {
+	// 	height: 145px;
+	// 	width: 80vw;
+	// }
 
 	&:first-child {
 		background: url(/assets/images/home-page/Project-block/A136_preview-block.jpg);
-		@include bg-img;
+		// @include bg-img;
 	}
 
 	&:last-child {
 		background: url(/assets/images/home-page/Project-block/A136_preview.jpg);
-		@include bg-img;
+		// @include bg-img;
 	}
 
 	&__title-container {
@@ -275,70 +275,71 @@ img {
 		display: flex;
 		flex-direction: column;
 		transform: translate(-34%, -50%);
-
-		@include for-desktop {
-			width: 45vw;
-			height: 50%;
-		}
-
-		@include for-tablet-landscape {
-			transform: translate(-35%, -50%);
-			width: 60vw;
-		}
-
-		@include for-phone(425) {
-			transform: translate(-15%, -50%);
-			width: 80vw;
-		}
-
-		a {
-			position: absolute;
-			right: 5%;
-			bottom: 0px;
-		}
-	}
-
-	&__title {
-		font-weight: 900;
-		@include fluid-type(12px, 30px);
-		line-height: unset;
-		text-align: left;
-		text-transform: uppercase;
-
-		@include for-desktop {
-			font-size: calc(50% + 10px);
-		}
 	}
 }
+// 		@include for-desktop {
+// 			width: 45vw;
+// 			height: 50%;
+// 		}
 
-.date {
-	@include date;
-}
+// 		@include for-tablet-landscape {
+// 			transform: translate(-35%, -50%);
+// 			width: 60vw;
+// 		}
 
-.par {
-	color: $gt-color;
-	font-size: 12px;
-}
+// 		@include for-phone(425) {
+// 			transform: translate(-15%, -50%);
+// 			width: 80vw;
+// 		}
 
-.title-h1 {
-	@include title-h1;
-}
+// 		a {
+// 			position: absolute;
+// 			right: 5%;
+// 			bottom: 0px;
+// 		}
+// 	}
 
-.title-h2 {
-	@include title-h2;
-}
+// 	&__title {
+// 		font-weight: 900;
+// 		@include fluid-type(12px, 30px);
+// 		line-height: unset;
+// 		text-align: left;
+// 		text-transform: uppercase;
 
-.title-h4 {
-	@include title-h4;
-}
+// 		@include for-desktop {
+// 			font-size: calc(50% + 10px);
+// 		}
+// 	}
+// }
 
-.title-h3 {
-	@include title-h3;
-}
+// .date {
+// 	@include date;
+// }
 
-.title-h6 {
-	@include title-h6;
-}
+// .par {
+// 	color: $gt-color;
+// 	font-size: 12px;
+// }
+
+// .title-h1 {
+// 	@include title-h1;
+// }
+
+// .title-h2 {
+// 	@include title-h2;
+// }
+
+// .title-h4 {
+// 	@include title-h4;
+// }
+
+// .title-h3 {
+// 	@include title-h3;
+// }
+
+// .title-h6 {
+// 	@include title-h6;
+// }
 
 .row {
 	width: 100%;
@@ -354,9 +355,9 @@ img {
 		font-size: 25px;
 		color: $darkGray;
 
-		@include for-phone(425px) {
-			font-size: 16px;
-		}
+		// @include for-phone(425px) {
+		// 	font-size: 16px;
+		// }
 	}
 }
 
@@ -375,10 +376,6 @@ img {
 	&__title {
 		width: 50%;
 	}
-
-	&__description-preview {
-		@include fluid-type(12px, 32px);
-	}
 }
 
 /************************************************************************************************
@@ -389,7 +386,7 @@ img {
 	margin-top: 4rem;
 	width: 100%;
 	justify-content: flex-end;
-	color: $w-color;
+	// color: $w-color;
 
 	&__container {
 		width: 60%;
@@ -408,7 +405,7 @@ img {
 		font-size: 15px;
 
 		a {
-			color: $w-color;
+			// color: $w-color;
 			opacity: 0.2;
 		}
 
@@ -444,7 +441,7 @@ img {
 			content: '';
 			position: absolute;
 			left: 50%;
-			background: $bk-color;
+			// background: $bk-color;
 			width: 675px;
 			height: 730px;
 			z-index: -1;
@@ -457,9 +454,9 @@ img {
 	}
 }
 
-.contact-form {
-	@include contact-form;
-}
+// .contact-form {
+// 	@include contact-form;
+// }
 
 /************************************************************************************************
                                       CAROUSEL - BUILDING PROCESS PAGE
@@ -472,4 +469,8 @@ img {
 		overflow: hidden;
 		height: 660px;
 	}
+}
+
+.flickity-page-dots {
+	display: none;
 }
