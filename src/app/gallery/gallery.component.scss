@@ -10,9 +10,9 @@
 
 .carousel {
 	background: #fafafa;
-	width: 50%;
+
 	overflow-x: hidden;
-	height: 620px;
+	height: 940px;
 }
 
 .flickity-viewport {
@@ -88,10 +88,16 @@ ol.flickity-page-dots {
 /* Second slider */
 
 .carousel-cell {
-	width: 28%;
+	width: 50%; /* half-width */
+	height: 160px;
 	margin-right: 10px;
-	border-radius: 5px;
 	counter-increment: carousel-cell;
+}
+
+/* Third slider */
+
+.third-slider {
+	padding-right: 50%;
 }
 
 /* main page style */
