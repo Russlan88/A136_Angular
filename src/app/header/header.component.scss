@@ -1,10 +1,18 @@
 @import "../../styles.scss";
 
+/************************************************************************************************
+                                      HEADER SECTION
+*************************************************************************************************/
+
 .header-container {
   width: 100%;
   top: 0px;
   left: 0px;
   z-index: 4;
+}
+
+.sticky-header {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .navbar-toggler {
@@ -13,9 +21,105 @@
 
 .app-header {
   z-index: 99;
-  background: rgba(0, 0, 0, 0.3);
   padding-bottom: 35px;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid $lightGray;
+
+  &__logo-container {
+    @include for-tablet-portrait {
+      width: 35vw;
+    }
+
+    // width: 35vw;
+  }
+
+  &__row {
+    display: flex;
+    color: $w-color;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: 0px;
+
+    @include for-tablet-portrait {
+      width: 65%;
+    }
+
+    @include for-phone(425) {
+      width: auto;
+    }
+
+    a {
+      color: $w-color;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &.color-invert {
+    .app-header {
+      &__logo {
+        width: 80px;
+        height: 80px;
+        background: url("../../assets/images/A136__logo-w.png");
+        background-repeat: no-repeat;
+      }
+
+      &__middle-container {
+        color: $w-color;
+
+        a {
+          color: $w-color;
+        }
+      }
+
+      &__language {
+        .btn.btn-primary {
+          color: $w-color;
+        }
+      }
+    }
+
+    .toggle-btn {
+      .bar {
+        background-color: $w-color;
+      }
+    }
+  }
+
+  &.sticky-header {
+    .app-header {
+      &__logo {
+        width: 80px;
+        background: url("../../assets/images/A136__logo-w.png") no-repeat;
+      }
+
+      &__middle-container {
+        color: $w-color;
+
+        a {
+          color: $w-color;
+        }
+      }
+
+      &__language {
+        .btn.btn-primary {
+          color: $w-color;
+        }
+      }
+
+      &__nav-menu {
+        .toggle-btn {
+          .bar {
+            background: $w-color;
+          }
+        }
+      }
+    }
+  }
 
   &__language {
     .btn {
@@ -25,6 +129,7 @@
         padding-top: 0px;
         opacity: 0.5;
         box-shadow: none;
+        color: $blackColor;
 
         &.active {
           opacity: 1;
@@ -40,14 +145,13 @@
 
     &:hover {
       text-decoration: none;
-      color: $gt-color;
+      color: $g-text;
     }
   }
 
   &__logo {
-    img {
-      width: 80px;
-    }
+    width: 80px;
+    background: url("../../assets/images/A136__logo.png") no-repeat;
   }
 
   &__item {
@@ -57,16 +161,15 @@
   }
 
   &__middle-container {
-    color: $w-color;
+    color: $blackColor;
     display: flex;
     position: relative;
-    width: 520px;
     line-height: 22px;
     font-size: 17px;
     justify-content: space-evenly;
 
     a {
-      color: $w-color;
+      color: $blackColor;
     }
   }
 
@@ -78,6 +181,10 @@
       display: flex;
       flex-direction: column;
     }
+
+    @include for-tablet-portrait {
+      display: none;
+    }
   }
 
   &__selector {
@@ -87,6 +194,18 @@
     &:hover,
     &.active {
       opacity: 1;
+    }
+  }
+
+  &__phone-number {
+    @include for-phone(425) {
+      display: none;
+    }
+  }
+
+  &__language-switch {
+    @include for-tablet-landscape {
+      display: none;
     }
   }
 
@@ -141,7 +260,7 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
             &:hover {
-              color: $gold;
+              color: $goldDarker;
             }
           }
         }
@@ -159,14 +278,13 @@
         width: 30px;
         height: 2px;
         margin: 7px auto;
-        background-color: #fff;
+        background-color: $blackColor;
         transition: all 0.3s ease-in-out;
-        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
       }
     }
 
     #toggle:checked {
-      &~nav {
+      & ~ nav {
         opacity: 1;
         visibility: visible;
 
@@ -240,7 +358,7 @@
 .modal-content {
   height: 100%;
   border-radius: 0px;
-  background-color: $gt-color;
+  background-color: $menu-bg;
 
   ul {
     // top:70px;
@@ -332,7 +450,7 @@ nav {
         font-weight: 400;
 
         &:hover {
-          color: $gt-color;
+          color: $goldDarker;
         }
       }
     }

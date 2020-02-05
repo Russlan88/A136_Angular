@@ -19,7 +19,6 @@ import { FlatsComponent } from './flats/flats.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NewsComponent } from './news/news.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TabsModule } from 'ngx-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpmCoreModule, EnumLanguages } from 'spm-core';
@@ -30,7 +29,11 @@ import { ISiteVariables } from '@owntypes/site-variables/site.variables';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LanguageInterceptor } from './interceptors/lang.interceptor';
-import { LayoutDescriptionComponent } from './layout-description/layout-description.component';
+import { PurchaseTermsComponent } from './purchase-terms/purchase-terms.component';
+import { ApartmentsFilterComponent } from './apartments-filter/apartments-filter.component';
+import { BuildingProcessSeptemberComponent } from './building-process-september/building-process-september.component';
+import { SharedModule } from './shared/shared.module';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export const SITE_VARIABLES: ISiteVariables = {
   /**
@@ -66,18 +69,21 @@ export function getEnv(): any {
     NewsComponent,
     NewsListComponent,
     DevelopmentTechnologyComponent,
-    LayoutDescriptionComponent
+    PurchaseTermsComponent,
+    ApartmentsFilterComponent,
+    BuildingProcessSeptemberComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgbModule,
-    CarouselModule.forRoot(),
     TabsModule.forRoot(),
     FormsModule,
     SpmCoreModule.forRoot(getEnv()),
     ReactiveFormsModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    SharedModule
   ],
   providers: [
     { provide: 'APP_CONFIG', useValue: SITE_VARIABLES },

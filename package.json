@@ -11,7 +11,11 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run a136:server:production --bundleDependencies all"
+    "build:client-and-server-bundles": "ng build --prod && ng run a136:server:production --bundleDependencies all",
+    "bssr:prod": "npm run build:client-and-server-bundles:prod && npm run compile:server",
+    "bssr:dev": "npm run build:client-and-server-bundles:dev && npm run compile:server",
+    "build:client-and-server-bundles:prod": "ng build -c=production && ng run a136:server:production --bundleDependencies all",
+    "build:client-and-server-bundles:dev": "ng build -c=dev && ng run a136:server:production --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
@@ -27,11 +31,15 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.5",
     "@nguniversal/express-engine": "^8.2.6",
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
+    "angular2-uuid": "^1.1.1",
     "bootstrap": "^4.4.1",
+    "domino": "^2.1.4",
     "express": "^4.15.2",
+    "flickity": "^2.2.1",
     "ngx-bootstrap": "^5.3.2",
+    "nouislider": "^14.1.1",
     "rxjs": "~6.4.0",
-    "spm-core": "file:../../kmb/spm-core-workspace/dist/spm-core/spm-core-1.0.6.tgz",
+    "spm-core": "^1.0.12",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

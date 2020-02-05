@@ -5,8 +5,8 @@
 }
 
 @mixin gold_desc {
-  font-size: 35px;
-  color: $gold;
+  font-size: 35px !important;
+  color: $gold !important;
   font-weight: 900;
 }
 
@@ -29,21 +29,6 @@
 @mixin bg-img {
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-@mixin link($font-size: 13px, $line-height: 25px) {
-  font-size: $font-size;
-  display: inline-block;
-  color: $b-color;
-  line-height: $line-height;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-    color: $b-color;
-  }
 }
 
 @mixin black-gold__title {
@@ -74,10 +59,6 @@
     font-size: 16px;
     line-height: 35px;
   }
-
-  .link {
-    @include link;
-  }
 }
 
 /* NEWS PAGE */
@@ -95,14 +76,10 @@
     }
 
     p {
-      color: $gl-color;
+      color: $n-color;
       font-size: 18px;
       line-height: 28px;
       margin: 0px;
-    }
-
-    .link {
-      @include link;
     }
   }
 }
@@ -138,7 +115,7 @@
 @mixin contact-form {
   input {
     border-radius: 0px;
-    border-bottom: 1px solid $b-color;
+    border-bottom: 1px solid $bd-color;
 
     &::-webkit-input-placeholder {
       color: #fff;
@@ -163,7 +140,6 @@
     border-radius: 0px;
     padding: 0px;
     text-align: left;
-    @include link;
   }
 }
 
@@ -176,7 +152,7 @@
 }
 
 @mixin for-tablet-portrait {
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     @content;
   }
 }

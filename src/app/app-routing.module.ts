@@ -14,7 +14,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewsListComponent } from './news-list/news-list.component';
 import { DevelopmentTechnologyComponent } from './development-technology/development-technology.component';
-import { LayoutDescriptionComponent } from './layout-description/layout-description.component';
+import { PurchaseTermsComponent } from './purchase-terms/purchase-terms.component';
+import { ApartmentsFilterComponent } from './apartments-filter/apartments-filter.component';
+import { BuildingProcessSeptemberComponent } from './building-process-september/building-process-september.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: 'main', component: MainComponent },
@@ -31,7 +34,10 @@ const routes: Routes = [
   { path: 'news-list', component: NewsListComponent },
   { path: 'news/:id', component: NewsComponent },
   { path: 'development-technology', component: DevelopmentTechnologyComponent },
-  { path: 'layout-description', component: LayoutDescriptionComponent },
+  { path: 'purchase-terms', component: PurchaseTermsComponent },
+  { path: 'apartments-filter', component: ApartmentsFilterComponent },
+  { path: 'building-process-september', component: BuildingProcessSeptemberComponent },
+  { path: 'about-us', component: AboutUsComponent },
   {
     path: '',
     redirectTo: '/main',
@@ -44,6 +50,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}

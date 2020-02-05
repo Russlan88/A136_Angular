@@ -1,12 +1,13 @@
 <section class="dim">
-  <div class="col-md-11 m-auto pb-5">
+  <div class="inner-container pb-5">
     <div class="row align-items-center">
-      <div class="col-md-8">
-        <h1 class="title-h1">Застройщик DIM</h1>
+      <div class="col-md-8 pl-0">
+        <h1 class="title-h1">
+          {{ getSiteGroup("readyDimMainTitle") | async }}
+        </h1>
       </div>
       <div class="paragraph col-md-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        {{ getSiteGroup("readyDimTitleParagraph") | async }}
       </div>
     </div>
   </div>
@@ -21,12 +22,12 @@
 <!-- Social section -->
 
 <section>
-  <div class="col-md-11 m-auto">
+  <div class="inner-container">
     <div class="row mt-5">
       <div class="col-md-6"></div>
       <div class="col-md-6 text-right">
-        <span class="text-uppercase ml-5">Facebook</span
-        ><span class="text-uppercase ml-5">Instagram</span>
+        <span class="text-uppercase ml-5"> <a href=""> Facebook</a></span
+        ><span class="text-uppercase ml-5"><a href="">Instagram</a></span>
       </div>
     </div>
   </div>
@@ -38,14 +39,14 @@
   <div class="dim-main col-md-12 pl-md-5 ml-md-auto mr-0 pr-0">
     <div class="row justify-content-between align-items-end">
       <div class="col-md-3 ml-md-5 ml-sm-5 mb-5 ordered">
-        <h2 class="title-h2 text-uppercase mt-5 pt-3">
-          Количество сданных <span class="desc">домов на 2019 год: 208д</span>
+        <h2 class="title-h2 text-uppercase mt-5 pt-3 mb-4">
+          {{ getSiteGroup("readyDimQuantity") | async }}
+          <span class="desc">{{
+            getSiteGroup("readyDimQuantityGold") | async
+          }}</span>
         </h2>
         <p class="paragraph">
-          But I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born and I will give you a complete
-          account of the system, and expound the actual teachings of the great
-          explorer of the truth, the master-builder of human happiness.
+          {{ getSiteGroup("readyDimQuantityParagraph") | async }}
         </p>
       </div>
       <div class="col-md-6 mt-5 pl-0 pr-0 pt-5 d-flex justify-content-between">
@@ -63,10 +64,10 @@
 <!-- Блок с проектами компании и переход на сайт -->
 
 <section>
-  <div class="col-md-11 m-auto pt-md-5">
+  <div class="inner-container pt-md-5">
     <div class="col-md-6 offset-md-6">
       <h2 class="title-h2 text-uppercase pt-md-5 mt-5 mb-5">
-        Блок с проектами компании и переход на сайт
+        {{ getSiteGroup("readyDimQuantitySecondaryTitle") | async }}
       </h2>
     </div>
   </div>
@@ -76,7 +77,7 @@
         <h3 class="project-block__title">
           Discover new emotions and to be inspired by the local atmosphere
         </h3>
-        <a href="" class="link d-none d-sm-block d-md-block d-lg-block"
+        <a href="" class="link-negative d-none d-sm-block d-md-block d-lg-block"
           >read more</a
         >
       </div>
@@ -86,7 +87,7 @@
         <h3 class="project-block__title">
           Discover new emotions and to be inspired by the local atmosphere
         </h3>
-        <a href="" class="link d-none d-sm-block d-md-block d-lg-block"
+        <a href="" class="link-negative d-none d-sm-block d-md-block d-lg-block"
           >read more</a
         >
       </div>
@@ -110,43 +111,59 @@
 <!-- Структура компании dim group -->
 
 <section>
-  <div class="company-structure col-md-12 pl-md-5 ml-md-auto mr-0 pr-0 pl-0">
+  <div class="company-structure container-left mr-0 pr-0">
     <div class="row justify-content-between">
-      <div class="col-md-6 pl-md-5">
+      <div class="col-md-6 pl-0 ml-0">
         <h2
-          class="company-structure_title col-md-5 title-h2 mt-md-5 pt-md-5 text-uppercase"
+          class="company-structure_title col-md-5 pl-0  title-h2 mt-md-5 pt-md-5 text-uppercase"
         >
-          Структура компании DIM GROup
+          {{ getSiteGroup("readyDimStructureTitle") | async }}
         </h2>
-        <p class="company-structure_paragraph paragraph col-md-8 mt-5 mb-5">
-          But I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born and I will give you a complete
-          account of the system, and expound the actual teachings of the great
-          explorer of the truth, the master-builder of human happiness.
+        <p
+          class="company-structure_paragraph paragraph col-md-8 mt-5 mb-5 pl-0"
+        >
+          {{ getSiteGroup("readyDimStructureParagraph") | async }}
         </p>
 
         <div class="company-structure__counter-container ml-5 pl-5">
           <p class="company-structure__completed-project text-uppercase">
-            Completed <br />
-            project in
-            <span class="company-structure__countries">16 countries</span>
+            {{ getSiteGroup("readyDimStructureParagraphOne") | async }}
+            <span class="company-structure__countries">{{
+              getSiteGroup("readyDimStructureParagraphOneNumber") | async
+            }}</span>
           </p>
           <div class="row col-md-9 pl-0">
             <div class="col-md-3 pl-0">
-              <span class="desc">320</span>
-              <p class="paragraph">Progect</p>
+              <span class="desc">{{
+                getSiteGroup("readyDimNumberOne") | async
+              }}</span>
+              <p class="paragraph">
+                {{ getSiteGroup("readyDimNumberOneText") | async }}
+              </p>
             </div>
             <div class="col-md-3">
-              <span class="desc">180</span>
-              <p class="paragraph">Contractors</p>
+              <span class="desc">{{
+                getSiteGroup("readyDimNumberTwo") | async
+              }}</span>
+              <p class="paragraph">
+                {{ getSiteGroup("readyDimNumberTwoText") | async }}
+              </p>
             </div>
             <div class="col-md-3">
-              <span class="desc">30</span>
-              <p class="paragraph">Years on the market</p>
+              <span class="desc">
+                {{ getSiteGroup("readyDimNumberThree") | async }}</span
+              >
+              <p class="paragraph">
+                {{ getSiteGroup("readyDimNumberThreeText") | async }}
+              </p>
             </div>
             <div class="col-md-3">
-              <span class="desc">15</span>
-              <p class="paragraph">Awards</p>
+              <span class="desc">{{
+                getSiteGroup("readyDimNumberFour") | async
+              }}</span>
+              <p class="paragraph">
+                {{ getSiteGroup("readyDimNumberFourText") | async }}
+              </p>
             </div>
           </div>
         </div>
@@ -202,7 +219,7 @@
 <!-- Сертификат качества -->
 
 <section>
-  <div class="col-md-11 m-auto">
+  <div class="inner-container">
     <div class="row justify-content-between align-items-end">
       <div class="col-md-4">
         <img
@@ -213,14 +230,10 @@
       </div>
       <div class="col-md-5">
         <h2 class="title-h2 text-uppercase">
-          Сертификат <br />
-          качества
+          {{ getSiteGroup("readyDimQualityCertificateTitle") | async }}
         </h2>
         <p class="paragraph col-md-8 mt-5 pl-md-5 ml-md-5">
-          But I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born and I will give you a complete
-          account of the system, and expound the actual teachings of the great
-          explorer of the truth, the master-builder of human happiness.
+          {{ getSiteGroup("readyDimQualityCertificateTParagraph") | async }}
         </p>
       </div>
     </div>

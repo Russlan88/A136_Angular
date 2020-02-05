@@ -1,6 +1,8 @@
 @import "../../styles.scss";
 
-/* First section | Hero style */
+/************************************************************************************************
+                                      HERO SECTION
+*************************************************************************************************/
 
 .app-hero {
   height: 100vh;
@@ -10,50 +12,84 @@
   position: relative;
   overflow: hidden;
 
+  &::before {
+    content: " ";
+    height: 100vh;
+    background: $lightGray;
+    width: 1px;
+    position: absolute;
+    right: 545px;
+  }
+
   &__h1 {
     position: absolute;
-    width: 629px;
-    height: 130px;
-    left: 100px;
+    // width: 50%;
+    // left: 8rem;
     bottom: 155px;
     font-family: Artegra Sans;
     font-style: normal;
     font-weight: 900;
-    font-size: 55px;
-    line-height: 65px;
-    display: flex;
+    font-size: 4rem;
+    // display: -webkit-box;
+    // display: flex;
+    -webkit-box-align: center;
     align-items: center;
     text-transform: uppercase;
     color: $w-color;
+
+    @include for-phone(425) {
+      word-wrap: break-word;
+      padding: 0 4rem;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      bottom: 170px;
+      font-size: 2.8rem;
+    }
   }
 
   &__cta {
     position: absolute;
     bottom: 80px;
-    left: 100px;
+    // left: 15rem;
     color: $w-color;
     border-bottom-color: $w-color;
+
+    @include for-phone(425) {
+      margin: 0 4rem;
+    }
+  }
+
+  &__indicator {
+    width: 10rem;
+    height: 1px;
+    background: #fff;
+  }
+
+  &__plan {
+    font-size: 15px;
+    letter-spacing: 0.1em;
   }
 
   &__watch-block {
     position: absolute;
-    width: 467px;
-    height: 145px;
     right: 0;
     bottom: 0;
     background: #232529;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
-
-    &::before {
-      content: " ";
-      height: 100vh;
-      background: $lightGray;
-      width: 1px;
-      position: absolute;
-      left: -1px;
-    }
+    height: 10rem;
+    padding: 0 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    width: 545px;
+    display: none;
 
     .desc {
       color: $w-color;
@@ -77,14 +113,20 @@
   &__list-social {
     position: absolute;
     bottom: 190px;
-    right: 50px;
+    // right: 50px;
     display: flex;
     justify-content: space-evenly;
-    width: 265px;
+    // width: 265px;
     font-size: 17px;
 
     a {
       color: $w-color;
+    }
+
+    @include for-phone(425) {
+      top: 210px;
+      padding: 0 4rem;
+      bottom: unset;
     }
   }
 
@@ -98,6 +140,15 @@
     right: 915px;
     border-right: 1px solid $lightGray;
 
+    @include for-phone(425) {
+      height: 1480px;
+      width: 210px;
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+      bottom: -502px;
+      right: -182px;
+    }
+
     &::after {
       content: "";
       width: 100vw;
@@ -105,8 +156,21 @@
       position: absolute;
       height: 100%;
       left: 248px;
+
+      @include for-phone(425) {
+        left: 210px;
+      }
     }
   }
+}
+
+/************************************************************************************************
+                                      PLANNING ROOM
+*************************************************************************************************/
+
+.planning-flat {
+  padding-top: 8rem;
+  padding-left: 8rem;
 }
 
 /* Main section */
@@ -120,10 +184,9 @@
       text-transform: uppercase;
 
       &.active {
-        color: $b-color;
+        color: $blackColor;
         background: transparent;
         border-radius: 0;
-        @include link(inherit, inherit);
       }
     }
   }
@@ -143,18 +206,31 @@
 }
 
 .six-elements-section {
+  margin-top: 8rem;
+
   &__grey-figure {
-    background-color: $gt-color;
+    background-color: $l-color;
     height: 810px;
+    width: 8rem;
   }
 
   &__gold-figure {
-    background-color: $gt-color;
+    background-color: $g-text;
     height: 395px;
+  }
+
+  &__figure-lastImg {
+    width: 20rem;
   }
 }
 
+/* ВИБIР КВАРТИРЫ И ПЕРЕХОД */
+
 .apartment-choice {
+  margin-top: 8rem;
+  margin-left: 8rem;
+  margin-bottom: 8rem;
+
   .title-h3 {
     font-weight: 900;
     font-size: 30px;
@@ -162,12 +238,12 @@
   }
 
   &__card {
-    height: 515px;
+    height: 465px;
     width: 530px;
     color: $w-color;
-    background: $gt-color;
-    left: -50px;
-    bottom: -15px;
+    background: $l-color;
+    left: 100px;
+    bottom: -55px;
     z-index: 9;
     padding: 60px;
     text-align: left;
@@ -189,6 +265,42 @@
   }
 }
 
+/* SLIDER */
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+a.carousel-control-next,
+a.carousel-control-prev {
+  position: absolute;
+  top: unset;
+  bottom: 0;
+  width: 10px;
+  background: $darkGray;
+  height: 80px;
+  left: 0;
+  opacity: 1;
+}
+
+.carousel-control span {
+  background-size: inherit;
+}
+
+a.carousel-control-next {
+  left: 110px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
+  transform: rotate(180deg);
+}
+
 /* галерея с фотками о жк */
 
 .gallery-section {
@@ -196,9 +308,68 @@
     height: 527px;
     background: $gold;
     margin-bottom: 8rem;
+    width: 8rem;
   }
 
   &__side-photo {
     margin-top: 20rem;
   }
+}
+
+.infostructure {
+  margin-top: 8rem;
+}
+
+.six-elements-section {
+  .title-h2 {
+    font-size: 60px;
+    margin-left: -265px;
+  }
+}
+
+/************************************************************************************************
+                                      SLIDER - ВИБIР КВАРТИРЫ И ПЕРЕХОД
+*************************************************************************************************/
+
+.apartment-choise-slider {
+  width: 600px;
+  height: 510px;
+  overflow: hidden;
+
+  .carousel-r {
+    height: 100%;
+  }
+
+  .carousel-status {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+  }
+
+  .carousel-cell {
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    counter-increment: carousel-cell;
+  }
+
+  .flickity-viewport,
+  .flickity-slider {
+    height: 100% !important;
+  }
+
+  img {
+    margin-left: 144px;
+  }
+
+  button.flickity-button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.carousel-status {
+  font-size: 18px;
+  color: #fff;
 }

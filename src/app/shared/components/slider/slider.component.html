@@ -1,0 +1,9 @@
+<div class="apartment-choise-slider" #container>
+  <div class="{{flickerId}}" *ngIf="isBrowser">
+    <div class="carousel-cell" *ngFor="let img of images">
+      <img src="{{ img }}" alt="" />
+    </div>
+  </div>
+  <p class="carousel-status"></p>
+</div>
+

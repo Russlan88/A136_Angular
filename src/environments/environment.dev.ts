@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'http://localhost:64524'
+  serverUrl: 'http://a136-ang.svitsoft.com'
 };

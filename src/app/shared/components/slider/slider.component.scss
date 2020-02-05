@@ -1,0 +1,38 @@
+.apartment-choise-slider {
+  width: 600px;
+  height: 510px;
+  overflow: hidden;
+
+  .carousel-r {
+    height: 100%;
+  }
+
+  .carousel-status {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+  }
+
+  .carousel-cell {
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    counter-increment: carousel-cell;
+  }
+
+  .flickity-viewport,
+  .flickity-slider {
+    height: 100% !important;
+  }
+
+  button.flickity-button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.carousel-status {
+  font-size: 18px;
+  color: #fff;
+}
