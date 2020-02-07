@@ -14,7 +14,7 @@
     "build:client-and-server-bundles": "ng build --prod && ng run a136:server:production --bundleDependencies all",
     "bssr:prod": "npm run build:client-and-server-bundles:prod && npm run compile:server",
     "bssr:dev": "npm run build:client-and-server-bundles:dev && npm run compile:server",
-    "build:client-and-server-bundles:prod": "ng build -c=production && ng run a136:server:production --bundleDependencies all",
+    "build:client-and-server-bundles:prod": "ng build -c=production  &&  ng run a136:server:production --bundleDependencies all",
     "build:client-and-server-bundles:dev": "ng build -c=dev && ng run a136:server:production --bundleDependencies all"
   },
   "private": true,

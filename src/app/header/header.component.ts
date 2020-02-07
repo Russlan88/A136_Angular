@@ -66,25 +66,23 @@ export class HeaderComponent implements OnInit {
     /*end test */
   ) {}
 
-  /* test */
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll(e) {
-  //   if (window.pageYOffset > 100) {
-  //     const element = document.querySelector('#navbar-top');
-  //     if (element) {
-  //       element.classList.remove('navbar-transparent');
-  //       element.classList.add('sticky-header');
-  //     }
-  //   } else {
-  //     const element = document.querySelector('#navbar-top');
-  //     if (element) {
-  //       element.classList.add('navbar-transparent');
-  //       element.classList.remove('sticky-header');
-  //     }
-  //   }
-  // }
 
-  /* end test */
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    if (window.pageYOffset > 100) {
+      const element = document.querySelector('#navbar-top');
+      if (element) {
+        element.classList.remove('navbar-transparent');
+        element.classList.add('sticky-header');
+      }
+    } else {
+      const element = document.querySelector('#navbar-top');
+      if (element) {
+        element.classList.add('navbar-transparent');
+        element.classList.remove('sticky-header');
+      }
+    }
+  }
 
   ngOnInit() {
     this.form = this._fb.group({

@@ -91,3 +91,25 @@
     flex-basis: 14vw;
   }
 }
+
+.dim__preview {
+  position: relative;
+  background: url('../../assets/images/Dim/A136__quantity-img.png');
+  height: 960px;
+  max-width: 1050px;
+  background-size: 122rem;
+  background-position: -721px -1160px;
+  margin-top: 16rem;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: $w-color;
+  }
+}

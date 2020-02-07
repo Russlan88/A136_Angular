@@ -1,9 +1,18 @@
 <div class="apartment-choise-slider" #container>
-  <div class="{{flickerId}}" *ngIf="isBrowser">
+  <div class="{{flickerId}} slider-container" *ngIf="isBrowser">
     <div class="carousel-cell" *ngFor="let img of images">
       <img src="{{ img }}" alt="" />
     </div>
   </div>
   <p class="carousel-status"></p>
+</div>
+<div *ngIf="keyDate && keyDate.length">
+  {{ getRes(keyDate) | async }}
+</div>
+<div *ngIf="keyType && keyType.length">
+  {{ getRes(keyType) | async }}
+</div>
+<div class="float-text" *ngIf="keyText && keyText.length">
+  {{ getRes(keyText) | async }}
 </div>
 

@@ -18,7 +18,8 @@ export class LanguageInterceptor implements HttpInterceptor {
     const lang: string = this._langService.getLang() || EnumLanguages.UKRAINIAN;
     cloneReq = req.clone({
       setHeaders: {
-        lang
+        lang,
+        'Access-Control-Allow-Origin': '*'
       },
     });
     return next.handle(cloneReq);

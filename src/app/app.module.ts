@@ -30,7 +30,6 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LanguageInterceptor } from './interceptors/lang.interceptor';
 import { PurchaseTermsComponent } from './purchase-terms/purchase-terms.component';
-import { ApartmentsFilterComponent } from './apartments-filter/apartments-filter.component';
 import { BuildingProcessSeptemberComponent } from './building-process-september/building-process-september.component';
 import { SharedModule } from './shared/shared.module';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -70,7 +69,6 @@ export function getEnv(): any {
     NewsListComponent,
     DevelopmentTechnologyComponent,
     PurchaseTermsComponent,
-    ApartmentsFilterComponent,
     BuildingProcessSeptemberComponent,
     AboutUsComponent
   ],

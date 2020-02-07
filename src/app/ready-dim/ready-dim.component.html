@@ -1,3 +1,17 @@
+<!-- <app-slider 
+   [images]="imageSource"
+   [keyText]="'sliderText'"
+   [keyDate]="'adress'"
+   [keyType]="'adress'"
+  >
+</app-slider>
+
+<app-slider [images]="imageSource"
+   [keyText]="'sliderText'"
+   [keyDate]="'adress'"
+   [keyType]="'adress'">
+</app-slider> -->
+
 <section class="dim">
   <div class="inner-container pb-5">
     <div class="row align-items-center">
@@ -49,14 +63,9 @@
           {{ getSiteGroup("readyDimQuantityParagraph") | async }}
         </p>
       </div>
-      <div class="col-md-6 mt-5 pl-0 pr-0 pt-5 d-flex justify-content-between">
-        <div class="col-md-6 pl-0 pr-2">
-          <img src="../../assets/images/Dim/A136_dim-left.png" alt="" />
-        </div>
-        <div class="col-md-6 pl-2 pr-0">
-          <img src="../../assets/images/Dim/A136_dim-right.jpg" alt="" />
-        </div>
-      </div>
+        <figure class="dim__preview pl-0 pr-0 ">
+         
+        </figure>
     </div>
   </div>
 </section>
@@ -242,7 +251,7 @@
 
 <!-- НОВОСТИ И АКЦИИ -->
 
-<section>
+<!-- <section>
   <div class="col-md-11 m-auto mb-5 ">
     <div class="row mr-0 align-items-center">
       <div class="col-md-10">
@@ -305,4 +314,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+<app-slider class="carousel-news" [opt]="optOne" [images]="imageSource" [keyText]="'sliderText'" [keyDate]="'adress'" [keyType]="'adress'">
+</app-slider>

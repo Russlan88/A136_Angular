@@ -3,7 +3,8 @@
   <div class="head-section__main-container inner-container ">
     <div class="head-section__section-title row documentation">
       <h1 class="head-section__title title-h1">
-        ДОКУМЕНТАЦИЯ
+        {{ getSiteGroup("documentsTitle") | async }}
+        
       </h1>
     </div>
     <div class="documentation__row">
@@ -20,30 +21,27 @@
           <a href="#"
             ><img src="./assets/images/Documentation/A136__pdf-icon.png" alt=""
           /></a>
-          <p>
-            Дозвіл на виконання будівельних робіт виданий Управлінням державного
-            архітектурно-будівельного контролю м. Києва № ІУ ‎113190111308 від
-            11.01.2019
+          <p class="paragraph">
+            {{ getSiteGroup("documentsParagraph") | async }}
+            
           </p>
         </li>
         <li class="documentation__item pt-5 pb-5">
           <a href="#"
             ><img src="./assets/images/Documentation/A136__pdf-icon.png" alt=""
           /></a>
-          <p>
-            Дозвіл на виконання будівельних робіт виданий Управлінням державного
-            архітектурно-будівельного контролю м. Києва № ІУ ‎113190111308 від
-            11.01.2019
+          <p class="paragraph">
+            {{ getSiteGroup("documentsParagraphTwo") | async }}
+            
           </p>
         </li>
         <li class="documentation__item pt-5 pb-5">
           <a href="#"
             ><img src="./assets/images/Documentation/A136__pdf-icon.png" alt=""
           /></a>
-          <p>
-            Дозвіл на виконання будівельних робіт виданий Управлінням державного
-            архітектурно-будівельного контролю м. Києва № ІУ ‎113190111308 від
-            11.01.2019
+          <p class="paragraph">
+            {{ getSiteGroup("documentsParagraphThree") | async }}
+            
           </p>
         </li>
       </ul>

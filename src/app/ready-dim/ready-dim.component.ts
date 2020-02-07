@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { LangService } from '@services/lang/lang.service';
 import { GgroupService } from '@services/sitegroup/sitegroup.service';
 import { mergeMap } from 'rxjs/operators';
@@ -7,11 +7,23 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-ready-dim',
   templateUrl: './ready-dim.component.html',
-  styleUrls: ['./ready-dim.component.scss']
+  styleUrls: ['./ready-dim.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReadyDimComponent implements OnInit {
+  imageSource = [
+    'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+    'assets/images/home-page/slider-planning/A136__apartment-check.jpg'
+  ];
+
 
   readonly route = 'ready-dim';
+  imagesForSomeSliderOne: string[];
+  optOne = {
+    imagesLoaded: true,
+    percentPosition: false,
+    container: true
+  };
   constructor(
     private _langServ: LangService,
     private _siteGroup: GgroupService

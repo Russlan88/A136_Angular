@@ -22,6 +22,82 @@ a:focus {
 
 @import "../src/assets/scss/mixins/_mixins.scss";
 
+
+
+/************************************************************************************************
+                                      PRELOADER
+*************************************************************************************************/
+
+body,
+html {
+  height: 100%;
+}
+
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__iframe-container {
+    width: 250px;
+    height: 250px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  &.spinner {
+    height: 200px;
+    width: 200px;
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &.path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+  }
+}
+
+
+
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
 .head-section {
   position: relative;
   overflow: hidden;
@@ -109,7 +185,7 @@ a.carousel-control-next {
   background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
 }
 
-ul > li {
+ul>li {
   list-style: none;
 }
 
@@ -527,27 +603,51 @@ img {
 }
 
 .apartment-choise-slider {
-  button.flickity-button {
-    position: absolute;
-    right: 90px;
-    bottom: 0px;
-    border: none;
-    background-color: white;
-    width: 50px;
-    height: 50px;
+  .slider-container {
+    position: relative;
+    height: 100%;
 
-    &.previous {
-      right: 150px;
+    .flickity-button {
+      position: absolute;
+      right: 90px;
+      bottom: 0px;
+      border: none;
+      background-color: white;
+      width: 50px;
+      height: 50px;
+
+      &.previous {
+        right: 150px;
+      }
     }
   }
 }
 
-/* App slider */
 
-app-slider {
-  position: relative;
-  margin-right: 250px;
-  .flickity-page-dots {
-    display: none;
+
+/**/
+
+.carousel-news {
+  .apartment-choise-slider {
+    // width: 33.3% !important;
+    overflow: visible !important;
+  }
+
+  .carousel-cell {
+    width: 32%;
+    height: 200px;
+    margin-right: 10px;
+    bottom: 0px;
+    background: #a0279d;
+    counter-increment: gallery-cell;
+    transition: all .5s;
+  }
+
+  .carousel-cell {
+    &.is-selected {
+      background: #2b2fb9;
+      height: 400px;
+      width: 60%;
+    }
   }
 }
