@@ -318,16 +318,39 @@ a.carousel-control-next {
     background: $gold;
     margin-bottom: 14rem;
     width: 8rem;
-    @include for-phone(425) {
-      height: 22rem;
+
+    @include for-desktop {
+      height: 23rem;
       width: 10%;
-      margin-bottom: 25rem;
+      margin-bottom: 13rem;
+    }
+
+    @include for-tablet-portrait {
+      height: 23rem;
+      width: 10%;
+      margin-bottom: 13rem;
+    }
+    @include for-phone(553) {
+      height: 19rem;
+      width: 10%;
+      margin-bottom: 6rem;
+    }
+    @include for-phone(425) {
+      height: 23rem;
+      width: 10%;
+      margin-bottom: 16rem;
     }
   }
 
   &__right-container {
     width: 93%;
     flex-direction: column;
+    @include for-desktop {
+      width: 90%;
+    }
+    @include for-tablet-portrait {
+      width: 90%;
+    }
     @include for-phone(425) {
       width: 90%;
     }
@@ -342,20 +365,56 @@ a.carousel-control-next {
   }
 
   &__preview-one {
-    width: 590px;
+    width: 35rem;
+    @include for-phone(1420) {
+      width: 29rem;
+    }
+    @include for-desktop {
+      width: 17rem;
+    }
+    @include for-tablet-portrait {
+      width: 17rem;
+    }
+
+    @include for-phone(553) {
+      width: 11rem;
+    }
     @include for-phone(425) {
       width: 146px;
     }
   }
 
   &__preview-two {
-    width: 17rem;
-    margin-right: 8rem;
-    margin-top: 165px;
+    width: 19rem;
+    margin-right: 5rem;
+    margin-top: 14rem;
+    margin-left: 5rem;
+    @include for-phone(1420) {
+      width: 15rem;
+    }
+    @include for-desktop {
+      width: 9rem;
+      margin-top: 7rem;
+      margin-right: 3rem;
+      margin-left: 2rem;
+    }
+    @include for-tablet-portrait {
+      width: 9rem;
+      margin-top: 7rem;
+      margin-right: 3rem;
+      margin-left: 2rem;
+    }
+    @include for-phone(553) {
+      width: 8rem;
+      margin-top: 7rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
     @include for-phone(425) {
       width: 6rem;
       margin-top: 2rem;
       margin-right: 3rem;
+      margin-left: 2rem;
     }
   }
 
@@ -363,8 +422,16 @@ a.carousel-control-next {
     width: 64%;
     margin-left: 11rem;
     margin-top: 6rem;
+    @include for-desktop {
+      width: 80%;
+      margin-left: 2rem;
+    }
+    @include for-tablet-portrait {
+      width: 80%;
+      margin-left: 2rem;
+    }
     @include for-phone(425) {
-      width: 65%;
+      width: 80%;
       margin-left: 2rem;
     }
   }
@@ -373,6 +440,12 @@ a.carousel-control-next {
     text-transform: uppercase;
     font-weight: 900;
     font-size: 3rem;
+    @include for-desktop {
+      font-size: 2rem;
+    }
+    @include for-tablet-portrait {
+      font-size: 2rem;
+    }
     @include for-phone(425) {
       font-size: 2rem;
     }
@@ -382,6 +455,12 @@ a.carousel-control-next {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @include for-desktop {
+      width: 100%;
+    }
+    @include for-tablet-portrait {
+      width: 100%;
+    }
     @include for-phone(425) {
       width: 100%;
     }
@@ -400,17 +479,43 @@ a.carousel-control-next {
 
   &__inner-container {
     width: 90%;
+    @include for-tablet-portrait {
+      width: 100%;
+    }
   }
 
   &__side-photo {
     margin-top: 27rem;
     width: 55rem;
     margin-bottom: 8rem;
+    @include for-desktop {
+      margin-top: 13rem;
+      overflow: hidden;
+      width: 65%;
+      height: 440px;
+      margin-bottom: 0rem;
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+    @include for-tablet-portrait {
+      margin-top: 13rem;
+      overflow: hidden;
+      width: 65%;
+      height: 360px;
+      margin-bottom: 0rem;
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
     @include for-phone(425) {
       margin-top: 16rem;
       overflow: hidden;
       width: 15%;
-      height: 360px;
+      height: 24rem;
+      margin-bottom: 0rem;
       img {
         width: auto;
         height: 100%;
@@ -420,6 +525,20 @@ a.carousel-control-next {
 
   &__bottom-preview {
     padding: 0 18rem;
+    @include for-desktop {
+      width: 100%;
+      padding: unset;
+      margin-top: 5rem;
+      overflow: hidden;
+      padding: 0 2rem;
+    }
+    @include for-tablet-portrait {
+      width: 100%;
+      padding: unset;
+      margin-top: 5rem;
+      overflow: hidden;
+      padding: 0 2rem;
+    }
     @include for-phone(425) {
       width: 100%;
       padding: unset;
