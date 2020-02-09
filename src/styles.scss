@@ -597,43 +597,53 @@ img {
   right: 40%;
 }
 
+/************************************************************************************************
+                                      CAROUSEL - NEWS & PROMOTIONS
+*************************************************************************************************/
+
 .apartment-choise-slider {
+  height: 400px;
+  .flickity-slider {
+    height: 100%;
+  }
   .slider-container {
     position: relative;
     height: 100%;
+    overflow: hidden;
+  }
 
-    .flickity-button {
-      position: absolute;
-      right: 90px;
-      bottom: 0px;
-      border: none;
-      background-color: white;
-      width: 50px;
-      height: 50px;
-
-      &.previous {
-        right: 150px;
-      }
-    }
+  .flickity-viewport {
+    height: 550px !important;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
   }
 }
 
 /**/
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8c8;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
+.carousel {
+  background: #eee;
 }
 
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
+.carousel-cell {
+  width: 28%;
+  height: 200px;
+  margin-right: 10px;
+  bottom: 0px;
+  counter-increment: gallery-cell;
+  transition: all 0.5s;
+  @include for-phone(425) {
+    width: 50%;
+  }
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.carousel-cell.is-selected {
+  height: 400px;
+  @include for-phone(425) {
+    height: 320px;
+  }
 }

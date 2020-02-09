@@ -26,7 +26,10 @@ export class MainComponent implements OnInit {
 	readonly route = 'main';
 	imagesForSomeSliderOne: string[];
 	optOne = {
-		draggable: true
+		draggable: true,
+		cellAlign: 'left',
+		prevNextButtons: false,
+		pageDots: false
 	};
 	imagesForSomeSliderTwo: string[];
 	constructor(
@@ -67,6 +70,12 @@ export class MainComponent implements OnInit {
 		 * init two mock array for passing them in <app-slider>
 		 *********************************************************************************************/
 		this.imagesForSomeSliderOne = [
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
