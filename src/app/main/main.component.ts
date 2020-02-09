@@ -31,7 +31,17 @@ export class MainComponent implements OnInit {
 		prevNextButtons: false,
 		pageDots: false
 	};
-	imagesForSomeSliderTwo: string[];
+	imageSource: string[];
+	optTwo = {
+		draggable: true,
+		groupCells: 2
+	};
+	imageSquere: string[];
+	optionSquere = {
+		draggable: true,
+		pageDots: false
+	};
+
 	constructor(
 		private _langServ: LangService,
 		private _resource: ResourcesDataServicesService,
@@ -83,7 +93,23 @@ export class MainComponent implements OnInit {
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg'
 		];
 
-		this.imagesForSomeSliderTwo = [
+		this.imageSource = [
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
+			'assets/images/home-page/slider-planning/A136__apartment-check.jpg'
+		];
+
+		this.imageSquere = [
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',
 			'assets/images/home-page/slider-planning/A136__apartment-check.jpg',

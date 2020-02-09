@@ -298,7 +298,7 @@
 
 <!-- выбор квартиры и переход -->
 
-<section style="display: none;">
+<section>
   <div class="apartment-choice">
     <div class="apartment-choice__row row justify-content-between p-0 m-0">
       <div class="apartment-choice__left-container col-md-4 pt-5 pl-0 pr-0">
@@ -357,10 +357,7 @@
       <div
         class="apartment-choice__img-container col-md-6 position-relative d-flex align-items-start justify-content-end pb-5 pr-0"
       >
-        <div
-          class="apartment-choice__card card-img-top position-absolute"
-          style="display: none;"
-        >
+        <div class="apartment-choice__card card-img-top position-absolute">
           <h3 class="title-h3 text-uppercase">
             {{ getSiteGroup("main__choiceRoom-slider-title") | async }}
           </h3>
@@ -370,56 +367,21 @@
           <a href="#" class="link underline pr-5 pb-3">watch more</a>
         </div>
 
-        <!-- Slider images ВИБIР КВАРТИРЫ И ПЕРЕХОД -->
-        <app-slider [images]="imagesForSomeSliderOne" [opt]="optOne">
-        </app-slider>
-
-        <!-- <div class="apartment-choise-slider">
-          <div class="carousel-r">
-            <div class="carousel-cell">
-              <img
-                src="assets/images/home-page/slider-planning/A136__apartment-check.jpg"
-                alt=""
-              />
-            </div>
-            <div class="carousel-cell">
-              <img
-                src="assets/images/home-page/slider-planning/A136__apartment-check.jpg"
-                alt=""
-              />
-            </div>
-            <div class="carousel-cell">
-              <img
-                src="assets/images/home-page/slider-planning/A136__apartment-check.jpg"
-                alt=""
-              />
-            </div>
-            <div class="carousel-cell">
-              <img
-                src="assets/images/home-page/slider-planning/A136__apartment-check.jpg"
-                alt=""
-              />
-            </div>
-            <div class="carousel-cell">
-              <img
-                src="assets/images/home-page/slider-planning/A136__apartment-check.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-          <p class="carousel-status"></p>
-        </div> -->
-
-        <!-- <img
-          class="col-md-12 pr-0"
-          src="./assets/images/home-page/slider-planning/A136__apartment-check.jpg"
-        /> -->
+        <!------------------------------
+        ------------------------------
+        CAROUSEL - выбор квартиры и переход
+        ------------------------------
+      ---------------------------------->
+        <div class="square-slider">
+          <app-slider [images]="imagesForSomeSliderOne" [opt]="optionSquere">
+          </app-slider>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="display: none;">
+<section>
   <img
     src="./assets/images/home-page/A136__full-img.jpg"
     class="img-fluid"
@@ -427,9 +389,25 @@
   />
 </section>
 
-<section style="display: none;">
-  <!-- here will be a slider -->
-</section>
+<!------------------------------
+  ------------------------------
+   CAROUSEL - БЛОК О ЖК ПЕРЕХОД В РАЗДЕЛ
+  ------------------------------
+---------------------------------->
+
+<!-- <section>
+  <div class="inner-container">
+    <app-slider
+      class="double-slider"
+      [opt]="optTwo"
+      [images]="imageSource"
+      [keyText]="'sliderText'"
+      [keyDate]="'adress'"
+      [keyType]="'adress'"
+    >
+    </app-slider>
+  </div>
+</section> -->
 
 <section style="display: none;">
   <div
@@ -570,13 +548,13 @@
   </div>
 </section>
 
-<!-- НОВОСТИ И АКЦИИ -->
+<!------------------------------
+  ------------------------------
+   CAROUSEL - NEWS & PROMOTIONS 
+  ------------------------------
+---------------------------------->
 
-<app-slider
-  class="carousel-news"
-  [opt]="optOne"
-  [images]="imagesForSomeSliderOne"
->
+<app-slider class="" [opt]="optOne" [images]="imagesForSomeSliderOne">
 </app-slider>
 
 <section style="display: none;">

@@ -608,3 +608,56 @@ a.carousel-control-next {
   font-size: 18px;
   color: #fff;
 }
+
+/************************************************************************************************
+                                      SLIDER - БЛОК О ЖК ПЕРЕХОД В РАЗДЕЛ
+*************************************************************************************************/
+
+.double-slider {
+  .main-slider {
+    height: 400px;
+
+    &__slider-container {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      .flickity-slider {
+        height: 100%;
+      }
+
+      .flickity-viewport {
+        height: 550px !important;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      .carousel-cell {
+        width: 28%;
+        height: 200px;
+        margin-right: 10px;
+        bottom: 0px;
+        counter-increment: gallery-cell;
+        transition: all 0.5s;
+
+        @include for-phone(425) {
+          width: 50%;
+        }
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &.is-selected {
+        height: 400px;
+        padding-right: 50px;
+
+        @include for-phone(425) {
+          height: 320px;
+        }
+      }
+    }
+  }
+}
