@@ -301,18 +301,134 @@ a.carousel-control-next {
   transform: rotate(180deg);
 }
 
+/************************************************************************************************
+                                    SECTION | ГАЛЕРЕЯ С ФОТКАМИ О ЖК
+*************************************************************************************************/
 /* галерея с фотками о жк */
 
 .gallery-section {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  width: 100%;
+
   &__gold-figure {
-    height: 527px;
+    height: 595px;
     background: $gold;
-    margin-bottom: 8rem;
+    margin-bottom: 14rem;
     width: 8rem;
+    @include for-phone(425) {
+      height: 22rem;
+      width: 10%;
+      margin-bottom: 25rem;
+    }
+  }
+
+  &__right-container {
+    width: 93%;
+    flex-direction: column;
+    @include for-phone(425) {
+      width: 90%;
+    }
+  }
+
+  &__main-images {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+
+  &__preview-one {
+    width: 590px;
+    @include for-phone(425) {
+      width: 146px;
+    }
+  }
+
+  &__preview-two {
+    width: 17rem;
+    margin-right: 8rem;
+    margin-top: 165px;
+    @include for-phone(425) {
+      width: 6rem;
+      margin-top: 2rem;
+      margin-right: 3rem;
+    }
+  }
+
+  &__text-container {
+    width: 64%;
+    margin-left: 11rem;
+    margin-top: 6rem;
+    @include for-phone(425) {
+      width: 65%;
+      margin-left: 2rem;
+    }
+  }
+
+  &__main-title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+    @include for-phone(425) {
+      font-size: 2rem;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include for-phone(425) {
+      width: 100%;
+    }
+    &_secondary {
+      flex-direction: column;
+    }
+  }
+
+  &__main-image {
+    width: 60rem;
+  }
+
+  &__paragraph {
+    @extend .paragraph;
+  }
+
+  &__inner-container {
+    width: 90%;
   }
 
   &__side-photo {
-    margin-top: 20rem;
+    margin-top: 27rem;
+    width: 55rem;
+    margin-bottom: 8rem;
+    @include for-phone(425) {
+      margin-top: 16rem;
+      overflow: hidden;
+      width: 15%;
+      height: 360px;
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+
+  &__bottom-preview {
+    padding: 0 18rem;
+    @include for-phone(425) {
+      width: 100%;
+      padding: unset;
+      margin-top: 5rem;
+      overflow: hidden;
+      img {
+        margin-left: 2rem;
+      }
+    }
   }
 }
 

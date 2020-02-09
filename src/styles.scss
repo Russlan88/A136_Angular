@@ -22,8 +22,6 @@ a:focus {
 
 @import "../src/assets/scss/mixins/_mixins.scss";
 
-
-
 /************************************************************************************************
                                       PRELOADER
 *************************************************************************************************/
@@ -71,9 +69,6 @@ html {
     }
   }
 }
-
-
-
 
 @keyframes rotate {
   100% {
@@ -185,7 +180,7 @@ a.carousel-control-next {
   background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
 }
 
-ul>li {
+ul > li {
   list-style: none;
 }
 
@@ -623,31 +618,22 @@ img {
   }
 }
 
-
-
 /**/
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8c8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
 
-.carousel-news {
-  .apartment-choise-slider {
-    // width: 33.3% !important;
-    overflow: visible !important;
-  }
-
-  .carousel-cell {
-    width: 32%;
-    height: 200px;
-    margin-right: 10px;
-    bottom: 0px;
-    background: #a0279d;
-    counter-increment: gallery-cell;
-    transition: all .5s;
-  }
-
-  .carousel-cell {
-    &.is-selected {
-      background: #2b2fb9;
-      height: 400px;
-      width: 60%;
-    }
-  }
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
 }
