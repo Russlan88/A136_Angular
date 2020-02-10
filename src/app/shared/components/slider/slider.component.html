@@ -1,7 +1,18 @@
 <div class="main-slider" #container>
   <div class="{{ flickerId }} main-slider__slider-container" *ngIf="isBrowser">
-    <div class="carousel-cell" *ngFor="let img of images">
-      <img src="{{ img }}" alt="" />
+    <div class="carousel-cell" *ngFor="let item of data">
+      <img src="{{ item.image }}" alt="" />
+      <div class="main-slider__description-container">
+        <div class="main-slider__date-type">
+          <div class="main-slider__date" *ngIf="item.date && item.date.length">{{item.date}}</div>
+          <div class="main-slider__type" *ngIf="item.type && item.type.length">{{item.type}}</div>
+        </div>
+        <div class="main-slider__title">
+          <div *ngIf="item.text && item.text.length">{{item.text}}</div>
+        </div>
+
+      </div>
+
     </div>
   </div>
   <p class="main-slider__carousel-status"></p>

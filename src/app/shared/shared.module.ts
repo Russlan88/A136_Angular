@@ -7,6 +7,6 @@ import { SliderComponent } from './components/slider/slider.component';
   imports: [
     CommonModule
   ],
-  exports:[ SliderComponent ]
+  exports: [ SliderComponent ]
 })
 export class SharedModule { }

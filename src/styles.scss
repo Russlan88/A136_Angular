@@ -180,7 +180,7 @@ a.carousel-control-next {
   background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
 }
 
-ul > li {
+ul>li {
   list-style: none;
 }
 
@@ -252,6 +252,7 @@ a {
 
   @include for-phone(425) {
     justify-content: space-between;
+    padding: 0 2rem;
   }
 }
 
@@ -277,6 +278,10 @@ input {
   color: $gl-color;
   font-weight: 500;
 }
+
+
+
+
 
 /* Gallery */
 
@@ -598,53 +603,222 @@ img {
 }
 
 /************************************************************************************************
-                                      CAROUSEL - NEWS & PROMOTIONS
+                                   SECTION - TABS WITH SLIDER
 *************************************************************************************************/
 
-.main-slider {
-  height: 400px;
+.tabs-slider {
+  margin-top: 8rem;
 
-  &__slider-container {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
+  .square-slider {
+    &.negative {
 
-    .flickity-slider {
-      height: 100%;
-    }
-
-    .flickity-viewport {
-      height: 550px !important;
-      position: absolute;
-      bottom: 0px;
-      width: 100%;
-    }
-
-    .carousel-cell {
-      width: 28%;
-      height: 200px;
-      margin-right: 10px;
-      bottom: 0px;
-      counter-increment: gallery-cell;
-      transition: all 0.5s;
-      @include for-phone(425) {
-        width: 50%;
+      .main-slider {
+        position: relative;
       }
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
-    }
 
-    .carousel-cell.is-selected {
-      height: 400px;
-      padding-right: 50px;
-      @include for-phone(425) {
-        height: 320px;
+      .flickity-prev-next-button.previous {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background-repeat: no-repeat;
+        background: $l-color;
+        width: 90px;
+        padding: 20px 37px;
+        height: 90px;
+        background-position: center center;
+
+        svg {
+          fill: $w-color;
+        }
+
+        &::after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+        }
+      }
+
+      .flickity-prev-next-button.next {
+        position: absolute;
+        bottom: 0px;
+        left: 89px;
+        background-repeat: no-repeat;
+        background: $l-color;
+        width: 90px;
+        padding: 20px 37px;
+        height: 90px;
+        background-position: center center;
+
+        svg {
+          fill: $w-color;
+        }
+
+        &::after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+        }
       }
     }
   }
+
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  .tabs {
+    margin-top: 2rem;
+    display: block;
+
+    .nav-tabs {
+      border: none;
+
+      a {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: $n-color;
+
+        &:hover {
+          border: none;
+        }
+
+        &.active {
+          font-weight: 500;
+          color: $b-color;
+          position: relative;
+          border: none;
+          padding-left: 0px;
+          padding-right: 0px;
+
+          &::after {
+            content: "";
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            background: $b-color;
+            ;
+            bottom: 0px;
+            left: 0px;
+          }
+        }
+      }
+
+    }
+
+    &__tab {
+      width: 40%;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__inner-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__content {
+      width: 50%;
+      margin-bottom: 50px;
+    }
+
+    &__paragraph {
+      @extend .paragraph;
+      margin: 50px 0;
+    }
+  }
 }
+
+
+/************************************************************************************************
+                                      CAROUSEL - NEWS & PROMOTIONS
+*************************************************************************************************/
+.news-promotions {
+  .main-slider {
+    height: 700px;
+
+    &__date-type {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 35px;
+    }
+
+    &__date,
+    &__type {
+      font-size: 12px;
+      line-height: 12px;
+      color: $gt-color;
+      margin: 15px 0;
+
+    }
+
+    &__slider-container {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      .flickity-slider {
+        height: 100%;
+      }
+
+      .flickity-viewport {
+        height: 550px !important;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      .carousel-cell {
+        width: 28%;
+        height: 300px;
+        margin-right: 10px;
+        bottom: 0px;
+        counter-increment: gallery-cell;
+        transition: all 0.5s;
+        margin-bottom: 150px;
+
+        @include for-phone(425) {
+          width: 50%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .carousel-cell.is-selected {
+        height: 500px;
+        padding-right: 50px;
+
+        @include for-phone(425) {
+          height: 320px;
+        }
+      }
+    }
+
+    &__carousel-status{
+      display: none;
+    }
+  }
+
+
+}
+
+
+
+
+
 
 /************************************************************************************************
                                       SLIDER - БЛОК О ЖК ПЕРЕХОД В РАЗДЕЛ
@@ -718,8 +892,11 @@ img {
 .square-slider {
   width: 670px;
   height: 615px;
+
   .main-slider {
     height: 100%;
+
+
 
     &__slider-container {
       position: relative;
@@ -735,6 +912,7 @@ img {
         position: absolute;
         bottom: 0px;
         width: 100%;
+        overflow-x: hidden;
       }
 
       .carousel-cell {
@@ -743,9 +921,11 @@ img {
         margin-right: 10px;
         bottom: 0px;
         transition: all 0.5s;
+
         @include for-phone(425) {
           width: 50%;
         }
+
         img {
           height: 100%;
           object-fit: cover;
@@ -755,26 +935,52 @@ img {
       .carousel-cell.is-selected {
         padding: 0;
         bottom: 0;
+
         &::after {
           content: none;
         }
+
         @include for-phone(425) {
           height: 320px;
         }
       }
     }
+
     &__carousel-status {
       width: 150px;
       position: absolute;
       right: 0px;
       top: 110px;
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+      color: $w-color;
+
+      &::first-letter {
+        font-size: 2.4rem;
+      }
+    }
+
+    .flickity-prev-next-button {
+      border: none;
+      background-color: transparent;
+      background-repeat: no-repeat;
     }
 
     .flickity-prev-next-button.previous {
       background-repeat: no-repeat;
       position: absolute;
-      bottom: -80px;
-      right: 30px;
+      bottom: -90px;
+      right: 160px;
+      background: url("assets/images/general/arrow/arrow-left.png");
+      background-repeat: no-repeat;
+    }
+
+    .flickity-prev-next-button.next {
+      position: absolute;
+      bottom: -90px;
+      right: 110px;
+      background: url("assets/images/general/arrow/arrow-right.png");
+      background-repeat: no-repeat;
     }
   }
 }

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'http://dimapi.svitsoft.com'
+  serverUrl: 'https://dimapi.svitsoft.com'
 };

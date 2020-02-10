@@ -2,7 +2,11 @@
 
 
 .gallery {
-    padding: 0;
+    padding: 0 0 8rem 0;
+
+    @include for-phone(425) {
+        padding: 0 0 5rem 0;
+    }
 
     &__container {
         max-width: 100%;
@@ -128,6 +132,11 @@
             /* NEW - Chrome */
             display: flex;
 
+        }
+
+        @include for-phone(425) {
+            width: 100%;
+            margin-top: 1rem;
         }
 
         &:nth-of-type(9n-7) {

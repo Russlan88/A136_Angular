@@ -33,6 +33,8 @@ import { PurchaseTermsComponent } from './purchase-terms/purchase-terms.componen
 import { BuildingProcessSeptemberComponent } from './building-process-september/building-process-september.component';
 import { SharedModule } from './shared/shared.module';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ApartmentsFilterComponent } from './apartments-filter/apartments-filter.component';
+import { LayoutDescriptionComponent } from './layout-description/layout-description.component';
 
 export const SITE_VARIABLES: ISiteVariables = {
   /**
@@ -50,38 +52,40 @@ export function getEnv(): any {
 }
 @NgModule({
   declarations: [
-    AppComponent,
-    MainComponent,
-    HeaderComponent,
-    FooterComponent,
-    LandComponent,
     AboutComplexComponent,
     AboutDeveloperComponent,
-    ByeConditionsComponent,
-    DocumentsComponent,
-    ContactsComponent,
-    ReadyDimComponent,
+    AboutUsComponent,
+    ApartmentsFilterComponent,
+    AppComponent,
     BuildingProcessComponent,
-    SelectFlatComponent,
+    BuildingProcessSeptemberComponent,
+    ByeConditionsComponent,
+    ContactsComponent,
+    DevelopmentTechnologyComponent,
+    DocumentsComponent,
     FlatsComponent,
+    FooterComponent,
     GalleryComponent,
+    HeaderComponent,
+    LandComponent,
+    LayoutDescriptionComponent,
+    MainComponent,
     NewsComponent,
     NewsListComponent,
-    DevelopmentTechnologyComponent,
     PurchaseTermsComponent,
-    BuildingProcessSeptemberComponent,
-    AboutUsComponent
+    ReadyDimComponent,
+    SelectFlatComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    NgbModule,
-    TabsModule.forRoot(),
-    FormsModule,
-    SpmCoreModule.forRoot(getEnv()),
-    ReactiveFormsModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ButtonsModule.forRoot(),
-    SharedModule
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    SharedModule,
+    SpmCoreModule.forRoot(getEnv()),
+    TabsModule.forRoot()
   ],
   providers: [
     { provide: 'APP_CONFIG', useValue: SITE_VARIABLES },
