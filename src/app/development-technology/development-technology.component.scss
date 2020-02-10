@@ -4,7 +4,7 @@
   .figured {
     width: 40rem;
 
-    @include for-phone(1275px) {
+    @include for-desktop {
       width: 30rem;
     }
 
@@ -18,11 +18,15 @@
     }
   }
 
+  .text-content {
+    order: 2;
+  }
+
   .ordered {
     order: 1;
 
-    @include for-phone(991px) {
-      order: 2;
+    @include for-phone(768px) {
+      order: 1;
     }
   }
 
@@ -45,6 +49,11 @@
     padding-left: 60px;
     line-height: 30px;
     margin-bottom: 20px;
+
+    @include for-desktop {
+      font-size: 0.9rem;
+      line-height: 23px;
+    }
 
     @include for-phone(425px) {
       font-size: 16px;

@@ -180,7 +180,7 @@ a.carousel-control-next {
   background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
 }
 
-ul>li {
+ul > li {
   list-style: none;
 }
 
@@ -258,10 +258,24 @@ a {
 
 .container-left {
   padding-left: 8rem;
+  @include for-tablet-landscape {
+    padding-left: 4rem;
+  }
+
+  @include for-phone(425) {
+    padding-left: 2rem;
+  }
 }
 
 .container-right {
   padding-right: 8rem;
+  @include for-tablet-landscape {
+    padding-right: 4rem;
+  }
+
+  @include for-phone(425) {
+    padding-right: 2rem;
+  }
 }
 
 input {
@@ -278,10 +292,6 @@ input {
   color: $gl-color;
   font-weight: 500;
 }
-
-
-
-
 
 /* Gallery */
 
@@ -611,9 +621,27 @@ img {
 
   .square-slider {
     &.negative {
-
+      @include for-phone(425) {
+        width: 300px;
+        height: 345px;
+        margin: 0 auto;
+      }
       .main-slider {
         position: relative;
+        &__carousel-status {
+          right: 0px;
+          top: 20px;
+          font-size: 0.9rem;
+          text-align: center;
+        }
+        &__slider-container {
+          .carousel-cell {
+            width: 100%;
+            &.is-selected {
+              height: 100%;
+            }
+          }
+        }
       }
 
       .flickity-prev-next-button.previous {
@@ -664,7 +692,6 @@ img {
     }
   }
 
-
   h1 {
     text-transform: uppercase;
   }
@@ -699,22 +726,26 @@ img {
             width: 100%;
             position: absolute;
             background: $b-color;
-            ;
             bottom: 0px;
             left: 0px;
           }
         }
       }
-
     }
 
     &__tab {
       width: 40%;
+      @include for-phone(425) {
+        width: 100%;
+      }
     }
 
     &__container {
       display: flex;
       justify-content: space-between;
+      @include for-phone(425) {
+        flex-direction: column;
+      }
     }
 
     &__inner-container {
@@ -725,6 +756,9 @@ img {
     &__content {
       width: 50%;
       margin-bottom: 50px;
+      @include for-phone(425) {
+        width: 100%;
+      }
     }
 
     &__paragraph {
@@ -733,7 +767,6 @@ img {
     }
   }
 }
-
 
 /************************************************************************************************
                                       CAROUSEL - NEWS & PROMOTIONS
@@ -759,7 +792,6 @@ img {
       line-height: 12px;
       color: $gt-color;
       margin: 15px 0;
-
     }
 
     &__slider-container {
@@ -807,18 +839,11 @@ img {
       }
     }
 
-    &__carousel-status{
+    &__carousel-status {
       display: none;
     }
   }
-
-
 }
-
-
-
-
-
 
 /************************************************************************************************
                                       SLIDER - БЛОК О ЖК ПЕРЕХОД В РАЗДЕЛ
@@ -895,8 +920,6 @@ img {
 
   .main-slider {
     height: 100%;
-
-
 
     &__slider-container {
       position: relative;
