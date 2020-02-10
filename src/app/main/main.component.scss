@@ -18,37 +18,50 @@
     background: $lightGray;
     width: 1px;
     position: absolute;
-    right: 545px;
+    right: 28rem;
+    @include for-large-desktop {
+      right: 35rem;
+    }
   }
 
   &__headline {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 155px;
-    bottom: 155px;
-    width: 90%;
     align-items: center;
+    position: absolute;
+
+    @media (min-width: 1634px) {
+      width: 55%;
+      bottom: 75px;
+    }
+
+    @media (min-width: 1201px) and (max-width: 1633px) {
+      width: 60%;
+      bottom: 165px;
+      flex-direction: column;
+      height: 33%;
+    }
+
+    @include for-desktop {
+      width: 55%;
+      bottom: 15px;
+      flex-direction: column;
+      height: 35%;
+    }
 
     @include for-tablet-portrait {
       width: 89%;
       bottom: 165px;
       flex-direction: column;
       height: 40%;
-
     }
-
-    @media only screen and (max-width:600px) {
+    @media only screen and (max-width: 600px) {
       width: 85%;
       flex-direction: column;
       bottom: 165px;
       height: 30%;
     }
-
   }
 
   &__h1 {
-
     font-weight: 900;
     font-size: 4rem;
     -webkit-box-align: center;
@@ -64,33 +77,19 @@
       flex-direction: row;
       flex-wrap: wrap;
       width: 100%;
-      bottom: 170px;
+      margin-bottom: 2rem;
       font-size: 2.8rem;
+    }
+
+    @include for-desktop {
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
   }
 
   &__cta {
-    position: absolute;
-    bottom: 80px;
-    left: 18rem;
     color: $w-color;
     border-bottom-color: $w-color;
-
-    @include for-tablet-portrait {
-      left: 4rem;
-      bottom: 20rem;
-    }
-
-    @media only screen and (max-width:600px) {
-      bottom: 4rem;
-    }
-
-
-
-    @include for-phone(425) {
-      left: 0;
-      margin: 0 2rem;
-    }
   }
 
   &__indicator {
@@ -100,7 +99,6 @@
 
     @include for-tablet-portrait {
       width: 8rem;
-
     }
   }
 
@@ -110,7 +108,6 @@
 
     @include for-tablet-portrait {
       font-size: 14px;
-
     }
   }
 
@@ -129,15 +126,18 @@
     padding: 0 3rem;
     text-transform: uppercase;
     color: $w-color;
-    width: 545px;
+    width: 28rem;
 
-    @media only screen and (min-width:600px) {
+    @include for-large-desktop {
+      width: 35rem;
+    }
+
+    @media only screen and (min-width: 600px) {
       display: flex;
     }
 
     @include for-tablet-portrait {
       width: 28rem;
-
     }
 
     @include for-phone(425) {
@@ -166,14 +166,16 @@
   &__list-social {
     display: flex;
     justify-content: space-evenly;
-    // width: 265px;
     font-size: 17px;
+    position: absolute;
+    right: 2rem;
+    bottom: 170px;
 
     @include for-tablet-portrait {
       align-self: flex-end;
     }
 
-    @media only screen and (max-width:600px) {
+    @media only screen and (max-width: 600px) {
       display: none;
     }
 
@@ -221,9 +223,6 @@
     }
   }
 }
-
-
-
 
 /************************************************************************************************
                                       PLANNING ROOM

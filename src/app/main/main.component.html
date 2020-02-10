@@ -1,63 +1,60 @@
 <div class="app-hero">
-
-
   <div class="app-hero__rectangle"></div>
   <div class="inner-container">
     <div class="app-hero__headline">
       <h1 class="app-hero__h1">
         {{ getSiteGroup("textOne") | async }}
       </h1>
-      <ul class="app-hero__list-social mr-5">
-        <li>
-          <a href="#" class="text-uppercase">{{
-            getSiteGroup("facebook") | async
-            }}</a>
-        </li>
-        <li>
-          <a href="#" class="text-uppercase ml-5">{{
-            getSiteGroup("instagram") | async
-            }}</a>
-        </li>
-      </ul>
+      <a href="" class="app-hero__cta link underline">{{
+        getSiteGroup("watchMore") | async
+      }}</a>
     </div>
 
-    <a href="" class="app-hero__cta link underline">{{
-      getSiteGroup("watchMore") | async
-      }}</a>
-
+    <a
+      [routerLink]="['/flats']"
+      routerLinkActive="router-link-active"
+      class="app-hero__watch-block"
+    >
+      <hr class="app-hero__indicator" />
+      <span class="app-hero__plan">{{
+        getSiteGroup("exploreFlats") | async
+      }}</span>
+    </a>
   </div>
 
-  <a
-    [routerLink]="['/flats']"
-    routerLinkActive="router-link-active"
-    class="app-hero__watch-block">
-    <hr class="app-hero__indicator mr-4" />
-    <span class="app-hero__plan">{{
-      getSiteGroup("exploreFlats") | async
-      }}</span>
-  </a>
+  <ul class="app-hero__list-social mr-5">
+    <li>
+      <a href="#" class="text-uppercase">{{
+        getSiteGroup("facebook") | async
+      }}</a>
+    </li>
+    <li>
+      <a href="#" class="text-uppercase ml-5">{{
+        getSiteGroup("instagram") | async
+      }}</a>
+    </li>
+  </ul>
 </div>
 
 <!-- main sections -->
 
-
 <section class="tabs-slider" style="display: none;">
-
   <div class="container-left">
     <h1 class="title-h2 mb-2 pr-5 mr-5">
       {{ getSiteGroup("planPlats_main") | async }}
     </h1>
     <ngb-tabset #t="ngbTabset" class="tabs">
       <ngb-tab id="tab-selectbyid1">
-        <ng-template ngbTabTitle>{{ getSiteGroup("main__room1") | async }}</ng-template>
+        <ng-template ngbTabTitle>{{
+          getSiteGroup("main__room1") | async
+        }}</ng-template>
         <ng-template ngbTabContent>
-
           <!-- TAB CONTENT -->
           <div class="tabs__container">
             <div class="tabs__tab">
-              <p class="tabs__paragraph">{{
-                getSiteGroup("main__room2-description") |
-                async }}</p>
+              <p class="tabs__paragraph">
+                {{ getSiteGroup("main__room2-description") | async }}
+              </p>
               <div class="tabs__inner-container">
                 <div class="tabs__content">
                   <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -89,17 +86,19 @@
           </div>
 
           <!-- END TAB CONTENT -->
-
         </ng-template>
       </ngb-tab>
       <ngb-tab id="tab-selectbyid2">
-        <ng-template ngbTabTitle>{{ getSiteGroup("main__room2") | async }}</ng-template>
-        <ng-template ngbTabContent><!-- TAB CONTENT -->
+        <ng-template ngbTabTitle>{{
+          getSiteGroup("main__room2") | async
+        }}</ng-template>
+        <ng-template ngbTabContent
+          ><!-- TAB CONTENT -->
           <div class="tabs__container">
             <div class="tabs__tab">
-              <p class="tabs__paragraph">{{
-                getSiteGroup("main__room2-description") |
-                async }}</p>
+              <p class="tabs__paragraph">
+                {{ getSiteGroup("main__room2-description") | async }}
+              </p>
               <div class="tabs__inner-container">
                 <div class="tabs__content">
                   <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -130,13 +129,9 @@
             </div>
           </div>
 
-
-
           <!-- END TAB CONTENT -->
-
         </ng-template>
       </ngb-tab>
-
 
       <ngb-tab id="tab-selectbyid3">
         <ng-template ngbTabTitle>
@@ -146,9 +141,9 @@
           <!-- TAB CONTENT -->
           <div class="tabs__container">
             <div class="tabs__tab">
-              <p class="tabs__paragraph">{{
-                getSiteGroup("main__room2-description") |
-                async }}</p>
+              <p class="tabs__paragraph">
+                {{ getSiteGroup("main__room2-description") | async }}
+              </p>
               <div class="tabs__inner-container">
                 <div class="tabs__content">
                   <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -180,17 +175,19 @@
           </div>
 
           <!-- END TAB CONTENT -->
-
         </ng-template>
       </ngb-tab>
       <ngb-tab id="tab-selectbyid4">
-        <ng-template ngbTabTitle>{{ getSiteGroup("main__room4") | async }}</ng-template>
-        <ng-template ngbTabContent><!-- TAB CONTENT -->
+        <ng-template ngbTabTitle>{{
+          getSiteGroup("main__room4") | async
+        }}</ng-template>
+        <ng-template ngbTabContent
+          ><!-- TAB CONTENT -->
           <div class="tabs__container">
             <div class="tabs__tab">
-              <p class="tabs__paragraph">{{
-                getSiteGroup("main__room2-description") |
-                async }}</p>
+              <p class="tabs__paragraph">
+                {{ getSiteGroup("main__room2-description") | async }}
+              </p>
               <div class="tabs__inner-container">
                 <div class="tabs__content">
                   <h3 class="h3">ОДНОКОМНАТНАЯ</h3>
@@ -222,13 +219,11 @@
           </div>
 
           <!-- END TAB CONTENT -->
-
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
   </div>
   <!---->
-
 </section>
 
 <!-- Main contact form -->
@@ -243,7 +238,7 @@
             class="main-contactForm__preview"
             title="A136"
             alt="A136"
-            />
+          />
         </div>
         <div class="col-md-6">
           <h2 class="title-h2 text-uppercase pl-5 mb-5"></h2>
@@ -260,7 +255,7 @@
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
-                />
+              />
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Ваш телефон</label>
@@ -269,7 +264,7 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
-                />
+              />
             </div>
             <div class="form-group mb-5">
               <label for="exampleInputPassword1">Ваш e-mail</label>
@@ -278,7 +273,7 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
-                />
+              />
             </div>
 
             <button type="submit" class="btn link-negative underline-negative">
@@ -304,8 +299,8 @@
           <h3 class="h3 pt-4">
             {{ getSiteGroup("main__choiceRoom-subtitle") | async }}
           </h3>
-          <span class="desc">{{
-            getSiteGroup("main__choiceRoom-subtitle_content") | async }}
+          <span class="desc"
+            >{{ getSiteGroup("main__choiceRoom-subtitle_content") | async }}
           </span>
         </div>
         <div class="apartment-choice__container col-md-12 pl-0 pr-0">
@@ -316,7 +311,7 @@
               </h3>
               <span class="desc">{{
                 getSiteGroup("main__choiceRoom-hight-number") | async
-                }}</span>
+              }}</span>
             </div>
             <div class="col-md-4">
               <h3 class="h3 pt-5">
@@ -324,7 +319,7 @@
               </h3>
               <span class="desc">{{
                 getSiteGroup("main__choiceRoom-flats_number") | async
-                }}</span>
+              }}</span>
             </div>
           </div>
         </div>
@@ -336,7 +331,7 @@
               </h3>
               <span class="desc">{{
                 getSiteGroup("main__choiceRoom-flats_levels-number") | async
-                }}</span>
+              }}</span>
             </div>
             <div class="col-md-4">
               <h3 class="h3 pt-5">
@@ -344,14 +339,15 @@
               </h3>
               <span class="desc">{{
                 getSiteGroup("main__choiceRoom-flats_rooms-number") | async
-                }}</span>
+              }}</span>
             </div>
           </div>
         </div>
       </div>
       <div
         class="apartment-choice__img-container col-md-6 position-relative d-flex
-        align-items-start justify-content-end pb-5 pr-0">
+        align-items-start justify-content-end pb-5 pr-0"
+      >
         <div class="apartment-choice__card card-img-top position-absolute">
           <h3 class="title-h3 text-uppercase">
             {{ getSiteGroup("main__choiceRoom-slider-title") | async }}
@@ -368,8 +364,7 @@
         ------------------------------
       ---------------------------------->
         <div class="square-slider">
-          <app-slider [data]="squareSlider" [opt]="optionSquere">
-          </app-slider>
+          <app-slider [data]="squareSlider" [opt]="optionSquere"> </app-slider>
         </div>
       </div>
     </div>
@@ -381,7 +376,7 @@
     src="./assets/images/home-page/A136__full-img.jpg"
     class="img-fluid"
     alt="Responsive image"
-    />
+  />
 </section>
 
 <!------------------------------
@@ -404,12 +399,14 @@
 </section> -->
 <section style="display: none;">
   <div
-    class="six-elements-section row justify-content-between align-items-center">
+    class="six-elements-section row justify-content-between align-items-center"
+  >
     <div class="six-elements-section__grey-figure"></div>
 
     <div
       class="six-elements-section__figure-img col-md-3 mr-5 mt-5 pt-5
-      align-self-start">
+      align-self-start"
+    >
       <img src="./assets/images/home-page/_materials/A136_image_2.jpg" alt="" />
     </div>
     <div class="col-md-4">
@@ -453,7 +450,7 @@
           src="../../assets/images/home-page/Infrastructure/A136__infrastruttura.jpg"
           class="infostructure__preview"
           alt=""
-          />
+        />
       </div>
     </div>
   </div>
@@ -474,12 +471,12 @@
                 class="gallery-section__preview-one"
                 src="../../assets/images/home-page/Photo-gallery__section/A136__photo-gallery_1.jpg"
                 alt=""
-                />
+              />
               <img
                 class="gallery-section__preview-two"
                 src="../../assets/images/home-page/Photo-gallery__section/A136__photo-gallery_3.jpg"
                 alt=""
-                />
+              />
             </div>
 
             <div class="gallery-section__text-container">
@@ -491,8 +488,9 @@
               </p>
               <a
                 href=""
-                class="gallery-section__link link-negative underline-negative">watch
-                more</a>
+                class="gallery-section__link link-negative underline-negative"
+                >watch more</a
+              >
             </div>
           </div>
         </div>
@@ -500,7 +498,7 @@
           <img
             src="../../assets/images/home-page/Photo-gallery__section/A136__photo-gallery_2.jpg"
             alt=""
-            />
+          />
         </div>
       </div>
 
@@ -509,7 +507,7 @@
           class="gallery-section__preview"
           src="../../assets/images/home-page/Photo-gallery__section/A136__photo-gallery_4.jpg"
           alt=""
-          />
+        />
       </div>
     </div>
   </div>
@@ -533,7 +531,8 @@
         frameborder="0"
         scrolling="no"
         marginheight="0"
-        marginwidth="0"></iframe>
+        marginwidth="0"
+      ></iframe>
     </div>
   </div>
 </section>
@@ -543,8 +542,11 @@
    CAROUSEL - NEWS & PROMOTIONS 
   ------------------------------
 ---------------------------------->
-<app-slider class="news-promotions" [opt]="optOne"
-  [data]="imagesForSomeSliderOne">
+<app-slider
+  class="news-promotions"
+  [opt]="optOne"
+  [data]="imagesForSomeSliderOne"
+>
 </app-slider>
 
 <section style="display: none;">
@@ -565,7 +567,7 @@
       <img
         src="../../assets/images/home-page/News__promotion/A136_news.jpg"
         alt=""
-        />
+      />
       <div class="row pt-3">
         <div class="date col-md-6 pl-0">
           {{ getSiteGroup("news-stocks__date") | async }}
@@ -585,7 +587,7 @@
           <img
             src="../../assets/images/home-page/News__promotion/A136_promotion_1.jpg"
             alt=""
-            />
+          />
           <div class="row pt-3">
             <div class="date col-md-6 pl-0">
               {{ getSiteGroup("news-stocks__date") | async }}
@@ -603,7 +605,7 @@
           <img
             src="../../assets/images/home-page/News__promotion/A136_promotion_2.jpg"
             alt=""
-            />
+          />
           <div class="row pt-3">
             <div class="date col-md-6 pl-0">
               {{ getSiteGroup("news-stocks__date") | async }}
