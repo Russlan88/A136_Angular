@@ -4,14 +4,13 @@
     <div class="head-section__section-title row documentation">
       <h1 class="head-section__title title-h1">
         {{ getSiteGroup("documentsTitle") | async }}
-        
       </h1>
     </div>
     <div class="documentation__row">
-      <figure class="documentation__thumbnail col-lg-5">
+      <figure class="documentation__thumbnail">
         <img
           src="./assets/images/Documentation/A136__documentation.jpg"
-          class="documentation__featurette-image img-fluid mx-auto h-100"
+          class="documentation__preview"
           title=""
           alt=""
         />
@@ -23,7 +22,6 @@
           /></a>
           <p class="paragraph">
             {{ getSiteGroup("documentsParagraph") | async }}
-            
           </p>
         </li>
         <li class="documentation__item pt-5 pb-5">
@@ -32,7 +30,6 @@
           /></a>
           <p class="paragraph">
             {{ getSiteGroup("documentsParagraphTwo") | async }}
-            
           </p>
         </li>
         <li class="documentation__item pt-5 pb-5">
@@ -40,8 +37,7 @@
             ><img src="./assets/images/Documentation/A136__pdf-icon.png" alt=""
           /></a>
           <p class="paragraph">
-            {{ getSiteGroup("documentsParagraphThree") | async }}
-            
+            {{ getSiteGroup("documentsParagraphTwo") | async }}
           </p>
         </li>
       </ul>
