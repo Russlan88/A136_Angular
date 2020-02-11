@@ -31,7 +31,7 @@ export class MainComponent implements OnInit {
 	optOne = {
 		draggable: true,
 		cellAlign: 'left',
-		prevNextButtons: true,
+		prevNextButtons: false,
 		pageDots: false
 	};
 	imageSource: string[];

@@ -31,6 +31,12 @@ html {
   height: 100%;
 }
 
+.row {
+  width: 100%;
+  margin: 0;
+  display: flex;
+}
+
 .app-loading {
   position: relative;
   display: flex;
@@ -512,7 +518,6 @@ img {
 
     a {
       color: $w-color;
-      opacity: 0.2;
     }
 
     &__active,
