@@ -1,0 +1,176 @@
+/* Mixin */
+
+@mixin font-size {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (7250 - 300)));
+}
+
+@mixin gold_desc {
+  font-size: 35px !important;
+  color: $gold !important;
+  font-weight: 900;
+}
+
+@mixin black_gold-title {
+  .h3 {
+    font-size: 16px;
+    color: $darkGray;
+  }
+
+  .desc {
+    @include gold_desc;
+  }
+}
+
+@mixin date {
+  color: $gt-color;
+  font-size: 1.1rem;
+}
+
+@mixin bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin black-gold__title {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 55px;
+
+  span {
+    color: $g-text;
+    display: block;
+  }
+}
+
+@mixin title__inner-padding {
+  h2 {
+    font-weight: 900;
+    line-height: 55px;
+    width: 25rem;
+    margin-bottom: 3rem;
+    font-size: $main-title;
+    @include main-tite;
+  }
+
+  p {
+    width: 23rem;
+    margin-left: 7rem;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 35px;
+  }
+}
+
+/* NEWS PAGE */
+
+@mixin left-align-content {
+  .text-content {
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include date;
+
+    h4 {
+      @include title-h4;
+      margin-top: 25px;
+    }
+
+    p {
+      color: $n-color;
+      font-size: 18px;
+      line-height: 28px;
+      margin: 0px;
+    }
+  }
+}
+
+/* mixins for the page single-news */
+
+@mixin centered-text {
+  color: $w-color !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin title-h4 {
+  font-size: 2rem;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+@mixin paragraph($font-size: 16px) {
+  margin-bottom: 50px;
+  font-size: $font-size;
+}
+
+/* page constructions */
+
+@mixin contact-form {
+  input {
+    border-radius: 0px;
+    border-bottom: 1px solid $bd-color;
+
+    &::-webkit-input-placeholder {
+      color: #fff;
+    }
+  }
+
+  label {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .field-input {
+    border-radius: 0px;
+    height: 25px;
+    border-bottom-color: $lightBlack;
+  }
+
+  .submit-btn {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: left;
+  }
+}
+
+/* MEDIA QUERY */
+
+@mixin for-phone($width-size) {
+  @media (max-width: $width-size + "px") {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-large-desktop {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}

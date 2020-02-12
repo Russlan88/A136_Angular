@@ -1,0 +1,36 @@
+@import 'mixins/main-mixins';
+@import './mixins/variables';
+
+
+img {
+    width: 100%;
+}
+
+section {
+    display: flex;
+    align-items: stretch;
+}
+
+.nav {
+    .nav-item {
+        &.active {
+            border-bottom: 2px solid $blackColor;
+        }
+
+        a.nav-link {
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+
+.main-paragraph {
+    color: $greyColor;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+
