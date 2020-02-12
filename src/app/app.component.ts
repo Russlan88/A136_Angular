@@ -1,16 +1,10 @@
-<<<<<<< HEAD
-=======
 import { EnumLanguages } from "spm-core";
->>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
 import { LangService } from "@services/lang/lang.service";
 import { ResourcesDataServicesService } from "@services/resources/resources-data-services.service";
 import { Component, OnInit, Inject } from "@angular/core";
 import { ISiteVariables } from "@owntypes/site-variables/site.variables";
 import { mergeMap } from "rxjs/operators";
-<<<<<<< HEAD
-=======
 import { AotSummaryResolver } from "@angular/compiler";
->>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
 
 @Component({
   selector: "app-root",
@@ -24,9 +18,6 @@ export class AppComponent implements OnInit {
     private _lang: LangService,
     @Inject("APP_CONFIG") private appConfig: ISiteVariables
   ) {}
-<<<<<<< HEAD
-  ngOnInit(): void {}
-=======
   ngOnInit(): void {
     /****************************************************************************************
      * listen change language and reinit global resources
@@ -40,5 +31,4 @@ export class AppComponent implements OnInit {
       )
       .subscribe();
   }
->>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
 }

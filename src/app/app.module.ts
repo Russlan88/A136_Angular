@@ -34,17 +34,15 @@ import { BuildingProcessSeptemberComponent } from "./building-process-september/
 import { SharedModule } from "./shared/shared.module";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { ApartmentsFilterComponent } from "./apartments-filter/apartments-filter.component";
-import { LayoutDescriptionComponent } from "./layout-description/layout-description.component";
 
 export const SITE_VARIABLES: ISiteVariables = {
   /**
    * this siteId
    */
-  id: 18,
+  id: 18
   /**
    * language applying at stary up application
    */
-  defLang: EnumLanguages.UKRAINIAN
 };
 
 export function getEnv(): any {
@@ -68,7 +66,6 @@ export function getEnv(): any {
     GalleryComponent,
     HeaderComponent,
     LandComponent,
-    LayoutDescriptionComponent,
     MainComponent,
     NewsComponent,
     NewsListComponent,
