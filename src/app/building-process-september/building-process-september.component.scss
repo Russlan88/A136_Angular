@@ -1,0 +1,146 @@
+@import "../../styles.scss";
+
+.carousel {
+  background: #fafafa;
+  height: 940px;
+}
+
+.flickity-viewport {
+  width: 600px;
+}
+
+.carousel-cell {
+  width: 86%;
+  margin-right: 10px;
+  counter-increment: carousel-cell;
+}
+
+.carousel-status {
+  font-size: 17px;
+  position: absolute;
+  right: 10%;
+  top: 0px;
+  margin-bottom: 0px;
+  line-height: 15px;
+  letter-spacing: 0.5rem;
+  color: $grey-color;
+
+  &:first-letter {
+    font-size: 20px;
+  }
+}
+
+ol.flickity-page-dots {
+  display: none;
+}
+
+/* first slider */
+
+.first-slider-container {
+  background: transparent;
+  position: relative;
+
+  a.carousel-control-next,
+  a.carousel-control-prev {
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    width: 100px;
+    background: transparent;
+    height: 80px;
+    left: 0;
+    opacity: 1;
+  }
+
+  .carousel-control span {
+    background-size: inherit;
+  }
+
+  a.carousel-control-next {
+    left: 100px;
+  }
+
+  .outer-controller {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    height: 90px;
+    width: 200px;
+    display: flex;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: auto;
+  }
+
+  .bottom-text {
+    display: flex;
+    justify-content: center;
+
+    &__paragraph {
+      width: 45%;
+      margin-top: 3rem;
+    }
+  }
+}
+
+/* Second slider */
+
+.carousel-cell {
+  // width: 51%;
+  margin-left: auto;
+  width: 970px;
+  display: flex;
+  margin-right: 10px;
+  counter-increment: carousel-cell;
+
+  img {
+    &:first-child {
+      margin-left: 40px;
+      margin-right: 15px;
+    }
+  }
+}
+
+/* Third slider */
+
+.third-slider {
+  position: relative;
+}
+
+.slider-paragraph {
+  width: 31%;
+  position: absolute;
+  bottom: 30px;
+  left: 55%;
+}
+
+/* Fourth slider */
+
+.first-slider-container_four {
+  .outer-controller {
+    left: unset;
+    right: 18rem;
+  }
+
+  .bottom-text {
+    justify-content: unset;
+    margin-left: 8rem;
+  }
+}
+
+/* main page style */
+
+.carousel-s {
+  margin-right: 50%;
+}
+
+.secondary-title {
+  color: #232529;
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 55px;
+  width: 47%;
+  margin-top: 8rem;
+}

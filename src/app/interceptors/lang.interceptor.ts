@@ -20,7 +20,13 @@ export class LanguageInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     let cloneReq = null;
-    cloneReq = req.clone({});
+    const lang: string = this._langService.getLang() || EnumLanguages.UKRAINIAN;
+    cloneReq = req.clone({
+      setHeaders: {
+        lang,
+        "Access-Control-Allow-Origin": "*"
+      }
+    });
     return next.handle(cloneReq);
   }
 }

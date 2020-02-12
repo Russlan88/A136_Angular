@@ -19,9 +19,9 @@ import { FlatsComponent } from "./flats/flats.component";
 import { GalleryComponent } from "./gallery/gallery.component";
 import { NewsComponent } from "./news/news.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { CarouselModule } from "ngx-bootstrap/carousel";
 import { TabsModule } from "ngx-bootstrap";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { SpmCoreModule, EnumLanguages } from "spm-core";
 import { environment } from "@environment/environment";
 import { NewsListComponent } from "./news-list/news-list.component";
 import { DevelopmentTechnologyComponent } from "./development-technology/development-technology.component";
@@ -30,43 +30,62 @@ import { ButtonsModule } from "ngx-bootstrap/buttons";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { LanguageInterceptor } from "./interceptors/lang.interceptor";
 import { PurchaseTermsComponent } from "./purchase-terms/purchase-terms.component";
+import { BuildingProcessSeptemberComponent } from "./building-process-september/building-process-september.component";
+import { SharedModule } from "./shared/shared.module";
+import { AboutUsComponent } from "./about-us/about-us.component";
 import { ApartmentsFilterComponent } from "./apartments-filter/apartments-filter.component";
+import { LayoutDescriptionComponent } from "./layout-description/layout-description.component";
+
+export const SITE_VARIABLES: ISiteVariables = {
+  /**
+   * this siteId
+   */
+  id: 18,
+  /**
+   * language applying at stary up application
+   */
+  defLang: EnumLanguages.UKRAINIAN
+};
 
 export function getEnv(): any {
   return environment;
 }
 @NgModule({
   declarations: [
-    AppComponent,
-    MainComponent,
-    HeaderComponent,
-    FooterComponent,
-    LandComponent,
     AboutComplexComponent,
     AboutDeveloperComponent,
-    ByeConditionsComponent,
-    DocumentsComponent,
-    ContactsComponent,
-    ReadyDimComponent,
+    AboutUsComponent,
+    ApartmentsFilterComponent,
+    AppComponent,
     BuildingProcessComponent,
-    SelectFlatComponent,
+    BuildingProcessSeptemberComponent,
+    ByeConditionsComponent,
+    ContactsComponent,
+    DevelopmentTechnologyComponent,
+    DocumentsComponent,
     FlatsComponent,
+    FooterComponent,
     GalleryComponent,
+    HeaderComponent,
+    LandComponent,
+    LayoutDescriptionComponent,
+    MainComponent,
     NewsComponent,
     NewsListComponent,
-    DevelopmentTechnologyComponent,
     PurchaseTermsComponent,
-    ApartmentsFilterComponent
+    ReadyDimComponent,
+    SelectFlatComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: "serverApp" }),
     AppRoutingModule,
-    NgbModule,
-    CarouselModule.forRoot(),
-    TabsModule.forRoot(),
+    BrowserModule.withServerTransition({ appId: "serverApp" }),
+    ButtonsModule.forRoot(),
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
-    ButtonsModule.forRoot()
+    SharedModule,
+    SpmCoreModule.forRoot(getEnv()),
+    TabsModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LanguageInterceptor, multi: true }

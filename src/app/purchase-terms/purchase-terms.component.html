@@ -2,11 +2,12 @@
   <div class="head-section__rectangle"></div>
   <div class="inner-container ">
     <div class="head-section__section-title row align-items-center">
-      <h1 class="head-section__title title-h1">Условия покупки</h1>
+      <h1 class="head-section__title title-h1">
+        {{ getSiteGroup("purchaseTermsMainTitle") | async }}
+      </h1>
       <div class="head-section__section-paragraph">
         <p class="head-section__paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {{ getSiteGroup("purchaseTermsMainTitleParagraph") | async }}
         </p>
       </div>
     </div>
@@ -24,24 +25,18 @@
 <section>
   <div class="purchase-terms__container inner-container pt-5">
     <h2 class="purchase-terms__title text-uppercase mb-4 ">
-      Условия приобретения
+      {{ getSiteGroup("purchaseTermsSecondTitle") | async }}
     </h2>
     <br />
     <div id="sliderDouble" class="slider slider-primary"></div>
     <div class="purchase-terms__row row mb-5">
       <div class="purchase-terms purchase-terms_double-container paragraph">
-        But I must explain to you how all this mistaken idea of denouncing
-        pleasure and praising pain was born and I will give you a complete
-        account of the system, and expound the actual teachings of the great
-        explorer of the truth, the master-builder of human happiness.
+        {{ getSiteGroup("purchaseTermsSecondTitleParagraph") | async }}
       </div>
       <div
         class="purchase-terms__right-content purchase-terms_double-container paragraph"
       >
-        But I must explain to you how all this mistaken idea of denouncing
-        pleasure and praising pain was born and I will give you a complete
-        account of the system, and expound the actual teachings of the great
-        explorer of the truth, the master-builder of human happiness.
+        {{ getSiteGroup("purchaseTermsSecondTitleParagraphSecond") | async }}
       </div>
     </div>
   </div>
@@ -57,43 +52,33 @@
   <div class="content-left__container inner-container inner-container_right">
     <div class="content-left__text-container mt-5 mb-5">
       <div class="content-left__left-side">
-        <span class="content-left__number desc">01</span>
+        <span class="content-left__number desc">{{
+          getSiteGroup("purchaseTermsIndicator") | async
+        }}</span>
         <p class="content-left__number-description">
-          100% оплата стоимости квартиры
+          {{ getSiteGroup("purchaseTermsIndicatorTitle") | async }}
         </p>
       </div>
       <div class="content-left__right-side">
         <div class="content-left__arrow-container">&#62;&#62;</div>
         <div class="content-left__text paragraph">
-          But I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born and I will give you a complete
-          account of the system, and expound the actual teachings of the great
-          explorer of the truth, the master-builder of human happiness. I must
-          explain to you how all this mistaken idea of denouncing pleasure and
-          praising pain was born and I will give you a complete account of the
-          system, and expound the actual teachings of the great explorer of the
-          truth, the master-builder of human happiness.
+          {{ getSiteGroup("purchaseTermsIndicatorParagraph") | async }}
         </div>
       </div>
     </div>
     <div class="content-left__text-container mb-5">
       <div class="content-left__left-side">
-        <span class="content-left__number desc">01</span>
+        <span class="content-left__number desc">{{
+          getSiteGroup("purchaseTermsIndicatorSecond") | async
+        }}</span>
         <p class="content-left__number-description">
-          Рассрочка при покупке квартиры
+          {{ getSiteGroup("purchaseTermsIndicatorSecondTitle") | async }}
         </p>
       </div>
       <div class="content-left__right-side">
         <div class="content-left__arrow-container">&#62;&#62;</div>
         <div class="content-left__text paragraph">
-          But I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born and I will give you a complete
-          account of the system, and expound the actual teachings of the great
-          explorer of the truth, the master-builder of human happiness. I must
-          explain to you how all this mistaken idea of denouncing pleasure and
-          praising pain was born and I will give you a complete account of the
-          system, and expound the actual teachings of the great explorer of the
-          truth, the master-builder of human happiness.
+          {{ getSiteGroup("purchaseTermsIndicatorSecondParagraph") | async }}
         </div>
       </div>
     </div>
@@ -101,7 +86,9 @@
 </section>
 <section class="filter-section">
   <div class="filter-section__container inner-container">
-    <h3 class="filter-section__title title-h1">Условия <br />приобретения</h3>
+    <h3 class="filter-section__title title-h1">
+      {{ getSiteGroup("purchaseTermsThirdTitle") | async }}
+    </h3>
   </div>
   <div class="filter-section__centered-content">
     <div class="filter-section__left-container">
@@ -114,71 +101,97 @@
 <section class="right-content">
   <div class="right-content__container">
     <div class="right-content__payment">
-      <div class="right-content__range desc">10 000.00</div>
+      <div class="right-content__range desc">
+        {{ getSiteGroup("purchaseTermsSectionNmber") | async }}
+      </div>
       <div class="right-content__range-description paragraph">
-        сумма рассрочки
+        {{ getSiteGroup("purchaseTermsSectionNmberDescription") | async }}
       </div>
     </div>
     <div class="right-content__payment">
-      <div class="right-content__range desc">10 000.00</div>
+      <div class="right-content__range desc">
+        {{ getSiteGroup("purchaseTermsSectionNmberSecond") | async }}
+      </div>
       <div class="right-content__range-description paragraph">
-        среднемесячный платеж на протяжении 1 года
+        {{ getSiteGroup("purchaseTermsSectionNmberSecondDescription") | async }}
       </div>
     </div>
     <div class="right-content__payment">
-      <div class="right-content__range desc">10 000.00</div>
+      <div class="right-content__range desc">
+        {{ getSiteGroup("purchaseTermsSectionNmberThird") | async }}
+      </div>
       <div class="right-content__range-description paragraph">
-        среднемесячный платеж по рассрочке
+        {{ getSiteGroup("purchaseTermsSectionNmberThirdParagraph") | async }}
       </div>
     </div>
   </div>
   <div class="right-content__payment-notes paragraph mt-4 mb-5">
-    *Среднемесячная сумма выплат является ориентировочной и указывается с целью
-    ознакомления. Расходы на оформление кредита рассчитываются отдельно.
+    {{ getSiteGroup("purchaseTermsSectionMainDescription") | async }}
   </div>
 </section>
 <section class="property-slider">
   <div class="property-slider__right">
     <div class="property-slider__info">
       <div class="property-slider__title title-h1 text-uppercase">
-        выбор квартиры и переход
+        {{ getSiteGroup("purchaseTermsSectionFourthTitle") | async }}
       </div>
       <div
         class="property-slider__inner-content property-slider__inner-content_row"
       >
         <p class="property-slider__paragraph paragraph">
-          РІК ВВЕДЕННЯ В ЕКСПЛУАТАЦІЮ
+          {{ getSiteGroup("purchaseTermsSectionFourthSubtitle") | async }}
         </p>
-        <span class="property-slider__description desc"
-          >2020 - 1ч. 2021 - 2ч.</span
-        >
+        <span class="property-slider__description desc">{{
+          getSiteGroup("purchaseTermsSectionFourthYear") | async
+        }}</span>
       </div>
       <div class="property-slider__inner-content">
         <div class="property-slider__left-side">
           <p class="property-slider__paragraph paragraph">
-            ВИСОТА СТЕЛЬ, М
+            {{
+              getSiteGroup("purchaseTermsSectionFourthSecondDescription")
+                | async
+            }}
           </p>
-          <span class="property-slider__description desc">2.7-3</span>
+          <span class="property-slider__description desc">{{
+            getSiteGroup("purchaseTermsSectionFourthThirdDescription") | async
+          }}</span>
         </div>
         <div class="property-slider__right-side">
           <p class="property-slider__paragraph paragraph">
-            БУДИНКИ
+            {{
+              getSiteGroup("purchaseTermsSectionFourthThirdDescription") | async
+            }}
           </p>
-          <span class="property-slider__description desc">4</span>
+          <span class="property-slider__description desc">{{
+            getSiteGroup("purchaseTermsSectionFourthThirdDescriptionSpan")
+              | async
+          }}</span>
         </div>
       </div>
       <div class="property-slider__inner-content">
         <div class="property-slider__left-side">
           <p class="property-slider__paragraph paragraph">
-            ПОВЕРХІВ
+            {{
+              getSiteGroup("purchaseTermsSectionFourthFourthDescription")
+                | async
+            }}
           </p>
-          <span class="property-slider__description desc">10-34</span>
+          <span class="property-slider__description desc">{{
+            getSiteGroup("purchaseTermsSectionFourthFourthDescriptionSpan")
+              | async
+          }}</span>
         </div>
         <div class="property-slider__right-side">
           <p class="property-slider__paragraph paragraph">
-            КВАРТИР
+            {{
+              getSiteGroup("purchaseTermsSectionFourthFifthDescription") | async
+            }}
           </p>
-          <span class="property-slider__description desc">2857</span>
+          <span class="property-slider__description desc">{{
+            getSiteGroup("purchaseTermsSectionFourthFifthDescriptionSpan")
+              | async
+          }}</span>
         </div>
       </div>
     </div>
@@ -191,14 +204,10 @@
       </div>
       <div class="property-slider__slider-text">
         <h3 class="property-slider__description-title text-uppercase mb-4">
-          But I must explain to you how all this mistaken
+          {{ getSiteGroup("purchaseTermsFourthTitle") | async }}
         </h3>
         <p class="property-slider__paragraph paragraph">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga.
+          {{ getSiteGroup("purchaseTermsFourthTitleParagraph") | async }}
         </p>
         <a href="" class="property-slider__link link underline">watch more</a>
       </div>
@@ -284,3 +293,6 @@
     </div>
   </div>
 </section>
+
+<!-- <app-slider [images]="SliderNewsPromotion" [opt]="optOne">
+  </app-slider> -->

@@ -21,6 +21,16 @@ export class BuildingProcessComponent implements OnInit {
     /****************************************************************************************************
      * subscribe to global change of language for reinitializing siteGroup (data for this particular page)
      ****************************************************************************************************/
-    this._langServ;
+    this._langServ
+      .onChange()
+      .pipe(
+        mergeMap(lang => {
+          return this._siteGroup.querySiteGroup(this.route, lang);
+        })
+      )
+      .subscribe();
+  }
+  getSiteGroup(key: string): Observable<string> {
+    return this._siteGroup.getGropRes(key);
   }
 }

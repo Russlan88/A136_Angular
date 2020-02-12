@@ -1,31 +1,37 @@
-import { Observable, forkJoin } from "rxjs";
+import { Observable, forkJoin } from 'rxjs';
 import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
   Inject,
-  ChangeDetectorRef
-} from "@angular/core";
-import { ResourcesDataServicesService } from "@services/resources/resources-data-services.service";
-
-import { FormGroup, FormBuilder } from "@angular/forms";
-import { pluck, mergeMap, filter } from "rxjs/operators";
-import { ISiteVariables } from "@owntypes/site-variables/site.variables";
-import { LangService } from "@services/lang/lang.service";
+  ChangeDetectorRef,
+  Renderer2
+} from '@angular/core';
+import { ResourcesDataServicesService } from '@services/resources/resources-data-services.service';
+import {
+  ModelResource,
+  ModelTopMenuItem,
+  MenuService,
+  EnumLanguages
+} from 'spm-core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { pluck, mergeMap, filter } from 'rxjs/operators';
+import { ISiteVariables } from '@owntypes/site-variables/site.variables';
+import { LangService } from '@services/lang/lang.service';
 
 /* test menu */
 
-import { Renderer, HostListener } from "@angular/core";
-import { Location } from "@angular/common";
-import { DOCUMENT } from "@angular/common";
-import { Params, Router, ActivatedRoute, NavigationEnd } from "@angular/router";
+import { Renderer, HostListener } from '@angular/core';
+import { Location } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
+import { Params, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 /* end test menu */
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
@@ -45,15 +51,17 @@ export class HeaderComponent implements OnInit {
     private _langServ: LangService,
     private _resource: ResourcesDataServicesService,
     private _router: Router,
+    private _renderer2: Renderer2,
 
     /* test */
     // tslint:disable-next-line: deprecation
-    private renderer: Renderer,
+    // private renderer: Renderer,
     public location: Location,
     @Inject(DOCUMENT) document
     /*end test */
   ) {}
 
+<<<<<<< HEAD
   /* test */
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
@@ -73,6 +81,25 @@ export class HeaderComponent implements OnInit {
   }
 
   /* end test */
+=======
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    if (window.pageYOffset > 100) {
+      const element = document.querySelector('#navbar-top');
+      if (element) {
+        element.classList.remove('navbar-transparent');
+        element.classList.add('sticky-header');
+      }
+    } else {
+      const element = document.querySelector('#navbar-top');
+      if (element) {
+        element.classList.add('navbar-transparent');
+        element.classList.remove('sticky-header');
+      }
+    }
+  }
+>>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
 
   ngOnInit() {
     this.form = this._fb.group({});
@@ -86,6 +113,7 @@ export class HeaderComponent implements OnInit {
     /****************************************************************************************************
      * subscribe to global change language for reinit resources
      ****************************************************************************************************/
+<<<<<<< HEAD
 
     /****************************************************************************************************
      * listen current router
@@ -97,5 +125,37 @@ export class HeaderComponent implements OnInit {
       });
     // tslint:disable-next-line: deprecation
     this.onWindowScroll(event);
+=======
+    this._langServ
+      .onChange()
+      .pipe(
+        mergeMap(_lang => {
+          return forkJoin([
+            this._menuServ.queryMenu(this._appConfig.id, this.mainMenucode)
+          ]);
+        })
+      )
+      .subscribe(([menu]: [ReadonlyArray<ModelTopMenuItem>]) => {
+        this.menu = menu;
+        this._cd.detectChanges();
+      });
+    /****************************************************************************************************
+     * listen current router
+     ****************************************************************************************************/
+    this._router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.currentUrl = this._router.routerState.snapshot.url;
+      });
+    // tslint:disable-next-line: deprecation
+    // this.onWindowScroll(event);
+  }
+
+  getRes(key: string): Observable<string> {
+    return this._resource.getRes(key);
+  }
+  getRouter(item: ModelTopMenuItem): string {
+    return `/${item.route}`;
+>>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
   }
 }

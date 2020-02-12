@@ -6,21 +6,28 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!-- Bootstrap js cdn -->
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body ng-app="">
-    <app-root> </app-root>
+    <app-root>
+      <!-- Preloader pages animation -->
+
+      <!-- ето тестовый прелоадер при необходимости можно закоменировать или удалить -->
+
+      <div class="app-loading">
+        <!-- <div class="app-loading__logo">A136</div> -->
+        <div class="app-loading__iframe-container">
+          <iframe
+            src="https://giphy.com/embed/9jeDxghD88Yik"
+            width="100%"
+            height="100%"
+            style="position:absolute"
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </app-root>
   </body>
 </html>

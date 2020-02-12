@@ -2,7 +2,7 @@ FROM node:10-alpine
 WORKDIR /app
 COPY ./package.json /app
 COPY ./dist/server.js /app
-COPY ./dist/browser/ /app/dist/browser
+COPY ./dist/browser/ /app/browser
 COPY ./dist/server/ /app/server
 
 # Expose the port the app runs in

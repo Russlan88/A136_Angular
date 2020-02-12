@@ -1,6 +1,8 @@
 @import "../../styles.scss";
 
-/* First section | Hero style */
+/************************************************************************************************
+                                      HERO SECTION
+*************************************************************************************************/
 
 .app-hero {
   height: 100vh;
@@ -16,30 +18,76 @@
     background: $lightGray;
     width: 1px;
     position: absolute;
-    right: 545px;
+    right: 28rem;
+    @include for-large-desktop {
+      right: 35rem;
+    }
+  }
+
+  &__headline {
+    align-items: center;
+    position: absolute;
+
+    @media (min-width: 1634px) {
+      width: 55%;
+      bottom: 75px;
+    }
+
+    @media (min-width: 1201px) and (max-width: 1633px) {
+      width: 60%;
+      bottom: 165px;
+      flex-direction: column;
+      height: 33%;
+    }
+
+    @include for-desktop {
+      width: 55%;
+      bottom: 15px;
+      flex-direction: column;
+      height: 35%;
+    }
+
+    @include for-tablet-portrait {
+      width: 89%;
+      bottom: 165px;
+      flex-direction: column;
+      height: 40%;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 85%;
+      flex-direction: column;
+      bottom: 165px;
+      height: 30%;
+    }
   }
 
   &__h1 {
-    position: absolute;
-    width: 50%;
-    left: 8rem;
-    bottom: 155px;
-    font-family: Artegra Sans;
-    font-style: normal;
     font-weight: 900;
     font-size: 4rem;
-    display: -webkit-box;
-    display: flex;
     -webkit-box-align: center;
     align-items: center;
     text-transform: uppercase;
     color: $w-color;
+
+    @include for-tablet-portrait {
+      word-wrap: break-word;
+      padding: 0;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
+    }
+
+    @include for-desktop {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 
   &__cta {
-    position: absolute;
-    bottom: 80px;
-    left: 15rem;
     color: $w-color;
     border-bottom-color: $w-color;
   }
@@ -48,11 +96,19 @@
     width: 10rem;
     height: 1px;
     background: #fff;
+
+    @include for-tablet-portrait {
+      width: 8rem;
+    }
   }
 
   &__plan {
     font-size: 15px;
     letter-spacing: 0.1em;
+
+    @include for-tablet-portrait {
+      font-size: 14px;
+    }
   }
 
   &__watch-block {
@@ -61,7 +117,7 @@
     bottom: 0;
     background: #232529;
     display: -webkit-box;
-    display: flex;
+    display: none;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-align: center;
@@ -69,9 +125,24 @@
     height: 10rem;
     padding: 0 3rem;
     text-transform: uppercase;
-    color: #fff;
-    width: 545px;
+    color: $w-color;
+    width: 28rem;
 
+    @include for-large-desktop {
+      width: 35rem;
+    }
+
+    @media only screen and (min-width: 600px) {
+      display: flex;
+    }
+
+    @include for-tablet-portrait {
+      width: 28rem;
+    }
+
+    @include for-phone(425) {
+      display: none;
+    }
 
     .desc {
       color: $w-color;
@@ -93,16 +164,29 @@
   }
 
   &__list-social {
-    position: absolute;
-    bottom: 190px;
-    right: 50px;
     display: flex;
     justify-content: space-evenly;
-    width: 265px;
     font-size: 17px;
+    position: absolute;
+    right: 2rem;
+    bottom: 170px;
+
+    @include for-tablet-portrait {
+      align-self: flex-end;
+    }
+
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
 
     a {
       color: $w-color;
+    }
+
+    @include for-phone(425) {
+      top: 210px;
+      padding: 0 4rem;
+      bottom: unset;
     }
   }
 
@@ -116,6 +200,15 @@
     right: 915px;
     border-right: 1px solid $lightGray;
 
+    @include for-phone(425) {
+      height: 1480px;
+      width: 210px;
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+      bottom: -502px;
+      right: -182px;
+    }
+
     &::after {
       content: "";
       width: 100vw;
@@ -123,21 +216,22 @@
       position: absolute;
       height: 100%;
       left: 248px;
+
+      @include for-phone(425) {
+        left: 210px;
+      }
     }
   }
 }
 
-
-/* Planning room */
+/************************************************************************************************
+                                      PLANNING ROOM
+*************************************************************************************************/
 
 .planning-flat {
   padding-top: 8rem;
   padding-left: 8rem;
 }
-
-
-
-
 
 /* Main section */
 
@@ -158,9 +252,6 @@
   }
 }
 
-
-
-
 .tab-content {
   .inner-content {
     font-size: 1rem;
@@ -175,7 +266,6 @@
 }
 
 .six-elements-section {
-
   margin-top: 8rem;
 
   &__grey-figure {
@@ -194,13 +284,13 @@
   }
 }
 
-
 /* ВИБIР КВАРТИРЫ И ПЕРЕХОД */
 
 .apartment-choice {
   margin-top: 8rem;
   margin-left: 8rem;
   margin-bottom: 8rem;
+  height: 790px;
 
   .title-h3 {
     font-weight: 900;
@@ -209,12 +299,12 @@
   }
 
   &__card {
-    height: 515px;
+    height: 465px;
     width: 530px;
     color: $w-color;
     background: $l-color;
-    left: -50px;
-    bottom: -15px;
+    left: 100px;
+    bottom: -55px;
     z-index: 9;
     padding: 60px;
     text-align: left;
@@ -235,8 +325,6 @@
     border-bottom-color: $w-color;
   }
 }
-
-
 
 /* SLIDER */
 
@@ -274,22 +362,399 @@ a.carousel-control-next {
   transform: rotate(180deg);
 }
 
-
+/************************************************************************************************
+                                    SECTION | ГАЛЕРЕЯ С ФОТКАМИ О ЖК
+*************************************************************************************************/
 /* галерея с фотками о жк */
 
 .gallery-section {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+  width: 100%;
+
   &__gold-figure {
-    height: 527px;
+    height: 595px;
     background: $gold;
-    margin-bottom: 8rem;
+    margin-bottom: 14rem;
     width: 8rem;
+
+    @include for-desktop {
+      height: 23rem;
+      width: 10%;
+      margin-bottom: 13rem;
+    }
+
+    @include for-tablet-portrait {
+      height: 23rem;
+      width: 10%;
+      margin-bottom: 13rem;
+    }
+
+    @include for-phone(553) {
+      height: 19rem;
+      width: 10%;
+      margin-bottom: 6rem;
+    }
+
+    @include for-phone(425) {
+      height: 23rem;
+      width: 10%;
+      margin-bottom: 16rem;
+    }
+  }
+
+  &__right-container {
+    width: 93%;
+    flex-direction: column;
+
+    @include for-desktop {
+      width: 90%;
+    }
+
+    @include for-tablet-portrait {
+      width: 90%;
+    }
+
+    @include for-phone(425) {
+      width: 90%;
+    }
+  }
+
+  &__main-images {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+
+  &__preview-one {
+    width: 35rem;
+
+    @include for-phone(1420) {
+      width: 29rem;
+    }
+
+    @include for-desktop {
+      width: 17rem;
+    }
+
+    @include for-tablet-portrait {
+      width: 17rem;
+    }
+
+    @include for-phone(553) {
+      width: 11rem;
+    }
+
+    @include for-phone(425) {
+      width: 146px;
+    }
+  }
+
+  &__preview-two {
+    width: 19rem;
+    margin-right: 5rem;
+    margin-top: 14rem;
+    margin-left: 5rem;
+
+    @include for-phone(1420) {
+      width: 15rem;
+    }
+
+    @include for-desktop {
+      width: 9rem;
+      margin-top: 7rem;
+      margin-right: 3rem;
+      margin-left: 2rem;
+    }
+
+    @include for-tablet-portrait {
+      width: 9rem;
+      margin-top: 7rem;
+      margin-right: 3rem;
+      margin-left: 2rem;
+    }
+
+    @include for-phone(553) {
+      width: 8rem;
+      margin-top: 7rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+
+    @include for-phone(425) {
+      width: 6rem;
+      margin-top: 2rem;
+      margin-right: 3rem;
+      margin-left: 2rem;
+    }
+  }
+
+  &__text-container {
+    width: 64%;
+    margin-left: 11rem;
+    margin-top: 6rem;
+
+    @include for-desktop {
+      width: 80%;
+      margin-left: 2rem;
+    }
+
+    @include for-tablet-portrait {
+      width: 80%;
+      margin-left: 2rem;
+    }
+
+    @include for-phone(425) {
+      width: 80%;
+      margin-left: 2rem;
+    }
+  }
+
+  &__main-title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+
+    @include for-desktop {
+      font-size: 2rem;
+    }
+
+    @include for-tablet-portrait {
+      font-size: 2rem;
+    }
+
+    @include for-phone(425) {
+      font-size: 2rem;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include for-desktop {
+      width: 100%;
+    }
+
+    @include for-tablet-portrait {
+      width: 100%;
+    }
+
+    @include for-phone(425) {
+      width: 100%;
+    }
+
+    &_secondary {
+      flex-direction: column;
+    }
+  }
+
+  &__main-image {
+    width: 60rem;
+  }
+
+  &__paragraph {
+    @extend .paragraph;
+  }
+
+  &__inner-container {
+    width: 90%;
+
+    @include for-tablet-portrait {
+      width: 100%;
+    }
   }
 
   &__side-photo {
-    margin-top: 20rem;
+    margin-top: 27rem;
+    width: 55rem;
+    margin-bottom: 8rem;
+
+    @include for-desktop {
+      margin-top: 13rem;
+      overflow: hidden;
+      width: 65%;
+      height: 440px;
+      margin-bottom: 0rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    @include for-tablet-portrait {
+      margin-top: 13rem;
+      overflow: hidden;
+      width: 65%;
+      height: 360px;
+      margin-bottom: 0rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    @include for-phone(425) {
+      margin-top: 16rem;
+      overflow: hidden;
+      width: 15%;
+      height: 24rem;
+      margin-bottom: 0rem;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+
+  &__bottom-preview {
+    padding: 0 18rem;
+
+    @include for-desktop {
+      width: 100%;
+      padding: unset;
+      margin-top: 5rem;
+      overflow: hidden;
+      padding: 0 2rem;
+    }
+
+    @include for-tablet-portrait {
+      width: 100%;
+      padding: unset;
+      margin-top: 5rem;
+      overflow: hidden;
+      padding: 0 2rem;
+    }
+
+    @include for-phone(425) {
+      width: 100%;
+      padding: unset;
+      margin-top: 5rem;
+      overflow: hidden;
+
+      img {
+        margin-left: 2rem;
+      }
+    }
   }
 }
 
-.infostructure{
-margin-top: 8rem;
+.infostructure {
+  margin-top: 8rem;
+}
+
+.six-elements-section {
+  .title-h2 {
+    font-size: 60px;
+    margin-left: -265px;
+  }
+}
+
+/************************************************************************************************
+                                      SLIDER - ВИБIР КВАРТИРЫ И ПЕРЕХОД
+*************************************************************************************************/
+
+.apartment-choise-slider {
+  width: 600px;
+  height: 510px;
+  overflow: hidden;
+
+  .carousel-r {
+    height: 100%;
+  }
+
+  .carousel-status {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+  }
+
+  .carousel-cell {
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    counter-increment: carousel-cell;
+  }
+
+  .flickity-viewport,
+  .flickity-slider {
+    height: 100% !important;
+  }
+
+  img {
+    margin-left: 144px;
+  }
+
+  button.flickity-button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.carousel-status {
+  font-size: 18px;
+  color: #fff;
+}
+
+/************************************************************************************************
+                                      SLIDER - БЛОК О ЖК ПЕРЕХОД В РАЗДЕЛ
+*************************************************************************************************/
+
+.double-slider {
+  .main-slider {
+    height: 400px;
+
+    &__slider-container {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      .flickity-slider {
+        height: 100%;
+      }
+
+      .flickity-viewport {
+        height: 550px !important;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      .carousel-cell {
+        width: 28%;
+        height: 200px;
+        margin-right: 10px;
+        bottom: 0px;
+        counter-increment: gallery-cell;
+        transition: all 0.5s;
+
+        @include for-phone(425) {
+          width: 50%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &.is-selected {
+        height: 400px;
+        padding-right: 50px;
+
+        @include for-phone(425) {
+          height: 320px;
+        }
+      }
+    }
+  }
 }

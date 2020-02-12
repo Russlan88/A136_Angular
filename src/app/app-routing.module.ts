@@ -15,7 +15,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewsListComponent } from './news-list/news-list.component';
 import { DevelopmentTechnologyComponent } from './development-technology/development-technology.component';
 import { PurchaseTermsComponent } from './purchase-terms/purchase-terms.component';
+<<<<<<< HEAD
 import { ApartmentsFilterComponent } from './apartments-filter/apartments-filter.component';
+=======
+import { BuildingProcessSeptemberComponent } from './building-process-september/building-process-september.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+>>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
 
 const routes: Routes = [
   { path: 'main', component: MainComponent },
@@ -33,7 +38,12 @@ const routes: Routes = [
   { path: 'news/:id', component: NewsComponent },
   { path: 'development-technology', component: DevelopmentTechnologyComponent },
   { path: 'purchase-terms', component: PurchaseTermsComponent },
+<<<<<<< HEAD
   { path: 'apartments-filter', component: ApartmentsFilterComponent},
+=======
+  { path: 'building-process-september', component: BuildingProcessSeptemberComponent },
+  { path: 'about-us', component: AboutUsComponent },
+>>>>>>> 0ea276bc4e76f805dc6e1d3019245ac6bb456dee
   {
     path: '',
     redirectTo: '/main',

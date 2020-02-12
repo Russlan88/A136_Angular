@@ -1,5 +1,9 @@
 @import "../../styles.scss";
 
+/************************************************************************************************
+                                      HEADER SECTION
+*************************************************************************************************/
+
 .header-container {
   width: 100%;
   top: 0px;
@@ -21,12 +25,47 @@
   align-items: center;
   position: fixed;
   width: 100%;
+  border-bottom: 1px solid $lightGray;
+
+  &__logo-container {
+    @include for-tablet-portrait {
+      width: 35vw;
+    }
+
+    // width: 35vw;
+  }
+
+  &__row {
+    display: flex;
+    color: $w-color;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: 0px;
+
+    @include for-tablet-portrait {
+      width: 65%;
+    }
+
+    @include for-phone(425) {
+      width: auto;
+    }
+
+    a {
+      color: $w-color;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
 
   &.color-invert {
     .app-header {
       &__logo {
         width: 80px;
+        height: 80px;
         background: url("../../assets/images/A136__logo-w.png");
+        background-repeat: no-repeat;
       }
 
       &__middle-container {
@@ -125,7 +164,6 @@
     color: $blackColor;
     display: flex;
     position: relative;
-    width: 520px;
     line-height: 22px;
     font-size: 17px;
     justify-content: space-evenly;
@@ -143,6 +181,10 @@
       display: flex;
       flex-direction: column;
     }
+
+    @include for-tablet-portrait {
+      display: none;
+    }
   }
 
   &__selector {
@@ -152,6 +194,18 @@
     &:hover,
     &.active {
       opacity: 1;
+    }
+  }
+
+  &__phone-number {
+    @include for-phone(425) {
+      display: none;
+    }
+  }
+
+  &__language-switch {
+    @include for-tablet-landscape {
+      display: none;
     }
   }
 

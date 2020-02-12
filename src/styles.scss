@@ -2,13 +2,17 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 a:focus {
   outline: none;
 }
 
 /* Import variables */
 
-@import ".././src/variables.scss";
+@import ".././src/assets/scss/variables.scss";
 
 /* Import custom fonts */
 
@@ -17,6 +21,83 @@ a:focus {
 /* Import mixins */
 
 @import "../src/assets/scss/mixins/_mixins.scss";
+
+/************************************************************************************************
+                                      PRELOADER
+*************************************************************************************************/
+
+body,
+html {
+  height: 100%;
+}
+
+.row {
+  width: 100%;
+  margin: 0;
+  display: flex;
+}
+
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__iframe-container {
+    width: 250px;
+    height: 250px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  &.spinner {
+    height: 200px;
+    width: 200px;
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &.path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
 
 .head-section {
   position: relative;
@@ -62,6 +143,7 @@ a:focus {
     padding-bottom: 117px;
     height: 100%;
     display: block;
+
     &__no-padding {
       padding-top: 0px;
       padding-bottom: 0px;
@@ -102,7 +184,6 @@ a.carousel-control-next {
 
 .carousel-control-next-icon {
   background-image: url("/assets/images/home-page/Layout_apartments/A136__arrow-left.png");
-  transform: rotate(180deg);
 }
 
 ul > li {
@@ -129,7 +210,6 @@ ul > li {
     font-weight: 900;
     border-radius: 0px;
     padding-left: 0px;
-    border: none;
   }
 
   text-transform: uppercase;
@@ -143,6 +223,13 @@ a {
   &:hover {
     text-decoration: none;
   }
+
+.mt {
+  margin-top: 8rem;
+}
+
+.mb {
+  margin-bottom: 8rem;
 }
 
 .z-top {
@@ -163,14 +250,37 @@ a {
   padding: 0 8rem;
   display: flex;
   width: 100%;
+
+  @include for-tablet-landscape {
+    padding: 0 4rem;
+  }
+
+  @include for-phone(425) {
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
 }
 
 .container-left {
   padding-left: 8rem;
+  @include for-tablet-landscape {
+    padding-left: 4rem;
+  }
+
+  @include for-phone(425) {
+    padding-left: 2rem;
+  }
 }
 
 .container-right {
   padding-right: 8rem;
+  @include for-tablet-landscape {
+    padding-right: 4rem;
+  }
+
+  @include for-phone(425) {
+    padding-right: 2rem;
+  }
 }
 
 input {
@@ -228,7 +338,7 @@ img {
 }
 
 .underline {
-  border-bottom: 2px solid inherit;
+  border-bottom: 2px solid;
   padding-right: 50px;
 }
 
@@ -407,7 +517,6 @@ img {
 
     a {
       color: $w-color;
-      opacity: 0.2;
     }
 
     &__active,
@@ -469,5 +578,436 @@ img {
     width: 100%;
     overflow: hidden;
     height: 660px;
+  }
+}
+
+/************************************************************************************************
+                                      CAROUSEL - BUILDING PROCESS SEPTEMBER PAGE
+*************************************************************************************************/
+
+.double-slider {
+  .flickity-page-dots {
+    display: none;
+  }
+
+  .flickity-viewport {
+    height: 610px !important;
+    overflow: hidden;
+  }
+
+  button.flickity-button {
+    display: inline-block;
+    right: 45%;
+    position: absolute;
+    bottom: 160px;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.flickity-prev-next-button.previous {
+  // background: url("assets/images/general/arrow/arrow-left.png");
+  background-repeat: no-repeat;
+}
+
+.flickity-prev-next-button.next {
+  // background: url("assets/images/general/arrow/arrow-right.png");
+  background-repeat: no-repeat;
+  right: 40%;
+}
+
+/************************************************************************************************
+                                   SECTION - TABS WITH SLIDER
+*************************************************************************************************/
+
+.tabs-slider {
+  margin-top: 8rem;
+
+  .square-slider {
+    &.negative {
+      @include for-phone(425) {
+        width: 300px;
+        height: 345px;
+        margin: 0 auto;
+      }
+      .main-slider {
+        position: relative;
+        &__carousel-status {
+          right: 0px;
+          top: 20px;
+          font-size: 0.9rem;
+          text-align: center;
+        }
+        &__slider-container {
+          .carousel-cell {
+            width: 100%;
+            &.is-selected {
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      .flickity-prev-next-button.previous {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background-repeat: no-repeat;
+        background: $l-color;
+        width: 90px;
+        padding: 20px 37px;
+        height: 90px;
+        background-position: center center;
+
+        svg {
+          fill: $w-color;
+        }
+
+        &::after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+        }
+      }
+
+      .flickity-prev-next-button.next {
+        position: absolute;
+        bottom: 0px;
+        left: 89px;
+        background-repeat: no-repeat;
+        background: $l-color;
+        width: 90px;
+        padding: 20px 37px;
+        height: 90px;
+        background-position: center center;
+
+        svg {
+          fill: $w-color;
+        }
+
+        &::after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  .tabs {
+    margin-top: 2rem;
+    display: block;
+
+    .nav-tabs {
+      border: none;
+
+      a {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: $n-color;
+
+        &:hover {
+          border: none;
+        }
+
+        &.active {
+          font-weight: 500;
+          color: $b-color;
+          position: relative;
+          border: none;
+          padding-left: 0px;
+          padding-right: 0px;
+
+          &::after {
+            content: "";
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            background: $b-color;
+            bottom: 0px;
+            left: 0px;
+          }
+        }
+      }
+    }
+
+    &__tab {
+      width: 40%;
+      @include for-phone(425) {
+        width: 100%;
+      }
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      @include for-phone(425) {
+        flex-direction: column;
+      }
+    }
+
+    &__inner-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__content {
+      width: 50%;
+      margin-bottom: 50px;
+      @include for-phone(425) {
+        width: 100%;
+      }
+    }
+
+    &__paragraph {
+      @extend .paragraph;
+      margin: 50px 0;
+    }
+  }
+}
+
+/************************************************************************************************
+                                      CAROUSEL - NEWS & PROMOTIONS
+*************************************************************************************************/
+.news-promotions {
+  .main-slider {
+    height: 700px;
+
+    &__date-type {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 35px;
+    }
+
+    &__date,
+    &__type {
+      font-size: 12px;
+      line-height: 12px;
+      color: $gt-color;
+      margin: 15px 0;
+    }
+
+    &__slider-container {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      .flickity-slider {
+        height: 100%;
+      }
+
+      .flickity-viewport {
+        height: 550px !important;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      .carousel-cell {
+        width: 28%;
+        height: 300px;
+        margin-right: 10px;
+        bottom: 0px;
+        counter-increment: gallery-cell;
+        transition: all 0.5s;
+        margin-bottom: 150px;
+
+        @include for-phone(425) {
+          width: 50%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .carousel-cell.is-selected {
+        height: 500px;
+        padding-right: 50px;
+
+        @include for-phone(425) {
+          height: 320px;
+        }
+      }
+    }
+
+    &__carousel-status {
+      display: none;
+    }
+  }
+}
+
+/************************************************************************************************
+                                      SLIDER - БЛОК О ЖК ПЕРЕХОД В РАЗДЕЛ
+*************************************************************************************************/
+
+// .double-slider {
+//   width: 100%;
+//   .main-slider {
+//     height: 400px;
+
+//     &__slider-container {
+//       position: relative;
+//       height: 100%;
+//       overflow: hidden;
+
+//       .flickity-slider {
+//         height: 100%;
+//       }
+
+//       .flickity-viewport {
+//         height: 550px !important;
+//         position: absolute;
+//         bottom: 0px;
+//         width: 100%;
+//       }
+
+//       .carousel-cell {
+//         width: 50%;
+//         height: 400px;
+//         margin-right: 10px;
+//         bottom: 0px;
+//         counter-increment: gallery-cell;
+//         transition: all 0.5s;
+//         @include for-phone(425) {
+//           width: 50%;
+//         }
+//         img {
+//           height: 100%;
+//           object-fit: cover;
+//         }
+//       }
+
+//       .carousel-cell.is-selected {
+//         padding: 20px 330px;
+//         bottom: 130px;
+//         &::after {
+//           content: " - Remember this";
+//           position: absolute;
+//           height: 50px;
+//           width: 50px;
+//           background: red;
+//         }
+//         @include for-phone(425) {
+//           height: 320px;
+//         }
+//       }
+//     }
+//     &__carousel-status {
+//       width: 150px;
+//       position: absolute;
+//       right: 0px;
+//       top: 110px;
+//     }
+//   }
+// }
+
+/************************************************************************************************
+                                      SLIDER - ВЫБОР КВАРТИР И ПЕРЕХОД
+*************************************************************************************************/
+
+.square-slider {
+  width: 670px;
+  height: 615px;
+
+  .main-slider {
+    height: 100%;
+
+    &__slider-container {
+      position: relative;
+      height: 100%;
+      // overflow: hidden;
+
+      .flickity-slider {
+        height: 100%;
+      }
+
+      .flickity-viewport {
+        height: 100% !important;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      .carousel-cell {
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        bottom: 0px;
+        transition: all 0.5s;
+
+        @include for-phone(425) {
+          width: 50%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .carousel-cell.is-selected {
+        padding: 0;
+        bottom: 0;
+
+        &::after {
+          content: none;
+        }
+
+        @include for-phone(425) {
+          height: 320px;
+        }
+      }
+    }
+
+    &__carousel-status {
+      width: 150px;
+      position: absolute;
+      right: 0px;
+      top: 110px;
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+      color: $w-color;
+
+      &::first-letter {
+        font-size: 2.4rem;
+      }
+    }
+
+    .flickity-prev-next-button {
+      border: none;
+      background-color: transparent;
+      background-repeat: no-repeat;
+    }
+
+    .flickity-prev-next-button.previous {
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: -90px;
+      right: 160px;
+      background: url("assets/images/general/arrow/arrow-left.png");
+      background-repeat: no-repeat;
+    }
+
+    .flickity-prev-next-button.next {
+      position: absolute;
+      bottom: -90px;
+      right: 110px;
+      background: url("assets/images/general/arrow/arrow-right.png");
+      background-repeat: no-repeat;
+    }
   }
 }

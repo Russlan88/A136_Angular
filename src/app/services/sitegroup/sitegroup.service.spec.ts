@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { SitegroupService } from 'spm-core';
 
-import { SitegroupService } from './sitegroup.service';
 
 describe('SitegroupService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

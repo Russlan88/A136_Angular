@@ -1,3 +1,12 @@
+<!-- <app-slider 
+   [images]="imageSource"
+   [keyText]="'adress'"
+   [opt]="{'cellAlign': 'left'}"
+  >
+</app-slider> -->
+<!-- <app-complex-slider></app-complex-slider> -->
+<!-- <app-complex-slider></app-complex-slider> -->
+
 <section class="dim">
   <div class="inner-container pb-5">
     <div class="row align-items-center">
@@ -26,8 +35,8 @@
     <div class="row mt-5">
       <div class="col-md-6"></div>
       <div class="col-md-6 text-right">
-        <span class="text-uppercase ml-5">Facebook</span
-        ><span class="text-uppercase ml-5">Instagram</span>
+        <span class="text-uppercase ml-5"> <a href=""> Facebook</a></span
+        ><span class="text-uppercase ml-5"><a href="">Instagram</a></span>
       </div>
     </div>
   </div>
@@ -49,14 +58,7 @@
           {{ getSiteGroup("readyDimQuantityParagraph") | async }}
         </p>
       </div>
-      <div class="col-md-6 mt-5 pl-0 pr-0 pt-5 d-flex justify-content-between">
-        <div class="col-md-6 pl-0 pr-2">
-          <img src="../../assets/images/Dim/A136_dim-left.png" alt="" />
-        </div>
-        <div class="col-md-6 pl-2 pr-0">
-          <img src="../../assets/images/Dim/A136_dim-right.jpg" alt="" />
-        </div>
-      </div>
+      <figure class="dim__preview pl-0 pr-0 "></figure>
     </div>
   </div>
 </section>
@@ -242,7 +244,7 @@
 
 <!-- НОВОСТИ И АКЦИИ -->
 
-<section>
+<!-- <section>
   <div class="col-md-11 m-auto mb-5 ">
     <div class="row mr-0 align-items-center">
       <div class="col-md-10">
@@ -305,4 +307,14 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+<!-- 
+<app-slider
+  class="carousel-news"
+  [opt]="optOne"
+  [images]="imageSource"
+  [keyText]="'sliderText'"
+  [keyDate]="'adress'"
+  [keyType]="'adress'"
+>
+</app-slider> -->

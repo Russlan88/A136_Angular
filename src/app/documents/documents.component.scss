@@ -1,48 +1,76 @@
 @import "../../styles.scss";
 
 .head-section {
-    &__main-container {
-        flex-direction: column;
-        align-items: flex-start;
+  &__main-container {
+    flex-direction: column;
+    align-items: flex-start;
+    @include for-phone(1400) {
+      padding-left: 0px;
     }
 
-    &__section-title{
-        align-items: flex-start;
+    @include for-tablet-portrait {
+      padding-right: 0px;
     }
+  }
+
+  &__section-title {
+    align-items: flex-start;
+  }
 }
 
 .documentation {
-    margin-top: 8rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  flex-direction: column;
+
+  &__row {
     margin-bottom: 8rem;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    @include for-tablet-portrait {
+      flex-direction: column;
+    }
+  }
 
+  &__list {
+    margin-left: 5rem;
+    @include for-tablet-portrait {
+      width: 80%;
+      margin: 7rem auto;
+    }
+  }
 
+  &__thumbnail {
+    object-fit: fill;
+  }
 
-    &__row {
-        display: flex;
-        justify-content: space-between;
+  &__preview {
+    width: 35rem;
+    height: 755px;
+    object-fit: cover;
+    @include for-phone(1400) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    border-top: 2px solid $b-color;
+
+    &:last-child {
+      border-bottom: 2px solid $b-color;
     }
 
-    &__thumbnail {
-        object-fit: fill;
+    img {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 1rem;
     }
 
-    &__item {
-        border-top: 2px solid $b-color;
-
-        &:last-child {
-            border-bottom: 2px solid $b-color;
-        }
-
-        img {
-            width: 28px;
-            height: 28px;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-family: "Artegra Sans medium";
-            font-size: 1rem;
-        }
+    p {
+      font-size: 1.3rem;
+      @include for-phone(1400) {
+        font-size: 1.1rem;
+      }
     }
+  }
 }

@@ -22,7 +22,7 @@ COPY --from=buildContainer /app/package.json /app
 
 # Get all the code needed to run the app
 COPY --from=buildContainer ./app/dist/server.js /app
-COPY --from=buildContainer ./app/dist/browser/ /app/dist/browser
+COPY --from=buildContainer ./app/dist/browser/ /app/browser
 COPY --from=buildContainer ./app/dist/server/ /app/server
 
 

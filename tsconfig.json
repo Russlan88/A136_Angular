@@ -22,7 +22,8 @@
       "@assets/*" : ["assets/*"],
       "@environment/*":["environments/*"],
       "@services/*":["app/services/*"],
-      "@owntypes/*":["app/own-types/*"]
+      "@owntypes/*":["app/own-types/*"],
+      "@models/*":["app/models/*"]
     }
   },
   "angularCompilerOptions": {

@@ -1,0 +1,233 @@
+@import '../../styles.scss';
+
+/*****************************************************************
+******************************************************************
+				PAGE ABOUT US
+******************************************************************
+*****************************************************************/
+
+.head-section {
+    &__rectangle {
+        height: 900rem;
+        width: 270px;
+        position: absolute;
+        border-left: 1px solid rgba(134, 134, 134, 0.2);
+        transform: rotate(-69deg) !important;
+        border-right: 1px solid rgba(134, 134, 134, 0.2);
+        left: 100px;
+        top: -444rem;
+
+       // &::after {
+            // content: "";
+            // width: 100vw;
+            // background: rgba(0, 0, 0, 0.3);
+            // position: absolute;
+            // height: 100%;
+            // left: 269px;
+       // }
+    }
+
+    &__section-title {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__title {
+        padding-top: 25rem;
+        width: 65%;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 6.2rem;
+        padding-bottom: 110px;
+    }
+
+    &__section-paragraph {
+        padding-top: 26rem;
+        width: 35%;
+        font-size: 20px;
+        border-left: 1px solid rgba(134, 134, 134, 0.2);
+        padding-bottom: 117px;
+        height: 100%;
+        display: block;
+    }
+}
+
+.full-image {
+    padding-bottom: 8rem;
+}
+
+.poligon {
+    background: green;
+    height: 630px;
+    clip-path: polygon(0px 150px, 16.12rem 0, 100% 100%, 68% 100%);
+}
+
+.right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+
+    &__main {
+        margin-top: 15rem;
+    }
+
+    &__title {
+        font-size: 4rem;
+        margin-bottom: 5rem;
+    }
+
+    &__lead {
+        margin-left: 5rem;
+        margin-bottom: 6rem;
+    }
+
+    .link {
+        margin-left: 7rem;
+    }
+}
+
+/* Double-preview section */
+
+.double-preview {
+    &__container {
+        align-items: flex-end;
+
+        .small-preview {
+            figure {
+                height: 490px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__text-content {
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    &__text-item {
+        width: 540px;
+    }
+}
+
+/* Infrastructure */
+
+.infrastructure {
+    &__preview {
+        height: auto;
+        width: 100%;
+        margin-top: 12rem;
+    }
+
+    .link {
+        margin-left: 7rem;
+    }
+}
+
+
+/* галерея с фотками о жк */
+
+.gallery-section {
+    &__gold-figure {
+        height: 527px;
+        background: $gold;
+        margin-bottom: 8rem;
+        width: 8rem;
+    }
+
+    &__side-photo {
+        margin-top: 20rem;
+    }
+}
+
+.infostructure {
+    margin-top: 8rem;
+}
+
+.six-elements-section {
+    .title-h2 {
+        font-size: 60px;
+        margin-left: -265px;
+    }
+}
+
+/* Multiple Blocks | Slider */
+
+.multiple-blocks-containers {
+    &__first-block {
+        width: 310px;
+    }
+
+    &__item {
+        width: 100%;
+
+        &:first-child {
+            height: 405px;
+        }
+
+        &:last-child {
+            height: 615px;
+
+            background: url("../../assets/images/About-us/Used__technology-slider/A136__living-room-preview.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__second-block {
+        .slider {
+            &__controls {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+    }
+
+    &__third-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin-left: 0px;
+        }
+    }
+}
+
+/* Multiple Blocks | Gallery */
+
+.gallery-section {
+    /* first figure */
+
+    &__left-container {
+        width: 125px;
+        height: 2290px;
+        align-items: flex-end;
+    }
+
+    &__color-figure {
+        height: 45%;
+        width: 100%;
+    }
+
+    &__innder-upper-container {
+        align-items: flex-end;
+    }
+
+    &__smaller-preview {
+        margin-bottom: 160px;
+    }
+
+    &__fourth-container {
+        justify-content: center;
+        align-items: center;
+        height: 660px;
+    }
+
+    &__preview-container {
+        width: 1170px;
+        margin-top: 140px;
+    }
+}

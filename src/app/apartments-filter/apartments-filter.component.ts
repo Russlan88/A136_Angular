@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import noUiSlider from "nouislider";
 
 @Component({
   selector: "app-apartments-filter",
@@ -11,5 +12,16 @@ export class ApartmentsFilterComponent implements OnInit {
     element.scrollIntoView({ behavior: "smooth" });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const slider2 = document.getElementById("slider");
+
+    noUiSlider.create(slider2, {
+      start: [20, 60],
+      connect: true,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+  }
 }
